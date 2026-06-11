@@ -1,0 +1,10 @@
+# Local media (site loads images from vidaviewresort.com remotely)
+Photos/
+Videos/
+
+# Local dev helper
+serve.ps1
+
+# OS / editor cruft
+Thumbs.db
+.DS_Store

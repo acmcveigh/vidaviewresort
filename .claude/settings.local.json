@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:vidaviewresort.com)",
+      "PowerShell(Get-Command python3,py,node,npx -ErrorAction SilentlyContinue)",
+      "mcp__Claude_Preview__preview_start",
+      "PowerShell(Get-ChildItem \"C:\\\\Program Files\\\\\" -ErrorAction SilentlyContinue | Where-Object {$_.Name -match 'node|python|php|ruby'} | Select-Object Name; Get-ChildItem \"C:\\\\Program Files \\(x86\\)\\\\\" -ErrorAction SilentlyContinue | Where-Object {$_.Name -match 'node|python|php'} | Select-Object Name)",
+      "Bash(dir \"C:\\\\Users\\\\acmcv\\\\ClaudeVidaviewresort\\\\Photos\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/)",
+      "Bash(gh api *)"
+    ]
+  }
+}
