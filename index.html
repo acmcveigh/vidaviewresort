@@ -335,6 +335,48 @@
     .amenity-item{display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--muted)}
     .amenity-item::before{content:'✓';color:var(--amber);font-size:.8rem;flex-shrink:0}
 
+    /* ─── BOOK DIRECT STRIP ─────────────────────────────────── */
+    .book-direct-strip{background:var(--forest);padding:5rem 2.5rem}
+    .bdstrip-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+    .bdstrip-tag{display:inline-block;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;background:var(--amber);color:var(--forest);padding:.28rem .85rem;border-radius:4px;font-weight:500;margin-bottom:1rem}
+    .bdstrip-left h3{font-family:var(--ff-display);font-size:2.4rem;font-weight:300;color:var(--cream);line-height:1.1;margin-bottom:.9rem}
+    .bdstrip-left p{font-size:.95rem;color:rgba(244,240,232,.65);line-height:1.8;margin-bottom:1.5rem}
+    .bdstrip-perks{list-style:none;display:flex;flex-direction:column;gap:.55rem}
+    .bdstrip-perks li{font-size:.88rem;color:rgba(244,240,232,.75);display:flex;align-items:center;gap:.6rem}
+    .bdstrip-perks li span{color:var(--amber);font-weight:500}
+    .bdstrip-card{background:rgba(255,255,255,.05);border:1px solid rgba(90,158,114,.25);border-radius:14px;padding:2rem}
+    .bdstrip-card-label{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--amber);margin-bottom:1.25rem;display:block}
+    .bdstrip-form{display:flex;flex-direction:column;gap:.75rem}
+    .bdstrip-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+    .bdstrip-form input,.bdstrip-form select{width:100%;padding:.75rem 1rem;background:rgba(255,255,255,.08);border:1px solid rgba(90,158,114,.2);border-radius:6px;color:var(--cream);font-family:var(--ff-body);font-size:.88rem;outline:none;transition:border-color .2s ease}
+    .bdstrip-form input::placeholder{color:rgba(244,240,232,.4)}
+    .bdstrip-form input:focus,.bdstrip-form select:focus{border-color:var(--amber)}
+    .bdstrip-form select{color:rgba(244,240,232,.6)}
+    .bdstrip-form select option{color:var(--text);background:#fff}
+    .bdstrip-btn{padding:.9rem;background:var(--amber);color:var(--forest);border:none;border-radius:6px;font-family:var(--ff-body);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;cursor:pointer;transition:background .2s ease}
+    .bdstrip-btn:hover{background:var(--amber-lt)}
+    .bdstrip-or{font-size:.78rem;color:rgba(244,240,232,.4);text-align:center;margin-top:.25rem}
+    .bdstrip-or a{color:rgba(244,240,232,.6);border-bottom:1px solid rgba(90,158,114,.3);text-decoration:none}
+    .bdstrip-success{font-size:.9rem;color:var(--amber);text-align:center;padding:1rem}
+    .bdstrip-gift{display:flex;align-items:center;justify-content:center;gap:.6rem;margin-top:1rem;padding:.9rem;background:rgba(90,158,114,.1);border:1px solid rgba(90,158,114,.2);border-radius:8px;color:rgba(244,240,232,.7);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:background .2s ease,color .2s ease}
+    .bdstrip-gift:hover{background:rgba(90,158,114,.18);color:var(--cream)}
+    @media(max-width:900px){.bdstrip-inner{grid-template-columns:1fr;gap:3rem}.bdstrip-row{grid-template-columns:1fr}}
+
+    /* ─── FOOTER EMAIL ────────────────────────────────────── */
+    .ft-email-strip{background:var(--forest-mid);padding:4rem 2.5rem}
+    .ft-email-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+    @media(max-width:800px){.ft-email-inner{grid-template-columns:1fr}}
+    .ft-email-left h3{font-family:var(--ff-display);font-size:1.8rem;font-weight:300;color:var(--cream);margin-bottom:.75rem}
+    .ft-email-left p{font-size:.9rem;color:rgba(244,240,232,.65);line-height:1.7}
+    .ft-email-form{display:flex;flex-direction:column;gap:.85rem}
+    .ft-email-form input{padding:.85rem 1rem;background:rgba(255,255,255,.08);border:1px solid rgba(90,158,114,.2);border-radius:6px;color:var(--cream);font-family:var(--ff-body);font-size:.88rem;outline:none}
+    .ft-email-form input::placeholder{color:rgba(244,240,232,.35)}
+    .ft-email-form input:focus{border-color:var(--amber)}
+    .ft-email-form button{padding:.9rem;background:var(--amber);color:var(--forest);border:none;border-radius:6px;font-family:var(--ff-body);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;cursor:pointer;transition:background .2s ease}
+    .ft-email-form button:hover{background:var(--amber-lt)}
+    .ft-email-success{display:none;text-align:center;padding:1.5rem;color:var(--cream)}
+    .ft-email-success.show{display:block}
+
     /* ─── FOOTER ─────────────────────────────────────────────── */
     footer{background:#0b1a0d;color:var(--cream);padding:5rem 2.5rem 2.5rem}
     .ft-inner{max-width:var(--mw);margin:0 auto}
@@ -429,6 +471,7 @@
     <li><a href="#events">Weddings</a></li>
     <li><a href="#gallery">Gallery</a></li>
     <li><a href="#location">Location</a></li>
+    <li><a href="blog/index.html">Blog</a></li>
   </ul>
   <a class="nav-cta" href="#book">Book Now</a>
   <button class="nav-ham" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
@@ -831,6 +874,112 @@
   </section>
 
 </main>
+
+<!-- ─── BOOK DIRECT BANNER ─────────────────────────────────── -->
+<section class="book-direct-strip">
+  <div class="bdstrip-inner">
+    <div class="bdstrip-left">
+      <span class="bdstrip-tag">Best Rate Guaranteed</span>
+      <h3>Book Direct &amp; Save</h3>
+      <p>Skip the platform fees. Booking directly through us means lower rates, flexible communication, and a direct line to the people who know this property best. We'll always match or beat any OTA price.</p>
+      <ul class="bdstrip-perks">
+        <li><span>✓</span> No Airbnb or VRBO service fees</li>
+        <li><span>✓</span> Direct communication with the owners</li>
+        <li><span>✓</span> Flexible check-in arrangements</li>
+        <li><span>✓</span> First access to new dates and availability</li>
+      </ul>
+    </div>
+    <div class="bdstrip-right">
+      <div class="bdstrip-card">
+        <p class="bdstrip-card-label">Start a Direct Inquiry</p>
+        <form class="bdstrip-form" id="direct-book-form" action="https://formspree.io/f/mqeoddag" method="POST">
+          <input type="hidden" name="_subject" value="Direct Booking Inquiry">
+          <input type="hidden" name="source" value="book-direct-banner">
+          <div class="bdstrip-row">
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="email" placeholder="Your email" required>
+          </div>
+          <div class="bdstrip-row">
+            <input type="date" name="checkin" placeholder="Check-in">
+            <input type="date" name="checkout" placeholder="Check-out">
+          </div>
+          <select name="property">
+            <option value="">Which property?</option>
+            <option value="Riverview B&B">Riverview B&amp;B</option>
+            <option value="Riverside Home">Riverside Home</option>
+            <option value="Both Properties">Both Properties</option>
+          </select>
+          <button type="submit" class="bdstrip-btn">Send Direct Inquiry</button>
+          <p class="bdstrip-or">or call <a href="tel:5418961196">541-896-1196</a></p>
+        </form>
+        <p class="bdstrip-success" id="bdstrip-success" style="display:none">✓ Got it! We'll be in touch within 24 hours.</p>
+      </div>
+      <a class="bdstrip-gift" href="gift-certificates.html">
+        <span>🎁</span>
+        <span>Give a Gift Certificate →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── BLOG PREVIEW ──────────────────────────────────────── -->
+<section class="sec" style="background:var(--cream-dk)">
+  <div class="sec-inner">
+    <span class="eyebrow" data-reveal="up">The River Journal</span>
+    <h2 class="sec-h2" data-reveal="up" data-delay="1">Guides &amp; <em>Insider Knowledge</em></h2>
+    <p class="sec-lead" data-reveal="up" data-delay="2">Everything you need to know about the McKenzie River — fishing, photography, seasons, and planning your perfect stay.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem" data-reveal="up" data-delay="3">
+      <a href="blog/guide-to-mckenzie-river.html" style="background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(20,31,26,.10);display:flex;flex-direction:column;text-decoration:none;transition:transform .3s ease,box-shadow .3s ease" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 8px 32px rgba(20,31,26,.18)'" onmouseout="this.style.transform='';this.style.boxShadow='0 2px 12px rgba(20,31,26,.10)'">
+        <div style="height:180px;overflow:hidden"><img src="https://vidaviewresort.com/vv_img/7d49779a.jpg.webp" alt="Whitewater rafting on the McKenzie River" style="width:100%;height:100%;object-fit:cover"></div>
+        <div style="padding:1.5rem;flex:1;display:flex;flex-direction:column;gap:.5rem">
+          <span style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;background:var(--amber);color:var(--cream);padding:.25rem .7rem;border-radius:4px;font-weight:500;width:fit-content">Travel Guide</span>
+          <h3 style="font-family:var(--ff-display);font-size:1.3rem;font-weight:400;color:var(--forest);line-height:1.2">Guide to the McKenzie River</h3>
+          <p style="font-size:.85rem;color:var(--muted);line-height:1.65;flex:1">Where to stay, what to do, and everything that makes the McKenzie one of Oregon's finest destinations.</p>
+          <span style="font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);font-weight:500">Read Article →</span>
+        </div>
+      </a>
+      <a href="blog/best-time-to-visit-mckenzie-river.html" style="background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(20,31,26,.10);display:flex;flex-direction:column;text-decoration:none;transition:transform .3s ease,box-shadow .3s ease" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 8px 32px rgba(20,31,26,.18)'" onmouseout="this.style.transform='';this.style.boxShadow='0 2px 12px rgba(20,31,26,.10)'">
+        <div style="height:180px;overflow:hidden"><img src="https://vidaviewresort.com/vv_img/f5b6ee57.jpg.avif" alt="McKenzie River in autumn" style="width:100%;height:100%;object-fit:cover"></div>
+        <div style="padding:1.5rem;flex:1;display:flex;flex-direction:column;gap:.5rem">
+          <span style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;background:var(--amber);color:var(--cream);padding:.25rem .7rem;border-radius:4px;font-weight:500;width:fit-content">Seasonal Guide</span>
+          <h3 style="font-family:var(--ff-display);font-size:1.3rem;font-weight:400;color:var(--forest);line-height:1.2">Best Time to Visit the McKenzie</h3>
+          <p style="font-size:.85rem;color:var(--muted);line-height:1.65;flex:1">Every season casts a different light on the McKenzie. Find the one that matches your vision.</p>
+          <span style="font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);font-weight:500">Read Article →</span>
+        </div>
+      </a>
+      <a href="blog/riverside-wedding-planning.html" style="background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(20,31,26,.10);display:flex;flex-direction:column;text-decoration:none;transition:transform .3s ease,box-shadow .3s ease" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 8px 32px rgba(20,31,26,.18)'" onmouseout="this.style.transform='';this.style.boxShadow='0 2px 12px rgba(20,31,26,.10)'">
+        <div style="height:180px;overflow:hidden"><img src="https://vidaviewresort.com/attached_assets/wedding.jpg" alt="Riverside wedding on the McKenzie River" style="width:100%;height:100%;object-fit:cover"></div>
+        <div style="padding:1.5rem;flex:1;display:flex;flex-direction:column;gap:.5rem">
+          <span style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;background:var(--amber);color:var(--cream);padding:.25rem .7rem;border-radius:4px;font-weight:500;width:fit-content">Wedding Planning</span>
+          <h3 style="font-family:var(--ff-display);font-size:1.3rem;font-weight:400;color:var(--forest);line-height:1.2">Planning a Riverside Wedding</h3>
+          <p style="font-size:.85rem;color:var(--muted);line-height:1.65;flex:1">A complete guide to planning a ceremony the McKenzie River will hold in its memory.</p>
+          <span style="font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);font-weight:500">Read Article →</span>
+        </div>
+      </a>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem">
+      <a href="blog/index.html" class="btn btn-outline" data-reveal="up">View All Articles</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER EMAIL SIGNUP ─────────────────────────────────── -->
+<section class="ft-email-strip">
+  <div class="ft-email-inner">
+    <div class="ft-email-left">
+      <h3>Join 1,000+ River Lovers</h3>
+      <p>Get 5 days of McKenzie River secrets delivered to your inbox — fishing tips, photography guides, seasonal advice, and insider knowledge from people who live here.</p>
+    </div>
+    <form class="ft-email-form" id="footer-email-form" onsubmit="handleFooterEmailSignup(event)">
+      <input type="text" name="ft_email_name" placeholder="Your name" required>
+      <input type="email" name="ft_email_address" placeholder="Your email" required>
+      <button type="submit">Get the Series</button>
+      <div class="ft-email-success" id="footer-email-success">
+        <p>✓ Welcome! Check your inbox in a few minutes.</p>
+      </div>
+    </form>
+  </div>
+</section>
 
 <!-- ─── FOOTER ──────────────────────────────────────────────── -->
 <footer>
