@@ -5,6 +5,78 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Vida View Resort — A luxury bed &amp; breakfast and private retreat on the McKenzie River in Vida, Oregon. Pool, hot tub, drift boat tours, and stunning river views.">
   <title>Vida View Resort | McKenzie River Retreat — Vida, Oregon</title>
+
+  <meta name="theme-color" content="#1a2e1c">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231a2e1c'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='central' text-anchor='middle' font-family='Georgia%2C serif' font-size='14' font-weight='300' letter-spacing='1' fill='%23c4a052'%3EVV%3C/text%3E%3C/svg%3E">
+  <link rel="canonical" href="https://vidaviewresort.com/">
+  <link rel="preload" as="image" href="https://vidaviewresort.com/vv_img/0e19f6e1.jpg.avif" type="image/avif">
+
+  <!-- Local SEO -->
+  <meta name="geo.region" content="US-OR">
+  <meta name="geo.placename" content="Vida, Oregon">
+  <meta name="geo.position" content="44.1220;-122.5300">
+  <meta name="ICBM" content="44.1220, -122.5300">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vidaviewresort.com/">
+  <meta property="og:title" content="Vida View Resort | McKenzie River Retreat — Vida, Oregon">
+  <meta property="og:description" content="Two private gated retreats on the wild McKenzie River. Pool, hot tub, drift boat tours, fly fishing, and 750 ft of private river frontage. Vida, Oregon.">
+  <meta property="og:image" content="https://vidaviewresort.com/vv_img/0e19f6e1.jpg.avif">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Vida View Resort">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Vida View Resort | McKenzie River Retreat">
+  <meta name="twitter:description" content="Two private gated retreats on the wild McKenzie River in Vida, Oregon. Pool, hot tub, drift boat tours, and 750 ft of private river frontage.">
+  <meta name="twitter:image" content="https://vidaviewresort.com/vv_img/0e19f6e1.jpg.avif">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LodgingBusiness",
+    "name": "Vida View Resort",
+    "description": "Two private gated retreats on the wild McKenzie River in Vida, Oregon. Featuring a heated pool, sauna, hot tub, drift boat tours, fly fishing, covered pickleball courts, and 750 feet of private river frontage.",
+    "url": "https://vidaviewresort.com",
+    "telephone": "+15418961196",
+    "email": "tommcveigh@yahoo.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "49885 McKenzie Hwy",
+      "addressLocality": "Vida",
+      "addressRegion": "OR",
+      "postalCode": "97488",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 44.1220,
+      "longitude": -122.5300
+    },
+    "priceRange": "$425–$550/night",
+    "numberOfRooms": 7,
+    "amenityFeature": [
+      {"@type": "LocationFeatureSpecification", "name": "Heated Pool", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Hot Tub", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Sauna", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "WiFi", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Full Kitchen", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Private River Frontage", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Drift Boat Tours", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Pickleball Courts", "value": true}
+    ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "ratingCount": "50"
+    }
+  }
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
@@ -111,6 +183,9 @@
     .nav-links a::after{content:'';position:absolute;bottom:-5px;left:0;width:0;height:1px;background:var(--amber);transition:width .35s var(--ease-out)}
     .nav-links a:hover{color:var(--cream)}
     .nav-links a:hover::after{width:100%}
+    .nav-phone{font-size:.7rem;letter-spacing:.12em;color:rgba(244,240,232,.65);transition:color .2s ease;display:none}
+    .nav-phone:hover{color:var(--amber)}
+    @media(min-width:1024px){.nav-phone{display:block}}
     .nav-cta{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;padding:.65rem 1.6rem;background:var(--amber);color:var(--forest);border-radius:var(--r-sm);transition:background .2s ease,transform .2s ease,box-shadow .2s ease}
     .nav-cta:hover{background:var(--amber-lt);transform:translateY(-2px);box-shadow:0 6px 20px rgba(196,160,82,.4)}
     .nav-ham{display:none;flex-direction:column;gap:5px;padding:4px;z-index:1001}
@@ -131,6 +206,8 @@
     #mobile-nav.open a:nth-child(6){transition-delay:.3s}
     #mobile-nav.open a:nth-child(7){transition-delay:.35s}
     #mobile-nav.open a:nth-child(8){transition-delay:.4s}
+    #mobile-nav.open a:nth-child(9){transition-delay:.45s}
+    #mobile-nav.open a:nth-child(10){transition-delay:.5s}
     #mobile-nav a:hover{color:var(--amber)}
     .mob-close{position:absolute;top:1.5rem;right:2rem;font-size:1.8rem;color:rgba(244,240,232,.6);transition:color .2s ease;background:none;border:none;cursor:none}
     .mob-close:hover{color:var(--cream)}
@@ -223,6 +300,14 @@
     .prop-price{font-family:var(--ff-display);font-size:1.05rem;color:var(--forest)}
     .prop-link{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--amber);font-weight:500;display:flex;align-items:center;gap:.4rem;transition:gap .2s ease}
     .prop-link:hover{gap:.7rem}
+
+    /* ─── BOOK BOTH CALLOUT ─────────────────────────────────── */
+    .book-both{margin-top:2.5rem;padding:2.5rem 3rem;background:var(--forest);border-radius:var(--r-lg);display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+    .book-both-text h3{font-family:var(--ff-display);font-size:1.6rem;font-weight:300;color:var(--cream);margin-bottom:.4rem}
+    .book-both-text h3 em{font-style:italic;color:var(--amber)}
+    .book-both-text p{font-size:.87rem;font-weight:300;line-height:1.7;color:rgba(244,240,232,.6);max-width:520px}
+    .book-both-badges{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:.75rem}
+    .book-both-badge{font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;padding:.25rem .7rem;border-radius:var(--r-sm);background:rgba(196,160,82,.15);color:var(--amber);border:1px solid rgba(196,160,82,.3)}
 
     /* ─── EXPERIENCES ────────────────────────────────────────── */
     #experiences{background:var(--forest)}
@@ -319,6 +404,33 @@
     .loc-badges{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:.5rem}
     .loc-badge{font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .8rem;border-radius:var(--r-sm);background:rgba(61,135,117,.18);color:#7ecfba;border:1px solid rgba(61,135,117,.3)}
 
+    /* ─── BOOK DIRECT STRIP ─────────────────────────────────── */
+    .book-direct-strip{background:var(--forest);padding:5rem 2.5rem}
+    .bdstrip-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+    .bdstrip-tag{display:inline-block;font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;background:var(--amber);color:var(--forest);padding:.28rem .85rem;border-radius:4px;font-weight:500;margin-bottom:1rem}
+    .bdstrip-left h3{font-family:var(--ff-display);font-size:2.4rem;font-weight:300;color:var(--cream);line-height:1.1;margin-bottom:.9rem}
+    .bdstrip-left p{font-size:.95rem;color:rgba(244,240,232,.65);line-height:1.8;margin-bottom:1.5rem}
+    .bdstrip-perks{list-style:none;display:flex;flex-direction:column;gap:.55rem}
+    .bdstrip-perks li{font-size:.88rem;color:rgba(244,240,232,.75);display:flex;align-items:center;gap:.6rem}
+    .bdstrip-perks li span{color:var(--amber);font-weight:500}
+    .bdstrip-card{background:rgba(255,255,255,.05);border:1px solid rgba(196,160,82,.25);border-radius:14px;padding:2rem}
+    .bdstrip-card-label{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--amber);margin-bottom:1.25rem;display:block}
+    .bdstrip-form{display:flex;flex-direction:column;gap:.75rem}
+    .bdstrip-row{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}
+    .bdstrip-form input,.bdstrip-form select{width:100%;padding:.75rem 1rem;background:rgba(255,255,255,.08);border:1px solid rgba(196,160,82,.2);border-radius:6px;color:var(--cream);font-family:var(--ff-body);font-size:.88rem;outline:none;transition:border-color .2s ease}
+    .bdstrip-form input::placeholder{color:rgba(244,240,232,.4)}
+    .bdstrip-form input:focus,.bdstrip-form select:focus{border-color:var(--amber)}
+    .bdstrip-form select{color:rgba(244,240,232,.6)}
+    .bdstrip-form select option{color:var(--text);background:#fff}
+    .bdstrip-btn{padding:.9rem;background:var(--amber);color:var(--forest);border:none;border-radius:6px;font-family:var(--ff-body);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;cursor:pointer;transition:background .2s ease}
+    .bdstrip-btn:hover{background:var(--amber-lt)}
+    .bdstrip-or{font-size:.78rem;color:rgba(244,240,232,.4);text-align:center;margin-top:.25rem}
+    .bdstrip-or a{color:rgba(244,240,232,.6);border-bottom:1px solid rgba(196,160,82,.3);text-decoration:none}
+    .bdstrip-success{font-size:.9rem;color:var(--amber);text-align:center;padding:1rem}
+    .bdstrip-gift{display:flex;align-items:center;justify-content:center;gap:.6rem;margin-top:1rem;padding:.9rem;background:rgba(196,160,82,.1);border:1px solid rgba(196,160,82,.2);border-radius:8px;color:rgba(244,240,232,.7);font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:background .2s ease,color .2s ease}
+    .bdstrip-gift:hover{background:rgba(196,160,82,.18);color:var(--cream)}
+    @media(max-width:900px){.bdstrip-inner{grid-template-columns:1fr;gap:3rem}.bdstrip-row{grid-template-columns:1fr}}
+
     /* ─── BOOKING ────────────────────────────────────────────── */
     #book{background:var(--cream)}
     .book-grid{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem}
@@ -329,6 +441,8 @@
     .plat-icon{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;letter-spacing:.04em;flex-shrink:0}
     .plat-vrbo .plat-icon{background:#1b5e9b;color:#fff}
     .plat-airbnb .plat-icon{background:#ff5a5f;color:#fff}
+    .book-prop-label{font-size:.63rem;letter-spacing:.22em;text-transform:uppercase;color:var(--forest);font-weight:500;margin-bottom:.4rem;margin-top:1.25rem}
+    .book-prop-label:first-child{margin-top:0}
     .plat-label{font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--forest)}
     .plat-sub{font-size:.72rem;color:var(--muted)}
     .plat-arr{color:var(--amber);margin-left:auto;transition:transform .2s ease;font-size:1.1rem}
@@ -374,6 +488,50 @@
     .ft-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:2rem;font-size:.75rem;color:rgba(244,240,232,.25);flex-wrap:wrap;gap:1rem}
     .ft-bottom a{color:rgba(244,240,232,.4);transition:color .2s ease}
     .ft-bottom a:hover{color:var(--cream)}
+    .ft-social{color:rgba(244,240,232,.4);transition:color .2s ease;display:inline-flex}
+    .ft-social:hover{color:var(--amber)}
+
+    /* ─── SCROLL TO TOP ─────────────────────────────────────── */
+    #scroll-top{
+      position:fixed;bottom:1.5rem;right:1.5rem;z-index:990;
+      width:44px;height:44px;border-radius:50%;
+      background:var(--forest);color:var(--cream);border:none;
+      display:flex;align-items:center;justify-content:center;
+      box-shadow:0 4px 18px rgba(26,46,28,.35);
+      opacity:0;transform:translateY(12px);pointer-events:none;
+      transition:opacity .3s ease,transform .3s ease;
+      cursor:pointer;
+    }
+    #scroll-top.visible{opacity:1;transform:translateY(0);pointer-events:all}
+    #scroll-top:hover{background:var(--canopy)}
+    @media(max-width:768px){#scroll-top{bottom:5rem;right:1rem}}
+
+    /* ─── FLOATING BOOK BTN (mobile) ────────────────────────── */
+    #float-book{display:none}
+    @media(max-width:768px){
+      #float-book{
+        display:flex;position:fixed;bottom:1.25rem;left:50%;transform:translateX(-50%);z-index:990;
+        background:var(--amber);color:var(--forest);
+        font-size:.72rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;
+        padding:.85rem 2.2rem;border-radius:50px;
+        box-shadow:0 6px 28px rgba(196,160,82,.55);
+        white-space:nowrap;transition:opacity .3s ease,transform .3s ease;
+      }
+      #float-book.hidden{opacity:0;transform:translateX(-50%) translateY(20px);pointer-events:none}
+    }
+
+    /* ─── FAQ ───────────────────────────────────────────────── */
+    #faq{background:var(--cream-dk)}
+    .faq-header{text-align:center;max-width:560px;margin:0 auto 3.5rem;display:flex;flex-direction:column;align-items:center;gap:.9rem}
+    .faq-list{max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:.75rem}
+    .faq-item{background:var(--cream);border-radius:var(--r-md);border:1px solid rgba(196,160,82,.18);overflow:hidden}
+    .faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding:1.4rem 1.75rem;background:none;border:none;text-align:left;font-family:var(--ff-body);font-size:.95rem;font-weight:500;color:var(--forest);cursor:pointer;transition:color .2s ease}
+    .faq-q:hover{color:var(--river)}
+    .faq-icon{width:26px;height:26px;border-radius:50%;border:1px solid rgba(196,160,82,.4);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--amber);font-size:1rem;line-height:1;transition:transform .35s var(--ease-out),background .2s ease}
+    .faq-item.open .faq-icon{transform:rotate(45deg);background:var(--amber);color:var(--forest)}
+    .faq-body{max-height:0;overflow:hidden;transition:max-height .4s var(--ease-out)}
+    .faq-item.open .faq-body{max-height:400px}
+    .faq-body p{padding:.25rem 1.75rem 1.5rem;font-size:.88rem;font-weight:300;line-height:1.82;color:var(--muted)}
 
     /* ─── REDUCED MOTION ─────────────────────────────────────── */
     @media(prefers-reduced-motion:reduce){
@@ -384,6 +542,7 @@
 
     /* ─── RESPONSIVE ─────────────────────────────────────────── */
     @media(max-width:1100px){
+      .book-both{flex-direction:column;align-items:flex-start;padding:2rem}
       .about-grid{grid-template-columns:1fr;gap:3.5rem}
       .about-imgs{height:420px}
       .props-grid{grid-template-columns:1fr}
@@ -412,8 +571,32 @@
       .about-stats{gap:1rem}
       .amenity-list{grid-template-columns:1fr}
     }
+
+    /* ─── FOOTER EMAIL ────────────────────────────────────── */
+    .ft-email-strip{background:linear-gradient(135deg, var(--forest) 0%, var(--canopy) 100%);padding:4rem 2.5rem;margin-top:4rem}
+    .ft-email-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+    @media(max-width:800px){.ft-email-inner{grid-template-columns:1fr}}
+    .ft-email-left h3{font-family:var(--ff-display);font-size:1.8rem;font-weight:300;color:var(--cream);margin-bottom:.75rem}
+    .ft-email-left p{font-size:.9rem;color:rgba(244,240,232,.65);line-height:1.7}
+    .ft-email-form{display:flex;flex-direction:column;gap:.85rem}
+    .ft-email-form input{padding:.85rem 1rem;background:rgba(255,255,255,.08);border:1px solid rgba(196,160,82,.2);border-radius:6px;color:var(--cream);font-family:var(--ff-body);font-size:.88rem;outline:none}
+    .ft-email-form input::placeholder{color:rgba(244,240,232,.35)}
+    .ft-email-form input:focus{border-color:var(--amber)}
+    .ft-email-form button{padding:.9rem;background:var(--amber);color:var(--forest);border:none;border-radius:6px;font-family:var(--ff-body);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;cursor:pointer;transition:background .2s ease}
+    .ft-email-form button:hover{background:var(--amber-lt)}
+    .ft-email-success{display:none;text-align:center;padding:1.5rem;color:var(--cream)}
+    .ft-email-success.show{display:block}
+    .ft-email-success p{font-size:.85rem;color:rgba(244,240,232,.65)}
   </style>
 </head>
+<noscript>
+  <style>
+    #loader{display:none!important}
+    #cursor{display:none!important}
+    [data-reveal]{opacity:1!important;transform:none!important}
+    #float-book{display:none!important}
+  </style>
+</noscript>
 <body>
 
 <!-- skip link -->
@@ -441,6 +624,7 @@
   <a href="#events">Weddings</a>
   <a href="#gallery">Gallery</a>
   <a href="#location">Location</a>
+  <a href="#faq">FAQ</a>
   <a href="#book">Book Now</a>
   <a href="tel:5418961196">&#9742;&nbsp;541-896-1196</a>
 </div>
@@ -455,7 +639,9 @@
     <li><a href="#events">Weddings</a></li>
     <li><a href="#gallery">Gallery</a></li>
     <li><a href="#location">Location</a></li>
+    <li><a href="#faq">FAQ</a></li>
   </ul>
+  <a class="nav-phone" href="tel:5418961196" aria-label="Call us at 541-896-1196">541-896-1196</a>
   <a class="nav-cta" href="#book">Book Now</a>
   <button class="nav-ham" aria-label="Open menu" aria-expanded="false">
     <span></span><span></span><span></span>
@@ -564,8 +750,8 @@
             </div>
             <div class="prop-foot">
               <span class="prop-price">From <strong>$550</strong>&thinsp;/&thinsp;night</span>
-              <a class="prop-link" href="#book" aria-label="Book the Riverview Bed and Breakfast">
-                Book Now
+              <a class="prop-link" href="https://www.airbnb.com/rooms/1694447162042583927" target="_blank" rel="noopener noreferrer" aria-label="Book the Riverview Bed and Breakfast on Airbnb">
+                Book on Airbnb
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </a>
             </div>
@@ -590,13 +776,28 @@
             </div>
             <div class="prop-foot">
               <span class="prop-price">From <strong>$425</strong>&thinsp;/&thinsp;night</span>
-              <a class="prop-link" href="#book" aria-label="Book the Riverside Home">
-                Book Now
+              <a class="prop-link" href="https://www.vrbo.com/4570921" target="_blank" rel="noopener noreferrer" aria-label="Book the Riverside Home on VRBO">
+                Book on VRBO
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </a>
             </div>
           </div>
         </article>
+      </div>
+
+      <!-- Book Both callout -->
+      <div class="book-both" data-reveal="up" data-delay="3">
+        <div class="book-both-text">
+          <h3>Reserve the <em>entire resort</em></h3>
+          <p>Book both properties together for exclusive full-resort access — all 7 bedrooms, the heated pool, sauna, two hot tubs, pickleball courts, and 750 ft of private river frontage. Perfect for weddings, family reunions, and corporate retreats.</p>
+          <div class="book-both-badges">
+            <span class="book-both-badge">7 Bedrooms</span>
+            <span class="book-both-badge">Up to 20+ Guests</span>
+            <span class="book-both-badge">Fully Private</span>
+            <span class="book-both-badge">All Amenities</span>
+          </div>
+        </div>
+        <a class="btn btn-gold" href="#book" style="flex-shrink:0">Inquire About Full Resort</a>
       </div>
     </div>
   </section>
@@ -770,7 +971,7 @@
         <span class="eyebrow eyebrow-lt" data-reveal="up">The Resort</span>
         <h2 class="sec-h2" data-reveal="up" data-delay="1">Seen through <em>every season</em></h2>
       </div>
-      <div class="gal-grid" role="list">
+      <div class="gal-grid" role="list" style="margin-bottom:2.5rem">
         <div class="gal-item" role="listitem" data-reveal="scale" data-delay="1" tabindex="0" aria-label="View photo: Resort exterior">
           <img src="https://vidaviewresort.com/vv_img/f8e63d54.jpg.avif" alt="Vida View Resort exterior with McKenzie River backdrop" loading="lazy">
           <div class="gal-over" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
@@ -804,6 +1005,11 @@
           <div class="gal-over" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
         </div>
       </div>
+      <div style="text-align:center;margin-top:1rem">
+        <a class="btn btn-ghost" href="https://www.airbnb.com/rooms/1694447162042583927" target="_blank" rel="noopener noreferrer" style="border-color:rgba(244,240,232,.35);color:var(--cream)">
+          See All Photos on Airbnb &nbsp;&#8594;
+        </a>
+      </div>
     </div>
   </section>
 
@@ -825,36 +1031,36 @@
         <article class="test-card" data-reveal="up" data-delay="1">
           <div class="test-stars" aria-label="5 out of 5 stars">★★★★★</div>
           <div class="test-quote-mark" aria-hidden="true">&ldquo;</div>
-          <p class="test-text">Woke up to the sound of the McKenzie every single morning. Photos don't do this place justice — it is absolutely stunning. We cooked every meal in the incredible kitchen and barely left. This place is pure magic.</p>
+          <p class="test-text">What a great place to get away with friends. Perfect weather &amp; right on the river. So relaxing, definitely would recommend it! The hosts are easy to work with and communicate well.</p>
           <div class="test-author">
-            <div class="test-av" aria-hidden="true">S</div>
+            <div class="test-av" aria-hidden="true">C</div>
             <div>
-              <p class="test-name">Sarah M.</p>
-              <p class="test-via">Verified VRBO Guest</p>
+              <p class="test-name">Cynthia S.</p>
+              <p class="test-via">Verified VRBO Guest &nbsp;&middot;&nbsp; Sep 2025</p>
             </div>
           </div>
         </article>
         <article class="test-card" data-reveal="up" data-delay="2">
           <div class="test-stars" aria-label="5 out of 5 stars">★★★★★</div>
           <div class="test-quote-mark" aria-hidden="true">&ldquo;</div>
-          <p class="test-text">We hosted our wedding here and it was more perfect than anything we'd dreamed. Having the entire property to ourselves for the weekend was extraordinary. The river backdrop for our ceremony made everyone cry — in the best way.</p>
+          <p class="test-text">We had a wonderful trip and the place was exceptional. The views were great and the hot tub was relaxing! Host was very nice and accommodating!</p>
           <div class="test-author">
-            <div class="test-av" aria-hidden="true">J</div>
+            <div class="test-av" aria-hidden="true">B</div>
             <div>
-              <p class="test-name">Jake &amp; Ren&eacute;e L.</p>
-              <p class="test-via">Wedding Couple &nbsp;&middot;&nbsp; Google Review</p>
+              <p class="test-name">Brittani B.</p>
+              <p class="test-via">Verified VRBO Guest &nbsp;&middot;&nbsp; Jul 2025</p>
             </div>
           </div>
         </article>
         <article class="test-card" data-reveal="up" data-delay="3">
           <div class="test-stars" aria-label="5 out of 5 stars">★★★★★</div>
           <div class="test-quote-mark" aria-hidden="true">&ldquo;</div>
-          <p class="test-text">The drift boat tour on our second morning was the highlight of our entire Oregon trip. Our guide knew every inch of that river. Then back to the hot tub for three hours. We're already looking at next year's dates.</p>
+          <p class="test-text">Beautiful property! Stunning view. Bummed that we were only staying one night. The hosts were very gracious and accommodating.</p>
           <div class="test-author">
-            <div class="test-av" aria-hidden="true">T</div>
+            <div class="test-av" aria-hidden="true">V</div>
             <div>
-              <p class="test-name">Thomas &amp; Diana P.</p>
-              <p class="test-via">Verified Airbnb Guest</p>
+              <p class="test-name">Laurie M.</p>
+              <p class="test-via">Verified VRBO Guest &nbsp;&middot;&nbsp; Sep 2025</p>
             </div>
           </div>
         </article>
@@ -923,12 +1129,159 @@
     </div>
   </section>
 
-  <!-- wave: location → book -->
+  <!-- wave: location → faq -->
   <div class="wave" style="background:var(--forest)" aria-hidden="true">
     <svg viewBox="0 0 1440 72" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-      <path d="M0,20 C480,72 960,0 1440,44 L1440,72 L0,72 Z" fill="#f4f0e8"/>
+      <path d="M0,20 C480,72 960,0 1440,44 L1440,72 L0,72 Z" fill="#ece7dd"/>
     </svg>
   </div>
+
+  <!-- ─── FAQ ────────────────────────────────────────────────────── -->
+  <section id="faq" class="sec" style="background:var(--cream-dk)">
+    <div class="sec-inner">
+      <div class="faq-header">
+        <span class="eyebrow" data-reveal="up">Good to Know</span>
+        <h2 class="sec-h2" data-reveal="up" data-delay="1">Frequently asked <em>questions</em></h2>
+      </div>
+      <div class="faq-list" data-reveal="up" data-delay="2">
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            What are check-in and check-out times?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-body" role="region">
+            <p>Check-in is at <strong>4:00 PM</strong> and check-out is at <strong>11:00 AM</strong>. Early check-in or late check-out may be available depending on the schedule — just reach out and we'll do our best to accommodate you.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            Can we book both properties at the same time?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-body" role="region">
+            <p>Yes — and it's one of the best ways to experience Vida View. Booking both the Riverview B&B and the Riverside Home gives your group exclusive access to all seven bedrooms, the heated pool, sauna, hot tubs, pickleball courts, and 750 feet of private river frontage. Ideal for weddings, family reunions, and corporate retreats. Contact us directly for combined pricing.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            Is the pool heated year-round?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-body" role="region">
+            <p>The heated pool at the Riverview B&B is available during the warmer months (typically May through October). The hot tubs at both properties are available year-round — there's nothing quite like soaking in the hot tub while watching snow fall on the McKenzie.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            Are pets allowed?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-body" role="region">
+            <p>Please contact us directly about pets. We understand they're family — just let us know what you're bringing when you inquire and we'll let you know what's possible for your dates.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            Is there WiFi?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-body" role="region">
+            <p>Yes, both properties have high-speed WiFi. That said, most guests find themselves forgetting it's there. The McKenzie has a way of pulling your attention away from screens.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            Are the drift boat tours included with our stay?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-body" role="region">
+            <p>The complimentary River Float Orientation — a short guided float on the gentle section behind the property — is included for all guests. Full-day whitewater adventures and the Sunset Drift &amp; Dine experience are available as premium add-ons. Inquire when you book and we'll coordinate everything.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            What is the minimum stay?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-body" role="region">
+            <p>Minimum stay requirements vary by season and are listed on our VRBO and Airbnb listings. Generally, a 2–3 night minimum applies on weekends and a longer minimum during peak summer and holiday periods. Contact us for specific availability — we're flexible when we can be.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" aria-expanded="false">
+            How far is the nearest grocery store or town?
+            <span class="faq-icon" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-body" role="region">
+            <p>The resort is at Milepost 36.5 on the McKenzie Highway, about 45 minutes from Eugene where you'll find full grocery options. We strongly recommend stocking up before you arrive — both properties have full kitchens, and cooking together is part of the experience. There's a small market in McKenzie Bridge (~15 min) for essentials.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- wave: faq → book -->
+  <div class="wave" style="background:var(--cream-dk)" aria-hidden="true">
+    <svg viewBox="0 0 1440 72" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,40 C480,0 960,72 1440,20 L1440,72 L0,72 Z" fill="#f4f0e8"/>
+    </svg>
+  </div>
+
+  <!-- ─── BOOK DIRECT BANNER ─────────────────────────────────── -->
+  <section class="book-direct-strip">
+    <div class="bdstrip-inner">
+      <div class="bdstrip-left">
+        <span class="bdstrip-tag">Best Rate Guaranteed</span>
+        <h3>Book Direct &amp; Save</h3>
+        <p>Skip the platform fees. Booking directly through us means lower rates, flexible communication, and a direct line to the people who know this property best. We'll always match or beat any OTA price.</p>
+        <ul class="bdstrip-perks">
+          <li><span>✓</span> No Airbnb or VRBO service fees</li>
+          <li><span>✓</span> Direct communication with the owners</li>
+          <li><span>✓</span> Flexible check-in arrangements</li>
+          <li><span>✓</span> First access to new dates and availability</li>
+        </ul>
+      </div>
+      <div class="bdstrip-right">
+        <div class="bdstrip-card">
+          <p class="bdstrip-card-label">Start a Direct Inquiry</p>
+          <form class="bdstrip-form" id="direct-book-form" action="https://formspree.io/f/mqeoddag" method="POST">
+            <input type="hidden" name="_subject" value="Direct Booking Inquiry">
+            <input type="hidden" name="source" value="book-direct-banner">
+            <div class="bdstrip-row">
+              <input type="text" name="name" placeholder="Your name" required>
+              <input type="email" name="email" placeholder="Your email" required>
+            </div>
+            <div class="bdstrip-row">
+              <input type="date" name="checkin" placeholder="Check-in">
+              <input type="date" name="checkout" placeholder="Check-out">
+            </div>
+            <select name="property">
+              <option value="">Which property?</option>
+              <option value="Riverview B&B">Riverview B&amp;B</option>
+              <option value="Riverside Home">Riverside Home</option>
+              <option value="Both Properties">Both Properties</option>
+            </select>
+            <button type="submit" class="bdstrip-btn">Send Direct Inquiry</button>
+            <p class="bdstrip-or">or call <a href="tel:5418961196">541-896-1196</a></p>
+          </form>
+          <p class="bdstrip-success" id="bdstrip-success" style="display:none">✓ Got it! We'll be in touch within 24 hours.</p>
+        </div>
+        <a class="bdstrip-gift" href="gift-certificates.html">
+          <span>🎁</span>
+          <span>Give a Gift Certificate →</span>
+        </a>
+      </div>
+    </div>
+  </section>
 
   <!-- ─── BOOKING ──────────────────────────────────────────────── -->
   <section id="book" class="sec" style="background:var(--cream)">
@@ -939,7 +1292,17 @@
           <h2 class="sec-h2" data-reveal="up" data-delay="1">Book your <em>escape</em><br>to the river</h2>
           <p class="sec-lead" data-reveal="up" data-delay="2">Check real-time availability and book instantly through our trusted platforms — or send a direct inquiry for weddings, events, rafting packages, or extended stays.</p>
           <div class="book-platforms" data-reveal="up" data-delay="3">
-            <a class="plat-btn plat-vrbo" href="https://www.vrbo.com" target="_blank" rel="noopener noreferrer" aria-label="Book on VRBO — opens in new tab">
+            <p class="book-prop-label">The Riverview B&amp;B — 4 Bedrooms</p>
+            <a class="plat-btn plat-airbnb" href="https://www.airbnb.com/rooms/1694447162042583927" target="_blank" rel="noopener noreferrer" aria-label="Book the Riverview B&B on Airbnb — opens in new tab">
+              <div class="plat-icon">Air</div>
+              <div>
+                <p class="plat-label">Book on Airbnb</p>
+                <p class="plat-sub">Instant booking &nbsp;&middot;&nbsp; Superhost rated</p>
+              </div>
+              <span class="plat-arr" aria-hidden="true">&#8594;</span>
+            </a>
+            <p class="book-prop-label">The Riverside Home — 3 Bedrooms</p>
+            <a class="plat-btn plat-vrbo" href="https://www.vrbo.com/4570921" target="_blank" rel="noopener noreferrer" aria-label="Book the Riverside Home on VRBO — opens in new tab">
               <div class="plat-icon">VRBO</div>
               <div>
                 <p class="plat-label">Book on VRBO</p>
@@ -947,7 +1310,7 @@
               </div>
               <span class="plat-arr" aria-hidden="true">&#8594;</span>
             </a>
-            <a class="plat-btn plat-airbnb" href="https://www.airbnb.com" target="_blank" rel="noopener noreferrer" aria-label="Book on Airbnb — opens in new tab">
+            <a class="plat-btn plat-airbnb" href="https://www.airbnb.com/rooms/1416089259255485498" target="_blank" rel="noopener noreferrer" aria-label="Book the Riverside Home on Airbnb — opens in new tab">
               <div class="plat-icon">Air</div>
               <div>
                 <p class="plat-label">Book on Airbnb</p>
@@ -966,6 +1329,8 @@
             <div class="amenity-item">Full Kitchen + Bar</div>
             <div class="amenity-item">750 ft River Frontage</div>
             <div class="amenity-item">Event Venue</div>
+            <div class="amenity-item">Fly Fishing Access</div>
+            <div class="amenity-item">High-Speed WiFi</div>
           </div>
         </div>
         <div class="book-col" data-reveal="right" data-delay="2">
@@ -976,6 +1341,8 @@
             <p>Thank you for your inquiry. We'll respond within 24 hours with availability and details.</p>
           </div>
           <form class="contact-form" id="inquiry-form" novalidate>
+            <input type="hidden" name="_subject" value="New Inquiry — Vida View Resort">
+            <input type="hidden" name="_replyto" id="f-replyto">
             <div class="fg-row">
               <div class="fg">
                 <label for="f-name">Full Name <span aria-hidden="true">*</span></label>
@@ -1014,12 +1381,23 @@
               </div>
             </div>
             <div class="fg">
+              <label for="f-property">Which Property?</label>
+              <select id="f-property" name="property">
+                <option value="">Select...</option>
+                <option>The Riverview B&amp;B (4 Bedrooms)</option>
+                <option>The Riverside Home (3 Bedrooms)</option>
+                <option>Both Properties (Full Resort)</option>
+                <option>Not Sure Yet</option>
+              </select>
+            </div>
+            <div class="fg">
               <label for="f-type">Type of Stay</label>
               <select id="f-type" name="stay_type">
                 <option value="">Select...</option>
                 <option>Leisure / Vacation</option>
                 <option>Wedding</option>
                 <option>Private Event / Retreat</option>
+                <option>Both Properties (Full Resort)</option>
                 <option>Rafting Package</option>
                 <option>Drift Boat Tour</option>
                 <option>Other</option>
@@ -1038,6 +1416,24 @@
   </section>
 
 </main>
+
+<!-- ─── FOOTER EMAIL SIGNUP ─────────────────────────────────── -->
+<section class="ft-email-strip">
+  <div class="ft-email-inner">
+    <div class="ft-email-left">
+      <h3>Join 1,000+ River Lovers</h3>
+      <p>Get 5 days of McKenzie River secrets delivered to your inbox — fishing tips, photography guides, seasonal advice, and insider knowledge from people who live here.</p>
+    </div>
+    <form class="ft-email-form" id="footer-email-form" onsubmit="handleFooterEmailSignup(event)">
+      <input type="text" name="ft_email_name" placeholder="Your name" required>
+      <input type="email" name="ft_email_address" placeholder="Your email" required>
+      <button type="submit">Get the Series</button>
+      <div class="ft-email-success" id="footer-email-success">
+        <p>✓ Welcome! Check your inbox in a few minutes.</p>
+      </div>
+    </form>
+  </div>
+</section>
 
 <!-- ─── FOOTER ──────────────────────────────────────────────── -->
 <footer>
@@ -1061,29 +1457,47 @@
       <div>
         <p class="ft-col-h">Book Direct</p>
         <ul class="ft-links">
-          <li><a href="https://www.vrbo.com" target="_blank" rel="noopener">VRBO</a></li>
-          <li><a href="https://www.airbnb.com" target="_blank" rel="noopener">Airbnb</a></li>
+          <li><a href="https://www.vrbo.com/4570921" target="_blank" rel="noopener noreferrer">VRBO — Riverside Home</a></li>
+          <li><a href="https://www.airbnb.com/rooms/1416089259255485498" target="_blank" rel="noopener noreferrer">Airbnb — Riverside Home</a></li>
+          <li><a href="https://www.airbnb.com/rooms/1694447162042583927" target="_blank" rel="noopener noreferrer">Airbnb — Riverview B&amp;B</a></li>
           <li><a href="#book">Direct Inquiry</a></li>
+          <li><a href="gift-certificates.html">🎁 Gift Certificates</a></li>
         </ul>
       </div>
       <div>
         <p class="ft-col-h">Contact</p>
         <div class="ft-contact-row">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          <span>49885 McKenzie Hwy<br>Vida, OR 97488</span>
+          <span>49885 &amp; 49894 McKenzie Hwy<br>Vida, OR 97488</span>
         </div>
         <div class="ft-contact-row">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.28h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6.29 6.29l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           <span><a href="tel:5418961196" style="color:rgba(244,240,232,.5)">541-896-1196</a></span>
         </div>
+        <div class="ft-contact-row" style="margin-top:.4rem;gap:.75rem">
+          <a class="ft-social" href="https://www.instagram.com/vidaviewresort" target="_blank" rel="noopener noreferrer" aria-label="Vida View Resort on Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a class="ft-social" href="https://www.facebook.com/vidaviewresort" target="_blank" rel="noopener noreferrer" aria-label="Vida View Resort on Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+        </div>
       </div>
     </div>
     <div class="ft-bottom">
-      <span>&copy; 2025 Vida View Resort &nbsp;&middot;&nbsp; All rights reserved</span>
+      <span>&copy; 2026 Vida View Resort &nbsp;&middot;&nbsp; All rights reserved</span>
       <span>Milepost 36.5 &nbsp;&middot;&nbsp; McKenzie Hwy OR-126 &nbsp;&middot;&nbsp; Vida, Oregon</span>
     </div>
   </div>
 </footer>
+
+<!-- scroll to top -->
+<button id="scroll-top" aria-label="Scroll to top">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<!-- floating mobile book btn -->
+<a id="float-book" href="#book" aria-label="Book Now">Book Now</a>
 
 <!-- ─── LIGHTBOX ─────────────────────────────────────────────── -->
 <div id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
@@ -1242,12 +1656,51 @@
     if (e.key === 'ArrowRight') nextLB();
   });
 
-  /* ── CONTACT FORM ───────────────────────────────────────── */
+  /* ── SCROLL TO TOP ──────────────────────────────────────── */
+  const scrollTopBtn = document.getElementById('scroll-top');
+  if (scrollTopBtn) {
+    window.addEventListener('scroll', () => {
+      scrollTopBtn.classList.toggle('visible', window.scrollY > 600);
+    }, { passive: true });
+    scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  }
+
+  /* ── FLOATING BOOK BUTTON ───────────────────────────────── */
+  const floatBtn = document.getElementById('float-book');
+  const bookSec  = document.getElementById('book');
+  if (floatBtn && bookSec) {
+    const fbObs = new IntersectionObserver(entries => {
+      floatBtn.classList.toggle('hidden', entries[0].isIntersecting);
+    }, { threshold: 0.1 });
+    fbObs.observe(bookSec);
+  }
+
+  /* ── FAQ ACCORDION ──────────────────────────────────────── */
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const btn  = item.querySelector('.faq-q');
+    const body = item.querySelector('.faq-body');
+    btn.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(o => {
+        o.classList.remove('open');
+        o.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded', 'true');
+      }
+    });
+    body.addEventListener('click', e => e.stopPropagation());
+  });
+
+  /* ── CONTACT FORM → Formspree (mqeoddag) ───────────────── */
   const form    = document.getElementById('inquiry-form');
   const success = document.getElementById('form-success');
   if (form) {
-    form.addEventListener('submit', e => {
+    form.addEventListener('submit', async e => {
       e.preventDefault();
+
+      /* Client-side validation */
       const nameEl  = form.querySelector('#f-name');
       const emailEl = form.querySelector('#f-email');
       let ok = true;
@@ -1257,8 +1710,86 @@
         if (invalid) { el.style.borderColor = '#c0392b'; if (ok) el.focus(); ok = false; }
       });
       if (!ok) return;
-      form.style.display = 'none';
-      success.classList.add('show');
+
+      /* Populate reply-to so Tom can reply directly to the guest */
+      document.getElementById('f-replyto').value = emailEl.value;
+
+      const btn = form.querySelector('.form-submit');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+
+      try {
+        const res = await fetch('https://formspree.io/f/mqeoddag', {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          form.style.display = 'none';
+          success.classList.add('show');
+        } else {
+          const data = await res.json().catch(() => ({}));
+          throw new Error(data.error || 'Server error');
+        }
+      } catch (err) {
+        btn.textContent = 'Send Inquiry';
+        btn.disabled = false;
+        alert('Something went wrong (' + err.message + '). Please call us at 541-896-1196.');
+      }
+    });
+  }
+
+  /* ── DIRECT BOOKING FORM → Formspree ───────────────────── */
+  const dbForm = document.getElementById('direct-book-form');
+  const dbSuccess = document.getElementById('bdstrip-success');
+  if (dbForm) {
+    dbForm.addEventListener('submit', async e => {
+      e.preventDefault();
+      const btn = dbForm.querySelector('.bdstrip-btn');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+      try {
+        const res = await fetch('https://formspree.io/f/mqeoddag', {
+          method: 'POST',
+          body: new FormData(dbForm),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          dbForm.style.display = 'none';
+          dbSuccess.style.display = 'block';
+        } else {
+          throw new Error('Server error');
+        }
+      } catch (err) {
+        btn.textContent = 'Send Direct Inquiry';
+        btn.disabled = false;
+        alert('Something went wrong. Please call us at 541-896-1196.');
+      }
+    });
+  }
+
+  /* ── FOOTER EMAIL FORM ────────────────────────────────────── */
+  const ftForm = document.getElementById('footer-email-form');
+  const ftSuccess = document.getElementById('footer-email-success');
+  if (ftForm) {
+    ftForm.addEventListener('submit', e => {
+      e.preventDefault();
+      const nameInput = ftForm.querySelector('[name="ft_email_name"]');
+      const emailInput = ftForm.querySelector('[name="ft_email_address"]');
+      const name = nameInput.value.trim();
+      const email = emailInput.value.trim();
+
+      if (!name || !email || !/\S+@\S+\.\S+/.test(email)) {
+        alert('Please enter valid name and email');
+        return;
+      }
+
+      const signups = JSON.parse(localStorage.getItem('mckenzie_signups') || '[]');
+      signups.push({ name, email, date: new Date().toISOString() });
+      localStorage.setItem('mckenzie_signups', JSON.stringify(signups));
+
+      ftForm.style.display = 'none';
+      ftSuccess.classList.add('show');
     });
   }
 
