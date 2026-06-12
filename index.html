@@ -328,10 +328,9 @@
     .form-submit{width:100%;padding:1rem;font-family:var(--ff-body);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;background:var(--amber);color:var(--forest);border:none;border-radius:var(--r-sm);transition:all .3s var(--ease-out);cursor:pointer}
     .form-submit:hover{background:var(--amber-lt);transform:translateY(-2px);box-shadow:0 10px 28px rgba(196,160,82,.38)}
     .form-note{font-size:.75rem;color:var(--muted);text-align:center;margin-top:.25rem}
-    #form-success{display:none;text-align:center;padding:2rem;background:rgba(61,135,117,.08);border-radius:var(--r-lg);border:1px solid rgba(61,135,117,.25)}
-    #form-success.show{display:block}
-    #form-success h3{font-family:var(--ff-display);font-size:1.5rem;color:var(--forest);margin-bottom:.5rem}
-    #form-success p{font-size:.9rem;color:var(--muted)}
+    .form-success-msg{text-align:center;padding:2rem;background:rgba(61,135,117,.08);border-radius:var(--r-lg);border:1px solid rgba(61,135,117,.25)}
+    .form-success-msg h3{font-family:var(--ff-display);font-size:1.5rem;color:var(--forest);margin-bottom:.5rem}
+    .form-success-msg p{font-size:.9rem;color:var(--muted)}
     .amenity-list{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
     .amenity-item{display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--muted)}
     .amenity-item::before{content:'✓';color:var(--amber);font-size:.8rem;flex-shrink:0}
@@ -903,11 +902,12 @@
         <div class="book-col" data-reveal="right" data-delay="2">
           <h3 style="font-family:var(--ff-display);font-size:1.7rem;font-weight:400;color:var(--forest);margin-bottom:.25rem">Send an Inquiry</h3>
           <p style="font-size:.85rem;color:var(--muted);margin-bottom:1.25rem">Weddings, events, rafting packages, or anything custom — we respond within 24 hours.</p>
-          <div id="form-success" role="alert"><h3>We'll be in touch!</h3><p>Thank you for your inquiry. We'll respond within 24 hours with availability and details.</p></div>
-          <form class="contact-form" id="inquiry-form" novalidate>
+          <div data-fs-success style="display:none" class="form-success-msg" role="alert"><h3>We'll be in touch!</h3><p>Thank you for your inquiry. We'll respond within 24 hours with availability and details.</p></div>
+          <div data-fs-error style="display:none;color:#c0392b;font-size:.82rem;margin-bottom:.75rem"></div>
+          <form class="contact-form" id="inquiry-form">
             <div class="fg-row">
-              <div class="fg"><label for="f-name">Full Name <span aria-hidden="true">*</span></label><input type="text" id="f-name" name="name" autocomplete="name" required placeholder="Your name"></div>
-              <div class="fg"><label for="f-email">Email Address <span aria-hidden="true">*</span></label><input type="email" id="f-email" name="email" autocomplete="email" required placeholder="your@email.com"></div>
+              <div class="fg"><label for="f-name">Full Name <span aria-hidden="true">*</span></label><input type="text" id="f-name" name="name" data-fs-field autocomplete="name" required placeholder="Your name"><span data-fs-error="name" style="color:#c0392b;font-size:.75rem"></span></div>
+              <div class="fg"><label for="f-email">Email Address <span aria-hidden="true">*</span></label><input type="email" id="f-email" name="email" data-fs-field autocomplete="email" required placeholder="your@email.com"><span data-fs-error="email" style="color:#c0392b;font-size:.75rem"></span></div>
             </div>
             <div class="fg-row">
               <div class="fg"><label for="f-phone">Phone Number</label><input type="tel" id="f-phone" name="phone" autocomplete="tel" placeholder="(541) 000-0000"></div>
@@ -923,9 +923,14 @@
               <select id="f-type" name="stay_type"><option value="">Select...</option><option>Leisure / Vacation</option><option>Wedding</option><option>Private Event / Retreat</option><option>Rafting Package</option><option>Whitewater Rafting Adventure</option><option>Other</option></select>
             </div>
             <div class="fg"><label for="f-message">Message</label><textarea id="f-message" name="message" placeholder="Tell us about your stay — any special requests, questions, or details&hellip;"></textarea></div>
-            <button type="submit" class="form-submit">Send Inquiry</button>
+            <button type="submit" class="form-submit" data-fs-submit-btn>Send Inquiry</button>
             <p class="form-note">We respond within 24&nbsp;hours &nbsp;&middot;&nbsp; <a href="tel:5418961196" style="color:var(--amber)">541-896-1196</a></p>
           </form>
+          <script>
+            window.formspree = window.formspree || function(){ (formspree.q = formspree.q || []).push(arguments); };
+            formspree('initForm', { formElement: '#inquiry-form', formId: 'maqzlqea' });
+          </script>
+          <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
         </div>
       </div>
     </div>
@@ -1160,27 +1165,6 @@
   lbClose.addEventListener('click', closeLB); lbPrev.addEventListener('click', prevLB); lbNext.addEventListener('click', nextLB);
   lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLB(); });
   document.addEventListener('keydown', e => { if (!lightbox.classList.contains('open')) return; if (e.key==='Escape') closeLB(); if (e.key==='ArrowLeft') prevLB(); if (e.key==='ArrowRight') nextLB(); });
-
-  /* ── CONTACT FORM ───────────────────────────────────────── */
-  const form = document.getElementById('inquiry-form');
-  const success = document.getElementById('form-success');
-  if (form) {
-    form.addEventListener('submit', async e => {
-      e.preventDefault();
-      const nameEl = form.querySelector('#f-name'), emailEl = form.querySelector('#f-email');
-      let ok = true;
-      [nameEl, emailEl].forEach(el => { el.style.borderColor = ''; const bad = !el.value.trim() || (el.type === 'email' && !/\S+@\S+\.\S+/.test(el.value)); if (bad) { el.style.borderColor = '#c0392b'; if (ok) el.focus(); ok = false; } });
-      if (!ok) return;
-      const submitBtn = form.querySelector('button[type="submit"]');
-      const origText = submitBtn.textContent;
-      submitBtn.textContent = 'Sending…'; submitBtn.disabled = true;
-      try {
-        const res = await fetch('https://formspree.io/f/maqzlqea', { method:'POST', headers:{'Accept':'application/json'}, body: new FormData(form) });
-        if (res.ok) { form.style.display = 'none'; success.classList.add('show'); }
-        else { submitBtn.textContent = 'Something went wrong — try again'; submitBtn.disabled = false; }
-      } catch { submitBtn.textContent = 'Network error — try again'; submitBtn.disabled = false; }
-    });
-  }
 
   /* ── SMOOTH SCROLL ──────────────────────────────────────── */
   document.querySelectorAll('a[href^="#"]').forEach(a => {
