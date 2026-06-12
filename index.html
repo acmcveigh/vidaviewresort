@@ -1165,13 +1165,20 @@
   const form = document.getElementById('inquiry-form');
   const success = document.getElementById('form-success');
   if (form) {
-    form.addEventListener('submit', e => {
+    form.addEventListener('submit', async e => {
       e.preventDefault();
       const nameEl = form.querySelector('#f-name'), emailEl = form.querySelector('#f-email');
       let ok = true;
       [nameEl, emailEl].forEach(el => { el.style.borderColor = ''; const bad = !el.value.trim() || (el.type === 'email' && !/\S+@\S+\.\S+/.test(el.value)); if (bad) { el.style.borderColor = '#c0392b'; if (ok) el.focus(); ok = false; } });
       if (!ok) return;
-      form.style.display = 'none'; success.classList.add('show');
+      const submitBtn = form.querySelector('button[type="submit"]');
+      const origText = submitBtn.textContent;
+      submitBtn.textContent = 'Sending…'; submitBtn.disabled = true;
+      try {
+        const res = await fetch('https://formspree.io/f/maqzlqea', { method:'POST', headers:{'Accept':'application/json'}, body: new FormData(form) });
+        if (res.ok) { form.style.display = 'none'; success.classList.add('show'); }
+        else { submitBtn.textContent = 'Something went wrong — try again'; submitBtn.disabled = false; }
+      } catch { submitBtn.textContent = 'Network error — try again'; submitBtn.disabled = false; }
     });
   }
 
