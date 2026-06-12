@@ -429,7 +429,12 @@
     @media(max-width:540px){
       .exp-grid{grid-template-columns:1fr}
       .test-grid{grid-template-columns:1fr}
-      .gal-grid{columns:1}
+      .gal-grid{columns:unset;display:flex;flex-direction:row;overflow-x:auto;overflow-y:visible;gap:.75rem;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:.5rem}
+      .gal-grid::-webkit-scrollbar{height:4px}
+      .gal-grid::-webkit-scrollbar-track{background:rgba(255,255,255,.1);border-radius:2px}
+      .gal-grid::-webkit-scrollbar-thumb{background:var(--amber);border-radius:2px}
+      .gal-item{flex:0 0 72vw;max-width:280px;margin-bottom:0;scroll-snap-align:start}
+      .gal-item img{width:100%;height:220px;object-fit:cover}
       .fg-row{grid-template-columns:1fr}
       .hero-btns{flex-direction:column;align-items:center}
       .about-stats{gap:1rem}
