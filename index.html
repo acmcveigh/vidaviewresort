@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Vida View Resort — a luxury Bed &amp; Breakfast and The River Front House, two private retreats on the McKenzie River in Vida, Oregon. Pool, sauna, hot tubs, whitewater rafting adventures, and weddings.">
+  <meta name="description" content="Vida View Resort — two private retreats on the McKenzie River in Vida, Oregon, where every stay includes a complimentary guided river rafting experience. Luxury Bed &amp; Breakfast and The River Front House with pool, sauna, hot tubs, and a riverfront wedding venue.">
   <title>Vida View Resort | McKenzie River Bed &amp; Breakfast and River Front House — Vida, Oregon</title>
   <meta name="theme-color" content="#141f1a">
   <meta name="robots" content="index, follow, max-image-preview:large">
@@ -13,13 +13,13 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Vida View Resort">
   <meta property="og:title" content="Vida View Resort — McKenzie River Bed &amp; Breakfast and River Front House">
-  <meta property="og:description" content="Two private gated retreats on the McKenzie River in Vida, Oregon — a luxury Bed &amp; Breakfast and The River Front House. Pool, sauna, hot tubs, whitewater rafting, and weddings.">
+  <meta property="og:description" content="Two private gated retreats on the McKenzie River in Vida, Oregon — every stay includes a complimentary guided river rafting experience. Pool, sauna, hot tubs, and a riverfront wedding venue.">
   <meta property="og:image" content="https://vidaviewresort.com/assets/hero-river.jpg">
   <meta property="og:url" content="https://vidaviewresort.com/">
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Vida View Resort — McKenzie River Bed &amp; Breakfast and River Front House">
-  <meta name="twitter:description" content="Two private gated retreats on the McKenzie River in Vida, Oregon. Pool, sauna, hot tubs, whitewater rafting, and weddings.">
+  <meta name="twitter:description" content="Two private gated retreats on the McKenzie River in Vida, Oregon — every stay includes a complimentary guided river rafting experience.">
   <meta name="twitter:image" content="https://vidaviewresort.com/assets/hero-river.jpg">
 
   <meta name="geo.region" content="US-OR">
@@ -32,7 +32,8 @@
     "@context": "https://schema.org",
     "@type": "Resort",
     "name": "Vida View Resort",
-    "description": "Two private gated retreats on the McKenzie River in Vida, Oregon — a luxury Bed & Breakfast with four designer suites and The River Front House. Heated pool, Finnish sauna, riverside hot tubs, whitewater rafting, pickleball, and a riverfront wedding venue.",
+    "description": "Two private gated retreats on the McKenzie River in Vida, Oregon — a luxury Bed & Breakfast with four designer suites and The River Front House. Every stay includes a complimentary guided McKenzie River rafting experience, plus a heated pool, Finnish sauna, riverside hot tubs, pickleball, and a riverfront wedding venue.",
+    "slogan": "Stay on the McKenzie River with a complimentary guided rafting experience included.",
     "url": "https://vidaviewresort.com/",
     "telephone": "+1-541-896-1196",
     "image": "https://vidaviewresort.com/assets/hero-river.jpg",
@@ -64,8 +65,16 @@
       {"@type": "LocationFeatureSpecification", "name": "River Frontage", "value": true},
       {"@type": "LocationFeatureSpecification", "name": "Pickleball Court", "value": true},
       {"@type": "LocationFeatureSpecification", "name": "Bar & Lounge", "value": true},
-      {"@type": "LocationFeatureSpecification", "name": "Wedding Venue", "value": true}
+      {"@type": "LocationFeatureSpecification", "name": "Wedding Venue", "value": true},
+      {"@type": "LocationFeatureSpecification", "name": "Complimentary Guided River Rafting", "value": true}
     ],
+    "makesOffer": {
+      "@type": "Offer",
+      "name": "Complimentary Guided McKenzie River Rafting",
+      "description": "Every overnight stay at Vida View Resort includes a complimentary guided river rafting experience on the McKenzie River.",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
     "sameAs": [
       "https://www.airbnb.com/rooms/1694468348526585828",
       "https://www.vrbo.com/4570921"
@@ -399,6 +408,14 @@
     .form-success-msg{text-align:center;padding:2rem;background:rgba(61,135,117,.08);border-radius:var(--r-lg);border:1px solid rgba(61,135,117,.25)}
     .form-success-msg h3{font-family:var(--ff-display);font-size:1.5rem;color:var(--forest);margin-bottom:.5rem}
     .form-success-msg p{font-size:.9rem;color:var(--muted)}
+    .faq-list{display:flex;flex-direction:column;gap:.75rem}
+    .faq-item{background:#fff;border:1px solid rgba(196,160,82,.18);border-radius:var(--r-md);overflow:hidden}
+    .faq-q{cursor:pointer;list-style:none;padding:1.15rem 1.4rem;font-family:var(--ff-display);font-size:1.2rem;color:var(--forest);display:flex;justify-content:space-between;align-items:center;gap:1rem;transition:color .2s ease}
+    .faq-q::-webkit-details-marker{display:none}
+    .faq-q::after{content:'+';font-family:var(--ff-body);font-size:1.4rem;color:var(--amber);transition:transform .25s ease;line-height:1}
+    .faq-item[open] .faq-q::after{transform:rotate(45deg)}
+    .faq-q:hover{color:var(--amber)}
+    .faq-a{padding:0 1.4rem 1.25rem;font-size:.92rem;line-height:1.7;color:var(--muted)}
     .amenity-list{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
     .amenity-item{display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--muted)}
     .amenity-item::before{content:'✓';color:var(--amber);font-size:.8rem;flex-shrink:0}
@@ -1093,6 +1110,57 @@
     </div>
   </div>
 </section>
+
+<!-- ─── FAQ ────────────────────────────────────────────────── -->
+<section id="faq" class="sec" style="background:var(--cream)">
+  <div class="sec-inner" style="max-width:820px">
+    <div style="text-align:center;margin-bottom:2.5rem">
+      <span class="eyebrow" data-reveal="up">Good to Know</span>
+      <h2 class="sec-h2" data-reveal="up" data-delay="1">Frequently asked <em>questions</em></h2>
+    </div>
+    <div class="faq-list" data-reveal="up" data-delay="2">
+      <details class="faq-item">
+        <summary class="faq-q">Does Vida View Resort include whitewater rafting?</summary>
+        <p class="faq-a">Yes. Every overnight stay at Vida View Resort includes a complimentary guided river rafting experience on the McKenzie River — a scenic guided float on the gentle section directly behind the property. Premium full-day whitewater adventures and sunset drift-and-dine packages are also available as optional add-ons.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Where can I stay on the McKenzie River in Oregon?</summary>
+        <p class="faq-a">Vida View Resort offers two private, gated retreats directly on the McKenzie River in Vida, Oregon — a luxury four-suite Bed &amp; Breakfast and The River Front House, with 750 feet of private river frontage. It's one of the few McKenzie River stays that includes a complimentary guided rafting experience with every booking.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">What is included with a stay at Vida View Resort?</summary>
+        <p class="faq-a">Every stay includes a complimentary guided McKenzie River rafting experience, plus access to a heated pool, Finnish sauna, riverside hot tubs, pickleball courts, full kitchens, a bar &amp; lounge, and 750 feet of private river frontage. The grounds are private and gated.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">How far is Vida View Resort from Eugene, Oregon?</summary>
+        <p class="faq-a">Vida View Resort is about 30 miles (roughly a 40-minute drive) east of Eugene and Springfield, along the McKenzie Highway (OR-126) at 49885 McKenzie Hwy, Vida, OR 97488. Eugene Airport (EUG) is about an hour away.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">Can you host weddings at Vida View Resort?</summary>
+        <p class="faq-a">Yes. Vida View is a private riverfront wedding and event venue accommodating everything from intimate elopements to full celebrations of up to 100 guests, with nine bedrooms across both properties so your wedding party can stay on the river all weekend.</p>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-q">How many bedrooms does Vida View Resort have?</summary>
+        <p class="faq-a">Vida View Resort has nine bedrooms total across two private properties — the Riverview Bed &amp; Breakfast with four designer suites, and The River Front House on the lower riverside. Properties can be booked individually or together.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "Does Vida View Resort include whitewater rafting?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Every overnight stay at Vida View Resort includes a complimentary guided river rafting experience on the McKenzie River — a scenic guided float on the gentle section directly behind the property. Premium full-day whitewater adventures and sunset drift-and-dine packages are also available as optional add-ons."}},
+    {"@type": "Question", "name": "Where can I stay on the McKenzie River in Oregon?", "acceptedAnswer": {"@type": "Answer", "text": "Vida View Resort offers two private, gated retreats directly on the McKenzie River in Vida, Oregon — a luxury four-suite Bed & Breakfast and The River Front House, with 750 feet of private river frontage. It is one of the few McKenzie River stays that includes a complimentary guided rafting experience with every booking."}},
+    {"@type": "Question", "name": "What is included with a stay at Vida View Resort?", "acceptedAnswer": {"@type": "Answer", "text": "Every stay includes a complimentary guided McKenzie River rafting experience, plus access to a heated pool, Finnish sauna, riverside hot tubs, pickleball courts, full kitchens, a bar and lounge, and 750 feet of private river frontage. The grounds are private and gated."}},
+    {"@type": "Question", "name": "How far is Vida View Resort from Eugene, Oregon?", "acceptedAnswer": {"@type": "Answer", "text": "Vida View Resort is about 30 miles (roughly a 40-minute drive) east of Eugene and Springfield, along the McKenzie Highway (OR-126) at 49885 McKenzie Hwy, Vida, OR 97488. Eugene Airport (EUG) is about an hour away."}},
+    {"@type": "Question", "name": "Can you host weddings at Vida View Resort?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Vida View is a private riverfront wedding and event venue accommodating everything from intimate elopements to full celebrations of up to 100 guests, with nine bedrooms across both properties so your wedding party can stay on the river all weekend."}},
+    {"@type": "Question", "name": "How many bedrooms does Vida View Resort have?", "acceptedAnswer": {"@type": "Answer", "text": "Vida View Resort has nine bedrooms total across two private properties — the Riverview Bed & Breakfast with four designer suites, and The River Front House on the lower riverside. Properties can be booked individually or together."}}
+  ]
+}
+</script>
 
 <!-- ─── FOOTER EMAIL SIGNUP ─────────────────────────────────── -->
 <section class="ft-email-strip">
