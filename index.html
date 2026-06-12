@@ -76,21 +76,6 @@
     @keyframes ldUp{to{opacity:1;transform:translateY(0)}}
     @keyframes ldBar{to{width:100px}}
 
-    /* ─── DRIFT BOAT CURSOR (desktop) ────────────────────────── */
-    @media(pointer:fine){
-      body{cursor:none}
-      #cursor{position:fixed;top:0;left:0;z-index:9998;pointer-events:none}
-      #cursor-boat{
-        position:absolute;transform:translate(-50%,-50%);
-        width:40px;height:auto;
-        filter:drop-shadow(0 3px 5px rgba(0,0,0,.4));
-        transition:width .25s var(--ease-out);
-      }
-      #cursor-boat .bob{animation:boatBob 2.6s ease-in-out infinite;transform-origin:center}
-      body.cursor-hover #cursor-boat{width:54px}
-      a,button,[role=button],.gal-item,.plat-btn,input,select,textarea,.video-frame{cursor:none}
-    }
-    @media(pointer:coarse){#cursor{display:none}}
     @keyframes boatBob{0%,100%{transform:rotate(-4deg) translateY(0)}50%{transform:rotate(4deg) translateY(-1.5px)}}
 
     /* ─── NAV ────────────────────────────────────────────────── */
@@ -413,19 +398,6 @@
 
 <a class="skip-link" href="#main">Skip to main content</a>
 
-<!-- drift boat cursor -->
-<div id="cursor" aria-hidden="true">
-  <svg id="cursor-boat" viewBox="0 0 48 28" xmlns="http://www.w3.org/2000/svg">
-    <g class="bob">
-      <line x1="24" y1="9" x2="41" y2="2" stroke="#5a3d24" stroke-width="1.6" stroke-linecap="round"/>
-      <line x1="24" y1="9" x2="7" y2="2" stroke="#5a3d24" stroke-width="1.6" stroke-linecap="round"/>
-      <path d="M3,11 C3,6 7,4 11,5 L14,7.5 H34 L37,5 C41,4 45,6 45,11 C41,20 32,23 24,23 C16,23 7,20 3,11 Z" fill="#c4a052" stroke="#3a2a16" stroke-width="1"/>
-      <path d="M7,11 C10,9 16,9.5 24,9.5 C32,9.5 38,9 41,11 C38,17 31,19 24,19 C17,19 10,17 7,11 Z" fill="#a9863f"/>
-      <rect x="16.5" y="10.4" width="2.2" height="7.2" rx="1" fill="#7a5a2c"/>
-      <rect x="29.3" y="10.4" width="2.2" height="7.2" rx="1" fill="#7a5a2c"/>
-    </g>
-  </svg>
-</div>
 
 <!-- loader -->
 <div id="loader" role="status" aria-label="Loading Vida View Resort">
@@ -914,22 +886,6 @@
   if (document.readyState === 'complete') setTimeout(hideLoader, 1500);
   else { window.addEventListener('load', () => setTimeout(hideLoader, 1000)); setTimeout(hideLoader, 3500); }
 
-  /* ── DRIFT BOAT CURSOR ──────────────────────────────────── */
-  const cursorEl = document.getElementById('cursor');
-  if (cursorEl && window.matchMedia('(pointer:fine)').matches) {
-    const boat = document.getElementById('cursor-boat');
-    let mx = window.innerWidth / 2, my = window.innerHeight / 2, bx = mx, by = my;
-    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-    (function loop() {
-      bx += (mx - bx) * 0.18; by += (my - by) * 0.18;
-      boat.style.left = bx + 'px'; boat.style.top = by + 'px';
-      requestAnimationFrame(loop);
-    })();
-    document.querySelectorAll('a,button,[role=button],.gal-item,.plat-btn,input,select,textarea').forEach(el => {
-      el.addEventListener('mouseenter', () => document.body.classList.add('cursor-hover'));
-      el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-hover'));
-    });
-  }
 
   /* ── NAV SCROLL STATE ───────────────────────────────────── */
   const nav = document.getElementById('nav');
