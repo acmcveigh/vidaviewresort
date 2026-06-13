@@ -204,8 +204,7 @@
 
     /* ─── HERO ───────────────────────────────────────────────── */
     #hero{position:relative;height:100svh;min-height:600px;display:flex;align-items:center;justify-content:center;overflow:hidden}
-    .hero-bg-wrap{position:absolute;inset:-8%;will-change:transform}
-    .hero-bg-wrap::before{content:'';position:absolute;inset:0;background-image:url('assets/hero-river.jpg');background-size:cover;background-position:center}
+    .hero-bg-wrap{position:absolute;inset:-8%;will-change:transform;background-image:url('assets/hero-river.jpg');background-size:cover;background-position:center}
     .hero-overlay{position:absolute;inset:0;background:linear-gradient(160deg,rgba(10,22,12,.6) 0%,rgba(10,22,12,.2) 45%,rgba(10,22,12,.72) 100%)}
     .hero-content{position:relative;z-index:2;text-align:center;color:var(--cream);max-width:960px;padding:0 2rem}
     .hero-eyebrow{display:block;font-size:.68rem;letter-spacing:.42em;text-transform:uppercase;color:#ffffff;margin-bottom:1.5rem;opacity:0;transform:translateY(14px);animation:fadeUp .9s var(--ease-out) .6s forwards}
@@ -1270,12 +1269,14 @@
 
   /* ── SCROLL REVEALS ─────────────────────────────────────── */
   const revEls = document.querySelectorAll('[data-reveal]');
+  const showAll = () => revEls.forEach(el => el.classList.add('visible'));
   if ('IntersectionObserver' in window) {
     const io = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
-    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0, rootMargin: '200px 0px 200px 0px' });
     revEls.forEach(el => io.observe(el));
-  } else revEls.forEach(el => el.classList.add('visible'));
+  } else showAll();
+  setTimeout(showAll, 2500);
 
   /* ── COUNTERS ───────────────────────────────────────────── */
   const easeOut = t => 1 - Math.pow(1 - t, 3);
