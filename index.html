@@ -505,7 +505,7 @@
       .raft-img{height:280px}
     }
     @media(max-width:768px){
-      .nav-links,.nav-cta{display:none}
+      .nav-links,.nav-cta,.nav-direct{display:none}
       .nav-ham{display:flex}
       .sec-inner{padding:5rem 1.5rem}
       .exp-grid{grid-template-columns:1fr 1fr}
@@ -526,6 +526,115 @@
       .hero-btns{flex-direction:column;align-items:center}
       .about-stats{gap:1rem}
       .amenity-list{grid-template-columns:1fr}
+    }
+
+    /* ─── BOOK DIRECT NAV BUTTON ─────────────────────────────── */
+    .nav-direct{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;padding:.6rem 1.35rem;background:transparent;color:rgba(238,245,240,.8);border:1px solid rgba(238,245,240,.28);border-radius:var(--r-sm);cursor:pointer;display:flex;align-items:center;gap:.45rem;transition:all .2s ease;font-family:var(--ff-body)}
+    .nav-direct:hover{border-color:var(--amber);color:var(--cream);background:rgba(90,158,114,.1)}
+
+    /* ─── BOOK DIRECT PASSWORD MODAL ─────────────────────────── */
+    #bd-pw{position:fixed;inset:0;z-index:2000;background:rgba(14,22,17,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .35s ease}
+    #bd-pw.open{opacity:1;pointer-events:all}
+    .bd-pw-box{background:var(--forest-mid);border:1px solid rgba(90,158,114,.25);border-radius:var(--r-lg);padding:3rem 2.5rem;max-width:440px;width:90%;position:relative;text-align:center;box-shadow:var(--shadow-lg)}
+    .bd-pw-close{position:absolute;top:1rem;right:1.25rem;font-size:1.4rem;color:rgba(238,245,240,.45);cursor:pointer;transition:color .2s ease;background:none;border:none;line-height:1}
+    .bd-pw-close:hover{color:var(--cream)}
+    .bd-pw-icon{width:60px;height:60px;border-radius:50%;background:rgba(90,158,114,.12);border:1px solid rgba(90,158,114,.3);display:flex;align-items:center;justify-content:center;margin:0 auto 1.5rem;color:var(--amber)}
+    .bd-pw-h{font-family:var(--ff-display);font-size:2rem;font-weight:300;color:var(--cream);margin-bottom:.65rem}
+    .bd-pw-p{font-size:.83rem;color:rgba(238,245,240,.55);line-height:1.6;margin-bottom:2rem}
+    .bd-pw-field{display:flex;flex-direction:column;gap:.75rem}
+    #bd-pw-input{background:rgba(238,245,240,.06);border:1px solid rgba(90,158,114,.25);border-radius:var(--r-sm);padding:.9rem 1.25rem;font-size:.95rem;color:var(--cream);font-family:var(--ff-body);outline:none;letter-spacing:.08em;transition:border-color .2s ease;text-align:center}
+    #bd-pw-input:focus{border-color:var(--amber)}
+    #bd-pw-input::placeholder{color:rgba(238,245,240,.3);letter-spacing:.04em}
+    #bd-pw-submit{padding:.9rem 2rem;background:var(--amber);color:var(--forest);font-family:var(--ff-body);font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;border-radius:var(--r-sm);border:none;cursor:pointer;transition:background .2s ease,transform .2s ease}
+    #bd-pw-submit:hover{background:var(--amber-lt);transform:translateY(-2px)}
+    #bd-pw-err{font-size:.8rem;color:#e07878;margin-top:.65rem;min-height:1.1em}
+
+    /* ─── BOOK DIRECT PORTAL ──────────────────────────────────── */
+    #bd-portal{position:fixed;inset:0;z-index:1999;background:var(--cream);overflow-y:auto;opacity:0;pointer-events:none;transition:opacity .4s ease;display:flex;flex-direction:column}
+    #bd-portal.open{opacity:1;pointer-events:all}
+    .bd-portal-header{background:var(--forest);padding:1.4rem 2.5rem;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;position:sticky;top:0;z-index:10;box-shadow:0 2px 24px rgba(0,0,0,.35)}
+    .bd-portal-brand{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+    .bd-portal-tag{font-size:.58rem;letter-spacing:.22em;text-transform:uppercase;background:var(--amber);color:var(--forest);padding:.25rem .75rem;border-radius:3px;font-weight:600;white-space:nowrap}
+    .bd-portal-h{font-family:var(--ff-display);font-size:1.55rem;font-weight:300;color:var(--cream);line-height:1}
+    .bd-portal-sub{font-size:.72rem;color:rgba(238,245,240,.5);letter-spacing:.03em}
+    .bd-portal-close{width:38px;height:38px;border-radius:50%;background:rgba(238,245,240,.08);border:1px solid rgba(238,245,240,.16);color:var(--cream);font-size:1.2rem;cursor:pointer;transition:all .2s ease;display:flex;align-items:center;justify-content:center;flex-shrink:0;line-height:1}
+    .bd-portal-close:hover{background:rgba(238,245,240,.16);border-color:rgba(238,245,240,.3)}
+
+    .bd-tabs-wrap{background:var(--forest-mid);border-bottom:1px solid rgba(90,158,114,.22);flex-shrink:0}
+    .bd-tabs{display:flex;max-width:1280px;margin:0 auto;padding:0 2.5rem;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+    .bd-tabs::-webkit-scrollbar{display:none}
+    .bd-tab{padding:.9rem 1.4rem;font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;font-weight:500;font-family:var(--ff-body);color:rgba(238,245,240,.45);border-bottom:2px solid transparent;background:none;border-top:none;border-left:none;border-right:none;cursor:pointer;white-space:nowrap;transition:color .2s ease,border-color .2s ease}
+    .bd-tab:hover{color:rgba(238,245,240,.78)}
+    .bd-tab.active{color:var(--amber);border-bottom-color:var(--amber)}
+
+    .bd-portal-body{flex:1;max-width:1280px;margin:0 auto;width:100%;padding:2.5rem 2.5rem 5rem}
+    .bd-panel{display:none}
+    .bd-panel.active{display:block}
+
+    .bd-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.5rem;margin-bottom:2.5rem}
+    .bd-cards--wide .bd-card{max-width:820px;margin:0 auto;width:100%}
+
+    .bd-card{background:#fff;border:1px solid rgba(20,31,26,.09);border-radius:var(--r-md);display:flex;flex-direction:column;overflow:hidden;transition:box-shadow .3s ease,transform .3s ease;box-shadow:var(--shadow-sm)}
+    .bd-card:hover{box-shadow:var(--shadow-md);transform:translateY(-3px)}
+    .bd-card-body{padding:1.75rem;flex:1}
+    .bd-card-tag{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);font-weight:600;margin-bottom:.55rem}
+    .bd-card-h{font-family:var(--ff-display);font-size:1.45rem;font-weight:400;color:var(--forest);margin-bottom:.65rem;line-height:1.2}
+    .bd-card-p{font-size:.83rem;color:var(--muted);line-height:1.65;margin-bottom:.9rem}
+    .bd-card-price{font-size:.8rem;color:var(--text);font-weight:500;padding-top:.75rem;border-top:1px solid rgba(20,31,26,.07)}
+    .bd-card-amenities{margin-top:.85rem;display:flex;flex-direction:column;gap:.35rem;padding-top:.85rem;border-top:1px solid rgba(20,31,26,.07)}
+    .bd-card-amenities li{font-size:.8rem;color:var(--muted)}
+    .bd-card-btn{margin:0 1.75rem 1.75rem;padding:.75rem 1.5rem;background:var(--forest);color:var(--cream);font-family:var(--ff-body);font-size:.67rem;letter-spacing:.16em;text-transform:uppercase;font-weight:500;border-radius:var(--r-sm);border:none;cursor:pointer;transition:background .2s ease,transform .2s ease}
+    .bd-card-btn:hover{background:var(--river);transform:translateY(-1px)}
+    .bd-card-btn.selected{background:var(--amber);color:var(--forest)}
+
+    /* ─── BD INQUIRY FORM ─────────────────────────────────────── */
+    .bd-form-wrap{background:var(--forest);border-radius:var(--r-lg);overflow:hidden;max-height:0;opacity:0;transition:max-height .45s var(--ease-out),opacity .3s ease}
+    .bd-form-wrap.open{max-height:1000px;opacity:1}
+    .bd-form-inner{padding:2.5rem}
+    .bd-form-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:1.75rem;gap:1rem}
+    .bd-form-tag{font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);margin-bottom:.3rem}
+    .bd-form-h{font-family:var(--ff-display);font-size:1.8rem;font-weight:300;color:var(--cream);line-height:1.15}
+    .bd-form-close-btn{width:34px;height:34px;border-radius:50%;background:rgba(238,245,240,.1);border:1px solid rgba(238,245,240,.18);color:var(--cream);font-size:.95rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s ease;flex-shrink:0}
+    .bd-form-close-btn:hover{background:rgba(238,245,240,.18)}
+    .bd-inq-form{display:flex;flex-direction:column;gap:1rem}
+    .bd-form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .bd-fg{display:flex;flex-direction:column;gap:.32rem}
+    .bd-fg label{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(238,245,240,.45);font-weight:500}
+    .bd-fg input,.bd-fg textarea,.bd-fg select{background:rgba(238,245,240,.06);border:1px solid rgba(90,158,114,.25);border-radius:var(--r-sm);padding:.78rem 1rem;font-size:.88rem;color:var(--cream);font-family:var(--ff-body);outline:none;transition:border-color .2s ease;width:100%}
+    .bd-fg textarea{resize:none}
+    .bd-fg input:focus,.bd-fg textarea:focus,.bd-fg select:focus{border-color:var(--amber)}
+    .bd-fg input::placeholder,.bd-fg textarea::placeholder{color:rgba(238,245,240,.28)}
+    .bd-fg input[type="date"]::-webkit-calendar-picker-indicator{filter:invert(.5)}
+    .bd-fg select option{background:var(--forest-mid);color:var(--cream)}
+    .bd-form-btns{display:flex;gap:.75rem;flex-wrap:wrap;align-items:center;margin-top:.25rem}
+    .bd-form-inquiry{padding:.85rem 1.6rem;background:transparent;color:rgba(238,245,240,.72);font-family:var(--ff-body);font-size:.67rem;letter-spacing:.17em;text-transform:uppercase;font-weight:500;border-radius:var(--r-sm);border:1px solid rgba(238,245,240,.22);cursor:pointer;transition:all .2s ease}
+    .bd-form-inquiry:hover{border-color:rgba(238,245,240,.48);color:var(--cream)}
+    .bd-form-inquiry:disabled{opacity:.5;cursor:not-allowed}
+    .bd-form-pay{padding:.85rem 1.75rem;background:var(--amber);color:var(--forest);font-family:var(--ff-body);font-size:.67rem;letter-spacing:.17em;text-transform:uppercase;font-weight:600;border-radius:var(--r-sm);border:none;cursor:pointer;transition:all .2s ease;display:flex;align-items:center;gap:.45rem}
+    .bd-form-pay::after{content:'→';font-size:.8rem}
+    .bd-form-pay:hover{background:var(--amber-lt);transform:translateY(-2px)}
+    .bd-form-pay:disabled{opacity:.6;cursor:not-allowed;transform:none}
+    .bd-form-note{font-size:.7rem;color:rgba(238,245,240,.35);margin-top:.35rem;line-height:1.5}
+    .bd-form-success{text-align:center;padding:2.5rem 1rem;color:var(--cream);display:flex;flex-direction:column;align-items:center;gap:1rem}
+    .bd-form-success svg{color:var(--amber)}
+    .bd-form-success h3{font-family:var(--ff-display);font-size:1.9rem;font-weight:300}
+    .bd-form-success p{color:rgba(238,245,240,.6);font-size:.88rem;max-width:380px}
+
+    /* mobile nav book direct btn */
+    #mobile-nav .mob-bd-btn{font-family:var(--ff-display);font-size:clamp(1.8rem,6vw,3rem);font-weight:300;color:var(--amber);letter-spacing:.04em;background:none;border:none;cursor:pointer;opacity:0;transform:translateY(20px);transition:color .2s ease,opacity .5s var(--ease-out) .35s,transform .5s var(--ease-out) .35s}
+    #mobile-nav.open .mob-bd-btn{opacity:1;transform:translateY(0)}
+
+    @media(max-width:900px){
+      .bd-portal-sub{display:none}
+      .bd-portal-brand{gap:.75rem}
+    }
+    @media(max-width:768px){
+      .bd-portal-header{padding:1.1rem 1.25rem}
+      .bd-portal-body{padding:1.5rem 1.25rem 4rem}
+      .bd-tabs{padding:0 1.25rem}
+      .bd-form-row{grid-template-columns:1fr}
+      .bd-cards{grid-template-columns:1fr}
+      .bd-form-inner{padding:1.75rem 1.25rem}
     }
   </style>
 </head>
@@ -551,6 +660,7 @@
   <a href="#gallery">Gallery</a>
   <a href="#location">Location</a>
   <a href="#book">Book Now</a>
+  <button class="mob-bd-btn" id="mob-direct-btn">Book Direct</button>
   <a href="tel:5418961196">&#9742;&nbsp;541-896-1196</a>
 </div>
 
@@ -566,6 +676,10 @@
     <li><a href="#location">Location</a></li>
     <li><a href="blog/index.html">Blog</a></li>
   </ul>
+  <button class="nav-direct" id="nav-direct-btn" aria-label="Open Book Direct portal">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+    Book Direct
+  </button>
   <a class="nav-cta" href="#book">Book Now</a>
   <button class="nav-ham" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
@@ -1223,6 +1337,243 @@
   <button class="lb-next" aria-label="Next image">&#8594;</button>
 </div>
 
+<!-- ─── BOOK DIRECT — PASSWORD GATE ──────────────────────── -->
+<div id="bd-pw" role="dialog" aria-modal="true" aria-label="Book Direct access" aria-hidden="true">
+  <div class="bd-pw-box">
+    <button class="bd-pw-close" aria-label="Close">&times;</button>
+    <div class="bd-pw-icon" aria-hidden="true">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+    </div>
+    <h2 class="bd-pw-h">Book Direct Portal</h2>
+    <p class="bd-pw-p">Enter the access code provided by Vida View Resort to unlock exclusive direct rates — no platform fees.</p>
+    <div class="bd-pw-field">
+      <input type="password" id="bd-pw-input" placeholder="Enter access code" autocomplete="off" aria-label="Access code">
+      <button id="bd-pw-submit" type="button">Unlock Portal</button>
+    </div>
+    <p id="bd-pw-err" aria-live="polite"></p>
+  </div>
+</div>
+
+<!-- ─── BOOK DIRECT — PORTAL ──────────────────────────────── -->
+<div id="bd-portal" role="dialog" aria-modal="true" aria-label="Book Direct Portal" aria-hidden="true">
+
+  <div class="bd-portal-header">
+    <div class="bd-portal-brand">
+      <span class="bd-portal-tag">Best Rate Guaranteed</span>
+      <h2 class="bd-portal-h">Book Direct &amp; Save</h2>
+      <p class="bd-portal-sub">No Airbnb or VRBO fees &nbsp;·&nbsp; Direct line to the owners &nbsp;·&nbsp; We respond within 24 hrs</p>
+    </div>
+    <button class="bd-portal-close" id="bd-portal-close" aria-label="Close portal">&times;</button>
+  </div>
+
+  <div class="bd-tabs-wrap">
+    <div class="bd-tabs" role="tablist" aria-label="Booking categories">
+      <button class="bd-tab active" role="tab" aria-selected="true"  data-tab="suites">Individual Suites</button>
+      <button class="bd-tab"        role="tab" aria-selected="false" data-tab="bnb">Whole B&amp;B</button>
+      <button class="bd-tab"        role="tab" aria-selected="false" data-tab="river">River Front House</button>
+      <button class="bd-tab"        role="tab" aria-selected="false" data-tab="events">Events &amp; Weddings</button>
+      <button class="bd-tab"        role="tab" aria-selected="false" data-tab="outdoor">Outdoor Experiences</button>
+    </div>
+  </div>
+
+  <div class="bd-portal-body">
+
+    <!-- ── Individual Suites ── -->
+    <div class="bd-panel active" id="bd-tab-suites">
+      <div class="bd-cards">
+        <div class="bd-card">
+          <div class="bd-card-body">
+            <p class="bd-card-tag">King Suite &nbsp;·&nbsp; 1 Bedroom</p>
+            <h3 class="bd-card-h">Twilight Pines King Suite</h3>
+            <p class="bd-card-p">Perched above the river with deep forest views. A private king suite with en-suite bath, designer furnishings, and full access to the heated pool, sauna, and resort grounds.</p>
+            <p class="bd-card-price">From <strong>$179</strong> / night &nbsp;·&nbsp; $199 weekends</p>
+          </div>
+          <button class="bd-card-btn" data-property="Twilight Pines King Suite">Request to Book</button>
+        </div>
+        <div class="bd-card">
+          <div class="bd-card-body">
+            <p class="bd-card-tag">King Suite &nbsp;·&nbsp; 1 Bedroom</p>
+            <h3 class="bd-card-h">Misty Ridge King Suite</h3>
+            <p class="bd-card-p">A serene retreat tucked beneath the ridge line with river glimpses. King bed, private bath, and full access to the pool, sauna, and riverside amenities.</p>
+            <p class="bd-card-price">From <strong>$179</strong> / night &nbsp;·&nbsp; $199 weekends</p>
+          </div>
+          <button class="bd-card-btn" data-property="Misty Ridge King Suite">Request to Book</button>
+        </div>
+        <div class="bd-card">
+          <div class="bd-card-body">
+            <p class="bd-card-tag">King Suite &nbsp;·&nbsp; 1 Bedroom</p>
+            <h3 class="bd-card-h">Forest Modern King Suite</h3>
+            <p class="bd-card-p">Clean lines and Pacific Northwest materials. King bed, private bath, and all the shared resort perks — pool, sauna, and complimentary guided rafting included.</p>
+            <p class="bd-card-price">From <strong>$179</strong> / night &nbsp;·&nbsp; $199 weekends</p>
+          </div>
+          <button class="bd-card-btn" data-property="Forest Modern King Suite">Request to Book</button>
+        </div>
+        <div class="bd-card">
+          <div class="bd-card-body">
+            <p class="bd-card-tag">Double Queen Suite &nbsp;·&nbsp; 1 Bedroom</p>
+            <h3 class="bd-card-h">Blue Pool Double Queen Suite</h3>
+            <p class="bd-card-p">Sleeps up to 4 with two queen beds and a private bath. Ideal for families or small groups. Overlooks the heated pool with easy access to all resort amenities.</p>
+            <p class="bd-card-price">From <strong>$179</strong> / night &nbsp;·&nbsp; $199 weekends</p>
+          </div>
+          <button class="bd-card-btn" data-property="Blue Pool Double Queen Suite">Request to Book</button>
+        </div>
+      </div>
+      <div class="bd-form-wrap" id="bd-form-suites"><div class="bd-form-inner" id="bd-form-content-suites"></div></div>
+    </div>
+
+    <!-- ── Whole B&B ── -->
+    <div class="bd-panel" id="bd-tab-bnb">
+      <div class="bd-cards bd-cards--wide">
+        <div class="bd-card">
+          <div class="bd-card-body">
+            <p class="bd-card-tag">Entire Property &nbsp;·&nbsp; 4 Suites &nbsp;·&nbsp; Sleeps up to 10</p>
+            <h3 class="bd-card-h">Riverview Bed &amp; Breakfast — Full Buyout</h3>
+            <p class="bd-card-p">Take over the entire B&amp;B — all four designer suites, the heated pool, Finnish sauna, bar lounge, and full resort grounds. Completely gated and private. Perfect for family reunions, group getaways, or milestone celebrations.</p>
+            <ul class="bd-card-amenities">
+              <li>✓ All 4 private suites, sleeps up to 10</li>
+              <li>✓ Heated pool &amp; Finnish sauna</li>
+              <li>✓ Full bar &amp; lounge access</li>
+              <li>✓ Complimentary guided rafting for the group</li>
+              <li>✓ Pickleball court &amp; outdoor recreation</li>
+              <li>✓ Fully gated — no other guests</li>
+            </ul>
+          </div>
+          <button class="bd-card-btn" data-property="Whole Riverview B&B — All 4 Suites">Request to Book</button>
+        </div>
+      </div>
+      <div class="bd-form-wrap" id="bd-form-bnb"><div class="bd-form-inner" id="bd-form-content-bnb"></div></div>
+    </div>
+
+    <!-- ── River Front House ── -->
+    <div class="bd-panel" id="bd-tab-river">
+      <div class="bd-cards bd-cards--wide">
+        <div class="bd-card">
+          <div class="bd-card-body">
+            <p class="bd-card-tag">Entire House &nbsp;·&nbsp; 3 Bedrooms &nbsp;·&nbsp; 2-Night Minimum</p>
+            <h3 class="bd-card-h">The River Front House</h3>
+            <p class="bd-card-p">Sitting directly at the water's edge with 750 feet of private McKenzie River frontage. Three bedrooms, a riverside hot tub, your own private boat launch, and the most intimate river access of any stay on the McKenzie.</p>
+            <ul class="bd-card-amenities">
+              <li>✓ 750 ft of private river frontage</li>
+              <li>✓ 3 bedrooms, sleeps up to 6</li>
+              <li>✓ Riverside hot tub</li>
+              <li>✓ Private boat launch</li>
+              <li>✓ Complimentary guided rafting included</li>
+              <li>✓ Fully gated — completely private</li>
+            </ul>
+          </div>
+          <button class="bd-card-btn" data-property="The River Front House — 3 Bedrooms">Request to Book</button>
+        </div>
+      </div>
+      <div class="bd-form-wrap" id="bd-form-river"><div class="bd-form-inner" id="bd-form-content-river"></div></div>
+    </div>
+
+    <!-- ── Events & Weddings ── -->
+    <div class="bd-panel" id="bd-tab-events">
+      <div class="bd-cards">
+        <div class="bd-card">
+          <div class="bd-card-body">
+            <p class="bd-card-tag">Weddings &amp; Celebrations</p>
+            <h3 class="bd-card-h">Riverside Wedding</h3>
+            <p class="bd-card-p">Say "I do" on the banks of the McKenzie River. An intimate gated venue with 750 ft of riverfront. Sleeps the whole wedding party across nine bedrooms — your guests never have to leave the property.</p>
+            <ul class="bd-card-amenities">
+              <li>✓ Full resort buyout (both properties)</li>
+              <li>✓ 9 bedrooms for the wedding party</li>
+              <li>✓ Riverside ceremony &amp; reception space</li>
+              <li>✓ Pool, sauna &amp; hot tub included</li>
+            </ul>
+          </div>
+          <button class="bd-card-btn" data-property="Riverside Wedding Inquiry">Inquire About Weddings</button>
+        </div>
+        <div class="bd-card">
+          <div class="bd-card-body">
+            <p class="bd-card-tag">Corporate &amp; Group Retreats</p>
+            <h3 class="bd-card-h">Corporate Retreat</h3>
+            <p class="bd-card-p">Disconnect and reconnect as a team — guided rafting, outdoor activities, communal dining, and a completely private riverside estate. No interruptions. No distractions.</p>
+            <ul class="bd-card-amenities">
+              <li>✓ Full resort buyout available</li>
+              <li>✓ Team rafting &amp; outdoor experiences</li>
+              <li>✓ Bar lounge for evening events</li>
+              <li>✓ Pickleball &amp; river recreation</li>
+            </ul>
+          </div>
+          <button class="bd-card-btn" data-property="Corporate Retreat Inquiry">Inquire About Retreats</button>
+        </div>
+        <div class="bd-card">
+          <div class="bd-card-body">
+            <p class="bd-card-tag">Private Events</p>
+            <h3 class="bd-card-h">Private Celebration</h3>
+            <p class="bd-card-p">Milestone birthdays, anniversaries, family reunions — whatever the occasion, a fully private McKenzie River estate makes it unforgettable.</p>
+            <ul class="bd-card-amenities">
+              <li>✓ Fully gated — completely private</li>
+              <li>✓ Flexible event setup</li>
+              <li>✓ Catering coordination available</li>
+              <li>✓ Pool, sauna &amp; riverside activities</li>
+            </ul>
+          </div>
+          <button class="bd-card-btn" data-property="Private Event Inquiry">Inquire About Events</button>
+        </div>
+      </div>
+      <div class="bd-form-wrap" id="bd-form-events"><div class="bd-form-inner" id="bd-form-content-events"></div></div>
+    </div>
+
+    <!-- ── Outdoor Experiences ── -->
+    <div class="bd-panel" id="bd-tab-outdoor">
+      <div class="bd-cards">
+        <div class="bd-card">
+          <div class="bd-card-body">
+            <p class="bd-card-tag">River Experience &nbsp;·&nbsp; Included with Every Stay</p>
+            <h3 class="bd-card-h">Guided River Float</h3>
+            <p class="bd-card-p">Every stay includes a complimentary introductory guided McKenzie River float. Upgrade to the full experience with rapids, a jump-off rock stop, and a BBQ riverside lunch — book direct for the best add-on rate.</p>
+          </div>
+          <button class="bd-card-btn" data-property="Guided River Float Upgrade">Inquire About Upgrades</button>
+        </div>
+        <div class="bd-card">
+          <div class="bd-card-body">
+            <p class="bd-card-tag">Full-Day Experience</p>
+            <h3 class="bd-card-h">Whitewater Adventure</h3>
+            <p class="bd-card-p">A full guided whitewater day on the McKenzie — class III rapids, jump-off rocks, and a BBQ lunch at the resort's private riverside boat launch. Book direct and skip the platform markup.</p>
+          </div>
+          <button class="bd-card-btn" data-property="Whitewater Adventure Package">Book This Experience</button>
+        </div>
+        <div class="bd-card">
+          <div class="bd-card-body">
+            <p class="bd-card-tag">Morning Experience</p>
+            <h3 class="bd-card-h">Sunrise &amp; Coffee Float</h3>
+            <p class="bd-card-p">An early morning drift on still water with coffee and pastries. The McKenzie at first light — mist on the river, no crowds, no noise. One of the most peaceful things you'll ever do.</p>
+          </div>
+          <button class="bd-card-btn" data-property="Sunrise & Coffee Float">Book This Experience</button>
+        </div>
+        <div class="bd-card">
+          <div class="bd-card-body">
+            <p class="bd-card-tag">Evening Experience</p>
+            <h3 class="bd-card-h">Sunset Drift &amp; Dine</h3>
+            <p class="bd-card-p">A leisurely evening float timed to golden hour, followed by a chef-prepared dinner on the riverbank. An evening you'll carry with you long after you leave.</p>
+          </div>
+          <button class="bd-card-btn" data-property="Sunset Drift & Dine">Book This Experience</button>
+        </div>
+        <div class="bd-card">
+          <div class="bd-card-body">
+            <p class="bd-card-tag">Land Adventure &nbsp;·&nbsp; Rental</p>
+            <h3 class="bd-card-h">Electric Mountain Bike Rental</h3>
+            <p class="bd-card-p">Explore the McKenzie River Trail and surrounding old-growth forest on resort e-bikes. Direct booking guests get first priority scheduling and preferred rates.</p>
+          </div>
+          <button class="bd-card-btn" data-property="Electric Mountain Bike Rental">Inquire &amp; Reserve</button>
+        </div>
+        <div class="bd-card">
+          <div class="bd-card-body">
+            <p class="bd-card-tag">Water Recreation &nbsp;·&nbsp; Included with Stay</p>
+            <h3 class="bd-card-h">Paddleboards &amp; River Tubes</h3>
+            <p class="bd-card-p">Standup paddleboards and inner tubes are available to all guests for self-guided river time. Reserve extra equipment or extended sessions by inquiring directly.</p>
+          </div>
+          <button class="bd-card-btn" data-property="Paddleboards & River Tubes Add-On">Inquire About Add-Ons</button>
+        </div>
+      </div>
+      <div class="bd-form-wrap" id="bd-form-outdoor"><div class="bd-form-inner" id="bd-form-content-outdoor"></div></div>
+    </div>
+
+  </div><!-- /bd-portal-body -->
+</div><!-- /bd-portal -->
+
 <script>
 (function () {
   'use strict';
@@ -1309,6 +1660,226 @@
       e.preventDefault();
       const navH = document.getElementById('nav').offsetHeight;
       window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - navH, behavior: 'smooth' });
+    });
+  });
+
+  /* ── BOOK DIRECT PORTAL ─────────────────────────────────── */
+  const BD_PW = 'vidaviewcharge';
+  const bdPwOverlay  = document.getElementById('bd-pw');
+  const bdPortal     = document.getElementById('bd-portal');
+  const bdPwInput    = document.getElementById('bd-pw-input');
+  const bdPwSubmit   = document.getElementById('bd-pw-submit');
+  const bdPwErr      = document.getElementById('bd-pw-err');
+  const bdPwCloseBtn = document.querySelector('.bd-pw-close');
+  const bdPortalCloseBtn = document.getElementById('bd-portal-close');
+
+  /* ── Deposit / pricing config — update amounts as needed ── */
+  const BD_CONFIG = {
+    'Twilight Pines King Suite':           { deposit: 199 },
+    'Misty Ridge King Suite':              { deposit: 199 },
+    'Forest Modern King Suite':            { deposit: 199 },
+    'Blue Pool Double Queen Suite':        { deposit: 199 },
+    'Whole Riverview B&B — All 4 Suites': { deposit: 600 },
+    'The River Front House — 3 Bedrooms': { deposit: 400 },
+    'Guided River Float Upgrade':          { deposit:  75, full: true },
+    'Whitewater Adventure Package':        { deposit: 150, full: true },
+    'Sunrise & Coffee Float':              { deposit:  75, full: true },
+    'Sunset Drift & Dine':                 { deposit: 150, full: true },
+    'Electric Mountain Bike Rental':       { deposit:  50, full: true },
+    'Paddleboards & River Tubes Add-On':   { deposit:  25, full: true },
+  };
+
+  const formHTML = (prop, cfg) => {
+    const payBtnLabel = cfg
+      ? (cfg.full ? `Book &amp; Pay &mdash; $${cfg.deposit}` : `Hold Dates &mdash; $${cfg.deposit} Deposit`)
+      : '';
+    const payBtnHTML = cfg
+      ? `<button type="button" class="bd-form-pay">${payBtnLabel}</button>`
+      : '';
+    const note = cfg
+      ? (cfg.full
+          ? 'Secure checkout via Stripe &nbsp;&middot;&nbsp; No Airbnb or VRBO fees.'
+          : 'Deposit holds your dates &nbsp;&middot;&nbsp; Balance due before arrival &nbsp;&middot;&nbsp; No platform fees.')
+      : 'We respond within 24 hours with availability and a direct rate.';
+    return `
+      <div class="bd-form-header">
+        <div>
+          <p class="bd-form-tag">Direct Booking Request</p>
+          <h3 class="bd-form-h">${prop}</h3>
+        </div>
+        <button class="bd-form-close-btn bd-close-form" type="button" aria-label="Close form">&times;</button>
+      </div>
+      <form class="bd-inq-form" action="https://formspree.io/f/mqeoddag" method="POST" novalidate>
+        <input type="hidden" name="_subject" value="Book Direct — ${prop}">
+        <input type="hidden" name="source"   value="book-direct-portal">
+        <input type="hidden" name="property" value="${prop}">
+        <div class="bd-form-row">
+          <div class="bd-fg"><label>Your Name</label><input type="text"  name="name"  placeholder="Full name" required></div>
+          <div class="bd-fg"><label>Email Address</label><input type="email" name="email" placeholder="your@email.com" required></div>
+        </div>
+        <div class="bd-form-row">
+          <div class="bd-fg"><label>Check-in Date</label><input type="date" name="checkin"></div>
+          <div class="bd-fg"><label>Check-out Date</label><input type="date" name="checkout"></div>
+        </div>
+        <div class="bd-form-row">
+          <div class="bd-fg"><label>Guests</label><input type="number" name="guests" placeholder="# of guests" min="1" max="20"></div>
+          <div class="bd-fg"><label>Phone (optional)</label><input type="tel" name="phone" placeholder="(541) 000-0000"></div>
+        </div>
+        <div class="bd-fg"><label>Message (optional)</label><textarea name="message" rows="3" placeholder="Questions or special requests…"></textarea></div>
+        <div class="bd-form-btns">
+          <button type="button" class="bd-form-inquiry">Send Free Inquiry</button>
+          ${payBtnHTML}
+        </div>
+        <p class="bd-form-note">${note}</p>
+      </form>
+      <div class="bd-form-success" hidden>
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        <h3>Inquiry Sent!</h3>
+        <p>We’ll be in touch within 24 hours with availability and your direct rate — no platform fees.</p>
+      </div>`;
+  };
+
+  const openBdPw = () => {
+    bdPwOverlay.classList.add('open');
+    bdPwOverlay.setAttribute('aria-hidden','false');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => bdPwInput.focus(), 120);
+  };
+  const closeBdPw = () => {
+    bdPwOverlay.classList.remove('open');
+    bdPwOverlay.setAttribute('aria-hidden','true');
+    bdPwInput.value = '';
+    bdPwErr.textContent = '';
+    if (!bdPortal.classList.contains('open')) document.body.style.overflow = '';
+  };
+  const openBdPortal = () => {
+    bdPortal.classList.add('open');
+    bdPortal.setAttribute('aria-hidden','false');
+    bdPortal.scrollTop = 0;
+    document.body.style.overflow = 'hidden';
+  };
+  const closeBdPortal = () => {
+    bdPortal.classList.remove('open');
+    bdPortal.setAttribute('aria-hidden','true');
+    document.body.style.overflow = '';
+  };
+  const checkPw = () => {
+    if (bdPwInput.value.trim().toLowerCase() === BD_PW) {
+      closeBdPw();
+      setTimeout(openBdPortal, 150);
+    } else {
+      bdPwErr.textContent = 'Incorrect code — please try again.';
+      bdPwInput.value = '';
+      bdPwInput.focus();
+    }
+  };
+
+  document.getElementById('nav-direct-btn').addEventListener('click', openBdPw);
+  const mobDirect = document.getElementById('mob-direct-btn');
+  if (mobDirect) mobDirect.addEventListener('click', () => { closeMob(); openBdPw(); });
+
+  bdPwSubmit.addEventListener('click', checkPw);
+  bdPwInput.addEventListener('keydown', e => { if (e.key === 'Enter') checkPw(); });
+  bdPwCloseBtn.addEventListener('click', closeBdPw);
+  bdPwOverlay.addEventListener('click', e => { if (e.target === bdPwOverlay) closeBdPw(); });
+  bdPortalCloseBtn.addEventListener('click', closeBdPortal);
+
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    if (bdPortal.classList.contains('open')) closeBdPortal();
+    else if (bdPwOverlay.classList.contains('open')) closeBdPw();
+  });
+
+  /* tabs */
+  document.querySelectorAll('.bd-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.bd-tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+      document.querySelectorAll('.bd-panel').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected','true');
+      document.getElementById('bd-tab-' + tab.dataset.tab).classList.add('active');
+    });
+  });
+
+  /* card buttons — inject form into the panel's form-wrap */
+  document.querySelectorAll('.bd-card-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const prop  = btn.dataset.property;
+      const cfg   = BD_CONFIG[prop] || null;
+      const panel = btn.closest('.bd-panel');
+      const wrap  = panel.querySelector('.bd-form-wrap');
+      const inner = wrap.querySelector('.bd-form-inner');
+
+      /* toggle off if same card clicked again */
+      if (wrap.classList.contains('open') && btn.classList.contains('selected')) {
+        wrap.classList.remove('open');
+        btn.classList.remove('selected');
+        return;
+      }
+
+      /* deselect other buttons in panel */
+      panel.querySelectorAll('.bd-card-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+
+      inner.innerHTML = formHTML(prop, cfg);
+      wrap.classList.add('open');
+      setTimeout(() => wrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 60);
+
+      const form      = inner.querySelector('.bd-inq-form');
+      const successEl = inner.querySelector('.bd-form-success');
+
+      inner.querySelector('.bd-close-form').addEventListener('click', () => {
+        wrap.classList.remove('open');
+        btn.classList.remove('selected');
+      });
+
+      /* ── Free inquiry via Formspree ── */
+      inner.querySelector('.bd-form-inquiry').addEventListener('click', async () => {
+        const ib = inner.querySelector('.bd-form-inquiry');
+        ib.textContent = 'Sending…';
+        ib.disabled = true;
+        try {
+          const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+          if (res.ok) { form.style.display = 'none'; successEl.hidden = false; }
+          else { ib.textContent = 'Send Free Inquiry'; ib.disabled = false; alert('Something went wrong. Please try again or call 541-896-1196.'); }
+        } catch { ib.textContent = 'Send Free Inquiry'; ib.disabled = false; alert('Something went wrong. Please try again or call 541-896-1196.'); }
+      });
+
+      /* ── Stripe Checkout ── */
+      const payBtn = inner.querySelector('.bd-form-pay');
+      if (payBtn && cfg) {
+        payBtn.addEventListener('click', async () => {
+          const name  = form.querySelector('[name="name"]').value.trim();
+          const email = form.querySelector('[name="email"]').value.trim();
+          if (!name)  { form.querySelector('[name="name"]').focus();  return; }
+          if (!email) { form.querySelector('[name="email"]').focus(); return; }
+          const origHTML = payBtn.innerHTML;
+          payBtn.textContent = 'Redirecting to secure checkout…';
+          payBtn.disabled = true;
+          try {
+            const res = await fetch('/.netlify/functions/create-checkout', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                label:         prop,
+                depositAmount: cfg.deposit,
+                isFullPayment: !!cfg.full,
+                name,  email,
+                checkin:  form.querySelector('[name="checkin"]')?.value  || '',
+                checkout: form.querySelector('[name="checkout"]')?.value || '',
+                guests:   form.querySelector('[name="guests"]')?.value   || '',
+              }),
+            });
+            const data = await res.json();
+            if (data.url) { window.location.href = data.url; }
+            else { throw new Error(data.error || 'Checkout unavailable'); }
+          } catch {
+            payBtn.innerHTML = origHTML;
+            payBtn.disabled  = false;
+            alert('Secure checkout is temporarily unavailable. Please send a free inquiry or call us at 541-896-1196.');
+          }
+        });
+      }
     });
   });
 
