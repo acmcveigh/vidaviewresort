@@ -1724,6 +1724,16 @@
     'Sunset Drift & Dine':                 { deposit: 150, full: true },
   };
 
+  /* Card-processing service fee passed to guest — must match the Netlify function (Stripe US: 2.9% + $0.30) */
+  const calcFee = baseDollars => {
+    const baseCents  = Math.round(baseDollars * 100);
+    const feeCents   = Math.round(baseCents * 0.029) + 30;
+    return {
+      fee:   (feeCents / 100).toFixed(2),
+      total: ((baseCents + feeCents) / 100).toFixed(2),
+    };
+  };
+
   const formHTML = (prop, cfg) => {
     const payBtnLabel = cfg
       ? (cfg.full ? `Book &amp; Pay &mdash; $${cfg.deposit}` : `Hold Dates &mdash; $${cfg.deposit} Deposit`)
@@ -1731,11 +1741,15 @@
     const payBtnHTML = cfg
       ? `<button type="button" class="bd-form-pay">${payBtnLabel}</button>`
       : '';
-    const note = cfg
-      ? (cfg.full
-          ? 'Secure checkout via Stripe &nbsp;&middot;&nbsp; No Airbnb or VRBO fees.'
-          : 'Deposit holds your dates &nbsp;&middot;&nbsp; Balance due before arrival &nbsp;&middot;&nbsp; No platform fees.')
-      : 'We respond within 24 hours with availability and a direct rate.';
+    let note;
+    if (cfg) {
+      const { fee, total } = calcFee(cfg.deposit);
+      note = cfg.full
+        ? `$${cfg.deposit} + $${fee} card-processing service fee = <strong>$${total}</strong> at secure checkout &nbsp;&middot;&nbsp; No Airbnb or VRBO markup.`
+        : `$${cfg.deposit} deposit + $${fee} card-processing service fee = <strong>$${total}</strong> today &nbsp;&middot;&nbsp; Balance due before arrival &nbsp;&middot;&nbsp; No platform markup.`;
+    } else {
+      note = 'We respond within 24 hours with availability and a direct rate.';
+    }
     return `
       <div class="bd-form-header">
         <div>
