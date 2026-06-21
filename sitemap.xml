@@ -6,6 +6,16 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://vidaviewresort.com/weddings.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://vidaviewresort.com/rafting.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://vidaviewresort.com/gift-certificates.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -32,6 +42,21 @@
   </url>
   <url>
     <loc>https://vidaviewresort.com/blog/mckenzie-river-cabin-rentals-with-pool.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vidaviewresort.com/blog/mckenzie-river-rafting-guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vidaviewresort.com/blog/things-to-do-mckenzie-river.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vidaviewresort.com/blog/mckenzie-river-elopement-guide.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

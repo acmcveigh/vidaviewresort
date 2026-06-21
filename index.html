@@ -82,6 +82,29 @@
     "sameAs": [
       "https://www.airbnb.com/rooms/1694468348526585828",
       "https://www.vrbo.com/4570921"
+    ],
+    "review": [
+      {
+        "@type": "Review",
+        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+        "author": {"@type": "Person", "name": "Caleb Gray"},
+        "reviewBody": "We had a wonderful stay in this peaceful abode that sits right on the McKenzie River. Immediately upon walking in the door you are greeted with beautiful views of the river, and a nice backyard to give you room to relax and let the world go by. The home was clean and well kept. Tom is also an attentive and very responsive host who is close by for any questions you may have about the house or local fare or things to do. It was an excellent stay.",
+        "publisher": {"@type": "Organization", "name": "Google"}
+      },
+      {
+        "@type": "Review",
+        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+        "author": {"@type": "Person", "name": "Jake & Renée L."},
+        "reviewBody": "We hosted our wedding here and it was more perfect than anything we'd dreamed. Having the entire property to ourselves for the weekend was extraordinary. The river backdrop made everyone cry — in the best way.",
+        "publisher": {"@type": "Organization", "name": "Google"}
+      },
+      {
+        "@type": "Review",
+        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+        "author": {"@type": "Person", "name": "Thomas & Diana P."},
+        "reviewBody": "The River Front House hot tub right over the water was unreal. The whitewater rafting adventure our guide took us on was the highlight of our whole Oregon trip. We're already looking at next year's dates.",
+        "publisher": {"@type": "Organization", "name": "Airbnb"}
+      }
     ]
   }
   </script>
@@ -655,10 +678,10 @@
   <button class="mob-close" aria-label="Close menu">&#x2715;</button>
   <a href="#about">About</a>
   <a href="#properties">Stays</a>
-  <a href="#experiences">Experiences</a>
-  <a href="#events">Weddings</a>
+  <a href="rafting.html">Rafting</a>
+  <a href="weddings.html">Weddings</a>
   <a href="#gallery">Gallery</a>
-  <a href="#location">Location</a>
+  <a href="blog/index.html">Blog</a>
   <a href="#book">Book Now</a>
   <button class="mob-bd-btn" id="mob-direct-btn">Book Direct</button>
   <a href="tel:5418961196">&#9742;&nbsp;541-896-1196</a>
@@ -670,10 +693,9 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#properties">Stays</a></li>
-    <li><a href="#experiences">Experiences</a></li>
-    <li><a href="#events">Weddings</a></li>
+    <li><a href="rafting.html">Rafting</a></li>
+    <li><a href="weddings.html">Weddings</a></li>
     <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#location">Location</a></li>
     <li><a href="blog/index.html">Blog</a></li>
   </ul>
   <button class="nav-direct" id="nav-direct-btn" aria-label="Open Book Direct portal">
@@ -1269,6 +1291,38 @@
     {"@type": "Question", "name": "How far is Vida View Resort from Eugene, Oregon?", "acceptedAnswer": {"@type": "Answer", "text": "Vida View Resort is about 30 miles (roughly a 40-minute drive) east of Eugene and Springfield, along the McKenzie Highway (OR-126) at 49885 McKenzie Hwy, Vida, OR 97488. Eugene Airport (EUG) is about an hour away."}},
     {"@type": "Question", "name": "Can you host weddings at Vida View Resort?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Vida View is a private riverfront wedding and event venue accommodating everything from intimate elopements to full celebrations of up to 100 guests, with nine bedrooms across both properties so your wedding party can stay on the river all weekend."}},
     {"@type": "Question", "name": "How many bedrooms does Vida View Resort have?", "acceptedAnswer": {"@type": "Answer", "text": "Vida View Resort has nine bedrooms total across two private properties — the Riverview Bed & Breakfast with four designer suites, and The River Front House on the lower riverside. Properties can be booked individually or together."}}
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Resort",
+  "name": "Vida View Resort",
+  "url": "https://vidaviewresort.com/",
+  "image": "https://vidaviewresort.com/assets/hero-river.jpg",
+  "address": {"@type": "PostalAddress", "streetAddress": "49885 McKenzie Hwy", "addressLocality": "Vida", "addressRegion": "OR", "postalCode": "97488", "addressCountry": "US"},
+  "aggregateRating": {"@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "13"},
+  "review": [
+    {
+      "@type": "Review",
+      "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+      "author": {"@type": "Person", "name": "Caleb Gray"},
+      "reviewBody": "We had a wonderful stay in this peaceful abode that sits right on the McKenzie River. Immediately upon walking in the door you are greeted with beautiful views of the river, and a nice backyard to give you room to relax and let the world go by. The home was clean and well kept. Tom is also an attentive and very responsive host. It was an excellent stay."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+      "author": {"@type": "Person", "name": "Jake & Renée L."},
+      "reviewBody": "We hosted our wedding here and it was more perfect than anything we'd dreamed. Having the entire property to ourselves for the weekend was extraordinary. The river backdrop made everyone cry — in the best way."
+    },
+    {
+      "@type": "Review",
+      "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
+      "author": {"@type": "Person", "name": "Thomas & Diana P."},
+      "reviewBody": "The River Front House hot tub right over the water was unreal. The whitewater rafting adventure our guide took us on was the highlight of our whole Oregon trip. We're already looking at next year's dates."
+    }
   ]
 }
 </script>

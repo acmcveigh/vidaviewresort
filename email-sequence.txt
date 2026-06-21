@@ -380,6 +380,75 @@ P.S. If you know anyone else who should be reading this, share this series with 
 END OF SEQUENCE
 ═══════════════════════════════════════════════════════════════════════════════
 
+───────────────────────────────────────────────────────────────────────────────
+POST-STAY GOOGLE REVIEW EMAIL
+Separate automation — sends 2 days after checkout
+───────────────────────────────────────────────────────────────────────────────
+
+Subject: The river asked us to say hi (and we have a small favor to ask)
+
+---
+
+Hi [First Name],
+
+It's been a couple of days since you left, and if we're being honest, we're still a little envious that you got to have that first morning coffee by the river.
+
+We hope the trip back was painless and that you've successfully adjusted to the absence of the McKenzie's soundtrack.
+
+We have a small favor to ask.
+
+If you enjoyed your stay — the river, the hot tub, the rafting, the quiet, whatever it was that made it for you — would you consider leaving us a Google review? It takes about two minutes, and it's genuinely one of the most meaningful ways you can help us reach people who are looking for exactly what we offer.
+
+→ Leave a review on Google:
+https://g.page/r/CQX1_zswM9iHEBM/review
+
+A few words about what stood out is all we need. If the rafting surprised you, say so. If the sound of the river made you sleep better than you have in months, say that. Real words from real guests carry more weight than anything we could ever write about ourselves.
+
+If anything during your stay wasn't perfect — please reply to this email and tell us. We mean that. We'd rather know about it privately and have the chance to make it right than have it go unaddressed.
+
+Thank you for spending time with us on the McKenzie. We hope to see you again — whether for a full week in summer, a fall weekend when the leaves turn, or a quiet winter stay by the fire.
+
+The river will be here.
+
+— Jody and Tom
+Vida View Resort
+541-896-1196
+vidaviewresort.com
+
+---
+
+SETUP INSTRUCTIONS FOR THIS EMAIL IN MAILCHIMP:
+
+1. Create a NEW audience (or tag/segment) called "Past Guests"
+   — Add each guest here manually after checkout, OR connect your booking source
+
+2. Create a new Automation in Mailchimp:
+   — Go to Automations → Customer Journeys → "Build from scratch"
+   — Trigger: "Date-based" → use your custom "checkout_date" field
+   — Delay: Send 2 days AFTER the checkout date field
+   — Or simpler: trigger on "Subscriber joins audience" and set a 2-day delay
+
+3. Paste this email as the single message in the automation
+
+4. Personalize the "From" name to "Jody & Tom at Vida View Resort"
+   (personal sender = more opens and trust)
+
+5. Subject line A/B test suggestions:
+   A: "The river asked us to say hi (and we have a small favor to ask)"  ← recommended
+   B: "Thank you for staying with us — one small thing"
+   C: "A quick note from Vida View (and a small favor)"
+
+6. The Google review link:
+   https://g.page/r/CQX1_zswM9iHEBM/review
+   Replace this with your actual Google review link if it differs.
+   Find yours: Google Maps → search your business → "Get more reviews" → copy link
+
+NOTE: Do NOT add guests to the lead-magnet "McKenzie River Secrets" sequence.
+That's for cold leads who signed up from your website. Post-stay emails go to
+the "Past Guests" audience/automation only.
+
+───────────────────────────────────────────────────────────────────────────────
+
 SETUP INSTRUCTIONS FOR MAILCHIMP:
 
 1. Go to mailchimp.com, create a free account
