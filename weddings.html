@@ -143,6 +143,23 @@
     .faq-item[open] .faq-q{color:var(--river)}
     .faq-a{font-size:1rem;color:var(--muted);line-height:1.8;padding-top:.85rem}
 
+    .inquiry-section{background:var(--cream-dk);padding:5.5rem 2.5rem}
+    .inquiry-inner{max-width:720px;margin:0 auto}
+    .inquiry-inner .sec-head{margin-bottom:2.5rem}
+    .inquiry-form{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem}
+    @media(max-width:600px){.inquiry-form{grid-template-columns:1fr}}
+    .inquiry-form .fg-full{grid-column:1/-1}
+    .fg label{display:block;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem;font-weight:500}
+    .fg input,.fg select,.fg textarea{width:100%;padding:.85rem 1rem;background:#fff;border:1px solid rgba(90,158,114,.25);border-radius:var(--r-sm);font-family:var(--ff-body);font-size:.95rem;color:var(--text);transition:border-color .2s ease;outline:none}
+    .fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--amber)}
+    .fg textarea{resize:vertical;min-height:110px}
+    .fg select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%234d6657' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center}
+    .inquiry-submit{grid-column:1/-1;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;padding:1.1rem 2.5rem;background:var(--amber);color:var(--forest);border:none;border-radius:var(--r-sm);cursor:pointer;transition:background .2s ease,transform .2s ease;font-family:var(--ff-body)}
+    .inquiry-submit:hover{background:var(--amber-lt);transform:translateY(-2px)}
+    .inquiry-success{display:none;grid-column:1/-1;text-align:center;padding:2rem;background:rgba(46,92,64,.08);border:1px solid rgba(46,92,64,.2);border-radius:var(--r-md)}
+    .inquiry-success h4{font-family:var(--ff-display);font-size:1.5rem;color:var(--forest);margin-bottom:.5rem}
+    .inquiry-success p{font-size:.9rem;color:var(--muted)}
+
     .cta-strip{background:var(--forest);padding:5rem 2.5rem;text-align:center}
     .cta-strip h3{font-family:var(--ff-display);font-size:clamp(1.9rem,4vw,3.2rem);font-weight:300;color:var(--cream);margin-bottom:.85rem}
     .cta-strip h3 em{font-style:italic;color:var(--amber-lt)}
@@ -168,7 +185,7 @@
     <li><a href="rafting.html">Rafting</a></li>
     <li><a href="blog/index.html">Blog</a></li>
   </ul>
-  <a class="nav-cta" href="index.html#book">Inquire</a>
+  <a class="nav-cta" href="#inquiry">Inquire</a>
 </nav>
 
 <header class="vhero">
@@ -176,7 +193,7 @@
     <span class="eyebrow">McKenzie River · Vida, Oregon</span>
     <h1>A Riverfront <em>Wedding Venue</em><br>on the McKenzie</h1>
     <p>Exchange your vows beside clear, moving water in a private, gated riverfront setting — for elopements, micro-weddings, and celebrations of up to 100 guests, with your whole party staying on the river all weekend.</p>
-    <a class="btn-gold" href="index.html#book">Check Dates &amp; Inquire</a>
+    <a class="btn-gold" href="#inquiry">Check Dates &amp; Inquire</a>
   </div>
 </header>
 
@@ -281,10 +298,68 @@
 
 </main>
 
+<section class="inquiry-section" id="inquiry">
+  <div class="inquiry-inner">
+    <div class="sec-head">
+      <span class="eyebrow">Get in Touch</span>
+      <h2>Inquire About Your <em>Wedding</em></h2>
+      <p>Tell us your date and guest count and we'll respond within 24 hours with availability, packages, and pricing.</p>
+    </div>
+    <form class="inquiry-form" id="wedding-inquiry-form" action="https://formspree.io/f/mqeoddag" method="POST">
+      <input type="hidden" name="stay_type" value="Wedding">
+      <div class="fg">
+        <label for="wi-name">Full Name *</label>
+        <input type="text" id="wi-name" name="name" required placeholder="Your name" autocomplete="name">
+      </div>
+      <div class="fg">
+        <label for="wi-email">Email Address *</label>
+        <input type="email" id="wi-email" name="email" required placeholder="your@email.com" autocomplete="email">
+      </div>
+      <div class="fg">
+        <label for="wi-phone">Phone Number</label>
+        <input type="tel" id="wi-phone" name="phone" placeholder="(541) 000-0000" autocomplete="tel">
+      </div>
+      <div class="fg">
+        <label for="wi-date">Wedding Date</label>
+        <input type="date" id="wi-date" name="wedding_date">
+      </div>
+      <div class="fg">
+        <label for="wi-guests">Estimated Guest Count</label>
+        <select id="wi-guests" name="guest_count">
+          <option value="">Select...</option>
+          <option>Elopement (2–10 guests)</option>
+          <option>Micro-wedding (10–30 guests)</option>
+          <option>Mid-size (30–60 guests)</option>
+          <option>Full celebration (60–100 guests)</option>
+        </select>
+      </div>
+      <div class="fg">
+        <label for="wi-lodging">Lodging Needed?</label>
+        <select id="wi-lodging" name="lodging">
+          <option value="">Select...</option>
+          <option>Yes — Bed &amp; Breakfast</option>
+          <option>Yes — River Front House</option>
+          <option>Yes — Both properties</option>
+          <option>No / Not sure yet</option>
+        </select>
+      </div>
+      <div class="fg fg-full">
+        <label for="wi-message">Tell us about your vision</label>
+        <textarea id="wi-message" name="message" placeholder="Share any details — ceremony style, special requests, questions about the space…"></textarea>
+      </div>
+      <button type="submit" class="inquiry-submit">Send Inquiry</button>
+      <div class="inquiry-success" id="wi-success">
+        <h4>✓ We received your inquiry!</h4>
+        <p>We'll be in touch within 24 hours with availability and packages. We can't wait to hear about your plans.</p>
+      </div>
+    </form>
+  </div>
+</section>
+
 <div class="cta-strip">
   <h3>Let's plan your day by the <em>river</em></h3>
-  <p>Tell us your dates and guest count and we'll send packages, pricing, and availability within 24 hours.</p>
-  <a class="btn-gold" href="index.html#book">Inquire About Your Wedding</a>
+  <p>Call us directly or fill out the form above and we'll respond within 24 hours.</p>
+  <a class="btn-gold" href="tel:5418961196">Call 541-896-1196</a>
 </div>
 
 <footer>
@@ -298,5 +373,35 @@
   </div>
 </footer>
 
+<script>
+document.getElementById('wedding-inquiry-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('.inquiry-submit');
+  const success = document.getElementById('wi-success');
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (res.ok) {
+      form.reset();
+      btn.style.display = 'none';
+      success.style.display = 'block';
+    } else {
+      btn.textContent = 'Send Inquiry';
+      btn.disabled = false;
+      alert('Something went wrong. Please call us at 541-896-1196.');
+    }
+  } catch {
+    btn.textContent = 'Send Inquiry';
+    btn.disabled = false;
+    alert('Something went wrong. Please call us at 541-896-1196.');
+  }
+});
+</script>
 </body>
 </html>
