@@ -54,7 +54,7 @@ exports.handler = async (event) => {
           ? `Dates: ${checkin} → ${checkout} · Guests: ${guests || '—'} · Balance due before arrival`
           : 'Reservation deposit · Balance due before arrival');
 
-    const siteUrl = process.env.URL || 'https://vidaviewresort.com';
+    const siteUrl = 'https://vidaviewresort.com';
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
