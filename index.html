@@ -1183,12 +1183,15 @@
             <input type="date" name="checkin" placeholder="Check-in">
             <input type="date" name="checkout" placeholder="Check-out">
           </div>
-          <select name="property">
-            <option value="">Which property?</option>
-            <option value="Riverview B&B">Riverview B&amp;B</option>
-            <option value="River Front House">River Front House</option>
-            <option value="Both Properties">Both Properties</option>
-          </select>
+          <div class="bdstrip-row">
+            <input type="tel" name="phone" placeholder="Your phone" required>
+            <select name="property">
+              <option value="">Which property?</option>
+              <option value="Riverview B&B">Riverview B&amp;B</option>
+              <option value="River Front House">River Front House</option>
+              <option value="Both Properties">Both Properties</option>
+            </select>
+          </div>
           <button type="submit" class="bdstrip-btn">Send Direct Inquiry</button>
           <p class="bdstrip-or">or call <a href="tel:5418961196">541-896-1196</a></p>
         </form>
@@ -1772,7 +1775,7 @@
         </div>
         <div class="bd-form-row">
           <div class="bd-fg"><label>Guests</label><input type="number" name="guests" placeholder="# of guests" min="1" max="20"></div>
-          <div class="bd-fg"><label>Phone (optional)</label><input type="tel" name="phone" placeholder="(541) 000-0000"></div>
+          <div class="bd-fg"><label>Phone</label><input type="tel" name="phone" placeholder="(541) 000-0000" required></div>
         </div>
         <div class="bd-fg"><label>Message (optional)</label><textarea name="message" rows="3" placeholder="Questions or special requests…"></textarea></div>
         <div class="bd-form-btns">
@@ -1884,6 +1887,7 @@
 
       /* ── Free inquiry via Formspree ── */
       inner.querySelector('.bd-form-inquiry').addEventListener('click', async () => {
+        if (!form.checkValidity()) { form.reportValidity(); return; }
         const ib = inner.querySelector('.bd-form-inquiry');
         ib.textContent = 'Sending…';
         ib.disabled = true;

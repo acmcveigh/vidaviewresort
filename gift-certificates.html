@@ -259,7 +259,7 @@
 
           <input type="text" name="buyer_name" placeholder="Your name *" required>
           <input type="email" name="buyer_email" placeholder="Your email * (we'll send it here)" required>
-          <input type="tel" name="buyer_phone" placeholder="Your phone number">
+          <input type="tel" name="buyer_phone" placeholder="Your phone number *" required>
           <input type="text" name="recipient_name" placeholder="Recipient's name (if different)">
           <textarea name="gift_message" placeholder="Personal message to include (optional)"></textarea>
 
@@ -376,6 +376,7 @@
   const gcSuccess = document.getElementById('gc-success');
   gcForm.addEventListener('submit', async e => {
     e.preventDefault();
+    if (!gcForm.checkValidity()) { gcForm.reportValidity(); return; }
     const btn = document.getElementById('gc-submit-btn');
     btn.textContent = 'Sending…';
     btn.disabled = true;
