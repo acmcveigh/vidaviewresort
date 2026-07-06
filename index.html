@@ -1892,7 +1892,12 @@
         ib.textContent = 'Sending…';
         ib.disabled = true;
         try {
-          const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+          const fd = new FormData(form);
+          ['checkin', 'checkout'].forEach(function (n) {
+            var p = fd.get(n) ? String(fd.get(n)).split('-') : [];
+            if (p.length === 3) fd.set(n, p[1] + '-' + p[2] + '-' + p[0]);
+          });
+          const res = await fetch(form.action, { method: 'POST', body: fd, headers: { Accept: 'application/json' } });
           if (res.ok) { form.style.display = 'none'; successEl.hidden = false; }
           else { ib.textContent = 'Send Free Inquiry'; ib.disabled = false; alert('Something went wrong. Please try again or call 541-896-1196.'); }
         } catch { ib.textContent = 'Send Free Inquiry'; ib.disabled = false; alert('Something went wrong. Please try again or call 541-896-1196.'); }
@@ -1939,6 +1944,29 @@
 })();
 </script>
 <script>
+/* Submit calendar dates in American MM-DD-YYYY format via a hidden mirror
+   field, while keeping the native date picker for the visitor. */
+(function () {
+  function toUS(iso) {
+    if (!iso) return '';
+    var p = iso.split('-');
+    return p.length === 3 ? p[1] + '-' + p[2] + '-' + p[0] : iso;
+  }
+  function wireDate(dateInput) {
+    var name = dateInput.getAttribute('name');
+    if (!name) return;
+    var hidden = document.createElement('input');
+    hidden.type = 'hidden';
+    hidden.name = name;
+    dateInput.removeAttribute('name'); // the ISO value is no longer submitted
+    dateInput.insertAdjacentElement('afterend', hidden);
+    function sync() { hidden.value = toUS(dateInput.value); }
+    dateInput.addEventListener('change', sync);
+    dateInput.addEventListener('input', sync);
+    sync();
+  }
+  document.querySelectorAll('input[type="date"]').forEach(wireDate);
+})();
 /* Auto-format phone inputs as (###) ###-#### */
 (function () {
   function formatUSPhone(value) {

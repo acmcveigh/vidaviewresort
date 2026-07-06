@@ -404,6 +404,29 @@ document.getElementById('wedding-inquiry-form').addEventListener('submit', async
 });
 </script>
 <script>
+/* Submit calendar dates in American MM-DD-YYYY format via a hidden mirror
+   field, while keeping the native date picker for the visitor. */
+(function () {
+  function toUS(iso) {
+    if (!iso) return '';
+    var p = iso.split('-');
+    return p.length === 3 ? p[1] + '-' + p[2] + '-' + p[0] : iso;
+  }
+  function wireDate(dateInput) {
+    var name = dateInput.getAttribute('name');
+    if (!name) return;
+    var hidden = document.createElement('input');
+    hidden.type = 'hidden';
+    hidden.name = name;
+    dateInput.removeAttribute('name'); // the ISO value is no longer submitted
+    dateInput.insertAdjacentElement('afterend', hidden);
+    function sync() { hidden.value = toUS(dateInput.value); }
+    dateInput.addEventListener('change', sync);
+    dateInput.addEventListener('input', sync);
+    sync();
+  }
+  document.querySelectorAll('input[type="date"]').forEach(wireDate);
+})();
 /* Auto-format phone inputs as (###) ###-#### */
 (function () {
   function formatUSPhone(value) {
