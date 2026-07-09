@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Vida View Resort — luxury McKenzie River vacation rental in Vida, Oregon. Private Bed &amp; Breakfast with heated pool and sauna, plus The River Front House with 750 ft of river frontage and hot tub. Every three-night stay includes paddleboards, inner tubes, and complimentary guided rafting.">
-  <title>Vida View Resort | McKenzie River Vacation Rental, Bed &amp; Breakfast &amp; Riverfront House — Vida, Oregon</title>
+  <meta name="description" content="Luxury McKenzie River vacation rental in Vida, Oregon — private B&amp;B with heated pool and sauna, riverfront house with hot tub, and guided rafting included.">
+  <title>Vida View Resort | McKenzie River Vacation Rental, Oregon</title>
   <meta name="theme-color" content="#141f1a">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -25,8 +25,8 @@
 
   <meta name="geo.region" content="US-OR">
   <meta name="geo.placename" content="Vida, Oregon">
-  <meta name="geo.position" content="44.1458;-122.5697">
-  <meta name="ICBM" content="44.1458, -122.5697">
+  <meta name="geo.position" content="44.1230185;-122.4082569">
+  <meta name="ICBM" content="44.1230185, -122.4082569">
 
   <script type="application/ld+json">
   {
@@ -49,9 +49,10 @@
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": 44.1458,
-      "longitude": -122.5697
+      "latitude": 44.1230185,
+      "longitude": -122.4082569
     },
+    "hasMap": "https://www.google.com/maps/place/Vida+View+Resort/@44.1230223,-122.4108318,17z/data=!3m1!4b1!4m6!3m5!1s0x54c0bb19e37fec01:0x87d738330beaf5fd!8m2!3d44.1230185!4d-122.4082569!16s%2Fg%2F11ycdv04f3",
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "5.0",
@@ -80,7 +81,11 @@
     },
     "sameAs": [
       "https://www.airbnb.com/rooms/1694468348526585828",
-      "https://www.vrbo.com/4570921"
+      "https://www.vrbo.com/4570921",
+      "https://www.tripadvisor.com/Hotel_Review-g52116-d33984817-Reviews-VidaViewResort-Vida_Oregon.html",
+      "https://traveloregon.com/plan-your-trip/places-to-stay/vacation-rentals/vida-view-resort/",
+      "https://www.youtube.com/@MrTommcveigh",
+      "https://www.google.com/maps/place/Vida+View+Resort/@44.1230223,-122.4108318,17z/data=!3m1!4b1!4m6!3m5!1s0x54c0bb19e37fec01:0x87d738330beaf5fd!8m2!3d44.1230185!4d-122.4082569!16s%2Fg%2F11ycdv04f3"
     ],
     "review": [
       {
@@ -308,6 +313,11 @@
     .showcase-media{display:flex;flex-direction:column;gap:1rem}
     .video-frame{position:relative;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:16/9;box-shadow:var(--shadow-md);background:#000}
     .video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;filter:saturate(1.16) contrast(1.05) brightness(1.02)}
+    .yt-facade{position:absolute;inset:0;width:100%;height:100%;display:block;padding:0;border:0;background:#000;cursor:pointer}
+    .yt-facade img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.16) contrast(1.05) brightness(1.02)}
+    .yt-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:48px;background:rgba(20,31,26,.82);border-radius:12px;display:flex;align-items:center;justify-content:center;transition:background .2s ease,transform .2s ease}
+    .yt-play::after{content:'';display:block;width:0;height:0;border-style:solid;border-width:10px 0 10px 18px;border-color:transparent transparent transparent var(--cream);margin-left:4px}
+    .yt-facade:hover .yt-play,.yt-facade:focus-visible .yt-play{background:var(--river);transform:translate(-50%,-50%) scale(1.08)}
     .media-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
     .media-strip img{width:100%;aspect-ratio:1/1;object-fit:cover;border-radius:var(--r-md);box-shadow:var(--shadow-sm);transition:transform .5s var(--ease-out)}
     .media-strip img:hover{transform:scale(1.04)}
@@ -681,6 +691,7 @@
   <a href="weddings.html">Weddings</a>
   <a href="#gallery">Gallery</a>
   <a href="blog/index.html">Blog</a>
+  <a href="/faq.html">FAQ</a>
   <a href="#book">Book Now</a>
   <button class="mob-bd-btn" id="mob-direct-btn">Book Direct</button>
   <a href="tel:5418961196">&#9742;&nbsp;541-896-1196</a>
@@ -696,6 +707,7 @@
     <li><a href="weddings.html">Weddings</a></li>
     <li><a href="#gallery">Gallery</a></li>
     <li><a href="blog/index.html">Blog</a></li>
+    <li><a href="/faq.html">FAQ</a></li>
   </ul>
   <button class="nav-direct" id="nav-direct-btn" aria-label="Open Book Direct portal">
     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
@@ -769,7 +781,10 @@
       <div class="showcase" data-reveal="up">
         <div class="showcase-media">
           <div class="video-frame">
-            <iframe src="https://www.youtube-nocookie.com/embed/Jtb0EKLbtbw?rel=0&modestbranding=1&cc_load_policy=1&cc_lang_pref=en-US" title="Vida View Resort Bed &amp; Breakfast tour" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <button class="yt-facade" type="button" data-yt="Jtb0EKLbtbw" data-params="rel=0&amp;modestbranding=1&amp;cc_load_policy=1&amp;cc_lang_pref=en-US" data-title="Vida View Resort Bed &amp; Breakfast tour" aria-label="Play video: Vida View Resort Bed and Breakfast tour">
+              <img src="https://i.ytimg.com/vi/Jtb0EKLbtbw/hqdefault.jpg" alt="Video tour of the Vida View Resort Bed &amp; Breakfast on the McKenzie River" loading="lazy">
+              <span class="yt-play" aria-hidden="true"></span>
+            </button>
           </div>
           <div class="media-strip">
             <img src="assets/river-view-bnb.avif" alt="Riverview Bed and Breakfast exterior" loading="lazy">
@@ -796,7 +811,10 @@
       <div class="showcase reverse" data-reveal="up">
         <div class="showcase-media">
           <div class="video-frame">
-            <iframe src="https://www.youtube-nocookie.com/embed/z6XmrXxioEM?rel=0&modestbranding=1" title="The River Front House at Vida View Resort tour" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <button class="yt-facade" type="button" data-yt="z6XmrXxioEM" data-params="rel=0&amp;modestbranding=1" data-title="The River Front House at Vida View Resort tour" aria-label="Play video: The River Front House at Vida View Resort tour">
+              <img src="https://i.ytimg.com/vi/z6XmrXxioEM/hqdefault.jpg" alt="Video tour of The River Front House at Vida View Resort with 750 feet of McKenzie River frontage" loading="lazy">
+              <span class="yt-play" aria-hidden="true"></span>
+            </button>
           </div>
           <div class="media-strip">
             <img src="assets/riverhouse-hottub-lawn.jpg" alt="Hot tub over the McKenzie River at The River Front House" loading="lazy">
@@ -1279,6 +1297,7 @@
         <p class="faq-a">Vida View Resort has nine bedrooms total across two private properties — the Riverview Bed &amp; Breakfast with four designer suites, and The River Front House on the lower riverside. Properties can be booked individually or together.</p>
       </details>
     </div>
+    <p style="text-align:center;margin-top:2rem" data-reveal="up"><a href="/faq.html" style="font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;color:var(--river);border-bottom:1px solid rgba(46,92,64,.35);padding-bottom:2px">View all frequently asked questions &rarr;</a></p>
   </div>
 </section>
 
@@ -1981,6 +2000,23 @@
     if (t && t.tagName === 'INPUT' && t.type === 'tel') {
       t.value = formatUSPhone(t.value);
     }
+  });
+})();
+</script>
+<script>
+/* Click-to-load YouTube facades — no iframe (and no third-party tags) until the user presses play */
+(function () {
+  document.querySelectorAll('.yt-facade').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var id = btn.dataset.yt;
+      var params = btn.dataset.params || 'rel=0';
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://www.youtube-nocookie.com/embed/' + id + '?' + params + '&autoplay=1';
+      iframe.title = btn.dataset.title || 'Video';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      iframe.allowFullscreen = true;
+      btn.replaceWith(iframe);
+    });
   });
 })();
 </script>

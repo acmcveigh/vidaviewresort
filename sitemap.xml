@@ -21,9 +21,24 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://vidaviewresort.com/faq.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://vidaviewresort.com/blog/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://vidaviewresort.com/blog/where-to-stay-mckenzie-river.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://vidaviewresort.com/blog/blue-pool-tamolitch-falls-guide.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://vidaviewresort.com/blog/guide-to-mckenzie-river.html</loc>
