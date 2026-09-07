@@ -33,7 +33,7 @@
     "@context": "https://schema.org",
     "@type": "Resort",
     "name": "Vida View Retreat",
-    "description": "Two private gated retreats on the McKenzie River in Vida, Oregon — a luxury Bed & Breakfast with four designer suites and The River Front House. Every three-night stay includes standup paddleboards and inner tubes for floating the river, plus a complimentary introductory guided river float, a heated pool, Finnish sauna, riverside hot tubs, and a riverfront wedding venue.",
+    "description": "Two private gated retreats on the McKenzie River in Vida, Oregon — a luxury Bed & Breakfast with four designer suites and The River Front House. Every three-night stay includes standup paddleboards and inner tubes for floating the river, plus a complimentary introductory guided river float, a heated pool, Finnish sauna, and riverside hot tubs.",
     "slogan": "Stay on the McKenzie River with a complimentary guided rafting experience included.",
     "url": "https://vidaviewretreat.com/",
     "telephone": "+1-541-896-1196",
@@ -67,7 +67,6 @@
       {"@type": "LocationFeatureSpecification", "name": "River Frontage", "value": true},
       {"@type": "LocationFeatureSpecification", "name": "Pickleball Court", "value": false},
       {"@type": "LocationFeatureSpecification", "name": "Bar & Lounge", "value": true},
-      {"@type": "LocationFeatureSpecification", "name": "Wedding Venue", "value": true},
       {"@type": "LocationFeatureSpecification", "name": "Complimentary Guided River Rafting", "value": true},
       {"@type": "LocationFeatureSpecification", "name": "Complimentary Standup Paddleboards", "value": true},
       {"@type": "LocationFeatureSpecification", "name": "Complimentary River Inner Tubes", "value": true}
@@ -93,13 +92,6 @@
         "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
         "author": {"@type": "Person", "name": "Caleb Gray"},
         "reviewBody": "We had a wonderful stay in this peaceful abode that sits right on the McKenzie River. Immediately upon walking in the door you are greeted with beautiful views of the river, and a nice backyard to give you room to relax and let the world go by. The home was clean and well kept. Tom is also an attentive and very responsive host who is close by for any questions you may have about the house or local fare or things to do. It was an excellent stay.",
-        "publisher": {"@type": "Organization", "name": "Google"}
-      },
-      {
-        "@type": "Review",
-        "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-        "author": {"@type": "Person", "name": "Jake & Renée L."},
-        "reviewBody": "We hosted our wedding here and it was more perfect than anything we'd dreamed. Having the entire property to ourselves for the weekend was extraordinary. The river backdrop made everyone cry — in the best way.",
         "publisher": {"@type": "Organization", "name": "Google"}
       },
       {
@@ -349,20 +341,6 @@
     .raft-pkg-p{font-size:.8rem;color:rgba(244,240,232,.55);line-height:1.55}
     .raft-img{border-radius:var(--r-lg);width:100%;height:420px;object-fit:cover}
 
-    /* ─── EVENTS ─────────────────────────────────────────────── */
-    #events{background:var(--cream)}
-    .events-split{display:grid;grid-template-columns:1fr 1fr;gap:5.5rem;align-items:center}
-    .events-imgs{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
-    .events-imgs img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--r-md);transition:transform .55s ease}
-    .events-imgs img:first-child{grid-column:1/-1;aspect-ratio:16/9}
-    .events-imgs img:hover{transform:scale(1.025)}
-    .events-col{display:flex;flex-direction:column;gap:1.5rem}
-    .events-feats{display:flex;flex-direction:column;gap:1.25rem;margin-top:.5rem}
-    .evt-feat{display:flex;align-items:flex-start;gap:1rem}
-    .evt-icon{width:42px;height:42px;border-radius:50%;flex-shrink:0;background:rgba(196,160,82,.1);display:flex;align-items:center;justify-content:center;color:var(--amber);margin-top:2px}
-    .evt-feat-h{font-family:var(--ff-display);font-size:1.1rem;font-weight:400;color:var(--forest);margin-bottom:.2rem}
-    .evt-feat-p{font-size:.84rem;color:var(--muted);line-height:1.6}
-
     /* ─── GALLERY ────────────────────────────────────────────── */
     #gallery{background:var(--canopy)}
     .gal-header{text-align:center;max-width:520px;margin:0 auto 3rem;display:flex;flex-direction:column;align-items:center;gap:.9rem}
@@ -529,7 +507,6 @@
       .about-imgs{height:420px}
       .showcase{grid-template-columns:1fr;gap:2.25rem;margin-bottom:4.5rem}
       .showcase.reverse .showcase-media{order:0}
-      .events-split{grid-template-columns:1fr}
       .loc-grid{grid-template-columns:1fr}
       .book-grid{grid-template-columns:1fr}
       .ft-top{grid-template-columns:1fr 1fr;gap:2.5rem}
@@ -744,7 +721,7 @@
         <div class="about-col">
           <span class="eyebrow" data-reveal="up">McKenzie River Lodging</span>
           <h2 class="sec-h2" data-reveal="up" data-delay="1">A <em>hidden gem</em><br>on the McKenzie</h2>
-          <p class="sec-lead" data-reveal="up" data-delay="2">Tucked between ancient Douglas firs at Milepost 36.5 on the McKenzie Highway, Vida View Retreat is the only McKenzie River vacation rental where guided whitewater rafting is included with every three-night stay — halfway between Eugene and Bend, completely apart from the world.</p>
+          <p class="sec-lead" data-reveal="up" data-delay="2">Tucked between ancient Douglas firs at Milepost 36.5 on the McKenzie Highway, Vida View Retreat sits halfway between Eugene and Bend, riverside and completely apart from the world.</p>
           <p class="sec-lead" data-reveal="up" data-delay="3">The <strong>Bed &amp; Breakfast</strong> is a private four-bedroom retreat with a heated pool, Finnish sauna, and designer suites overlooking the river. <strong>The River Front House</strong> sits right at the water's edge — 750 feet of private river frontage, a hot tub overlooking the river, and your own McKenzie River boat launch.</p>
           <div class="about-stats" data-reveal="up" data-delay="4">
             <div class="stat"><span class="stat-n" data-count="750">0</span><span class="stat-l">Feet of River</span></div>
@@ -890,48 +867,7 @@
   </section>
 
   <div class="wave" style="background:var(--forest)" aria-hidden="true">
-    <svg viewBox="0 0 1440 72" preserveAspectRatio="none"><path d="M0,40 C480,72 960,0 1440,32 L1440,72 L0,72 Z" fill="#f4f0e8"/></svg>
-  </div>
-
-  <!-- ─── EVENTS ─────────────────────────────────────────────── -->
-  <section id="events" class="sec" style="background:var(--cream)">
-    <div class="sec-inner">
-      <div class="events-split">
-        <div class="events-imgs" data-reveal="left" data-delay="1">
-          <img src="assets/bnb-deck2.jpg" alt="Riverside deck wedding venue on the McKenzie River at Vida View Retreat" loading="lazy">
-          <img src="assets/wine-river.jpg" alt="Two glasses of wine on a deck overlooking the autumn McKenzie River" loading="lazy">
-          <img src="assets/bnb-deck1.jpg" alt="Riverside deck ready for an event at Vida View Retreat" loading="lazy">
-        </div>
-        <div class="events-col">
-          <span class="eyebrow" data-reveal="up">Weddings &amp; Events</span>
-          <h2 class="sec-h2" data-reveal="up" data-delay="1">Your most <em>beautiful</em><br>day, by the river</h2>
-          <p class="sec-lead" data-reveal="up" data-delay="2">The McKenzie is an effortlessly romantic backdrop. Whether it's an intimate elopement for two or a full celebration for 100, Vida View provides a private, breathtaking setting where every detail feels intentional.</p>
-          <div class="events-feats" data-reveal="up" data-delay="3">
-            <div class="evt-feat">
-              <div class="evt-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-              <div><p class="evt-feat-h">Intimate to Grand</p><p class="evt-feat-p">Elopements, micro-weddings, and full celebrations up to 100 guests — the grounds accommodate it all with natural elegance.</p></div>
-            </div>
-            <div class="evt-feat">
-              <div class="evt-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 11l19-9-9 19-2-8-8-2z"/></svg></div>
-              <div><p class="evt-feat-h">Commercial Kitchen &amp; Full Bar</p><p class="evt-feat-p">Work with your preferred caterer or let us connect you with our trusted local partners who know the space inside and out.</p></div>
-            </div>
-            <div class="evt-feat">
-              <div class="evt-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
-              <div><p class="evt-feat-h">Completely Private &amp; Gated</p><p class="evt-feat-p">No other guests. No interruptions. Book both properties and the entire riverbank is exclusively yours for the weekend.</p></div>
-            </div>
-            <div class="evt-feat">
-              <div class="evt-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-              <div><p class="evt-feat-h">Overnight for Everyone</p><p class="evt-feat-p">Nine bedrooms across both properties — your wedding party, family, and closest friends all stay on the river, all weekend.</p></div>
-            </div>
-          </div>
-          <div data-reveal="up" data-delay="4" style="margin-top:.5rem"><a class="btn btn-forest" href="#book">Inquire About Your Event</a></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="wave" style="background:var(--cream)" aria-hidden="true">
-    <svg viewBox="0 0 1440 72" preserveAspectRatio="none"><path d="M0,32 C360,0 1080,72 1440,16 L1440,72 L0,72 Z" fill="#1e4024"/></svg>
+    <svg viewBox="0 0 1440 72" preserveAspectRatio="none"><path d="M0,40 C480,72 960,0 1440,32 L1440,72 L0,72 Z" fill="#1e4024"/></svg>
   </div>
 
   <!-- ─── GALLERY ─────────────────────────────────────────────── -->
@@ -1006,12 +942,6 @@
         <article class="test-card" data-reveal="up" data-delay="2">
           <div class="test-stars" aria-label="5 out of 5 stars">★★★★★</div>
           <div class="test-quote-mark" aria-hidden="true">&ldquo;</div>
-          <p class="test-text">We hosted our wedding here and it was more perfect than anything we'd dreamed. Having the entire property to ourselves for the weekend was extraordinary. The river backdrop made everyone cry — in the best way.</p>
-          <div class="test-author"><div class="test-av" aria-hidden="true">J</div><div><p class="test-name">Jake &amp; Ren&eacute;e L.</p><p class="test-via">Wedding Couple &nbsp;&middot;&nbsp; Google Review</p></div></div>
-        </article>
-        <article class="test-card" data-reveal="up" data-delay="3">
-          <div class="test-stars" aria-label="5 out of 5 stars">★★★★★</div>
-          <div class="test-quote-mark" aria-hidden="true">&ldquo;</div>
           <p class="test-text">The River Front House hot tub right over the water was unreal. The whitewater rafting adventure our guide took us on was the highlight of our whole Oregon trip. We're already looking at next year's dates.</p>
           <div class="test-author"><div class="test-av" aria-hidden="true">T</div><div><p class="test-name">Thomas &amp; Diana P.</p><p class="test-via">Verified Airbnb Guest</p></div></div>
         </article>
@@ -1068,7 +998,7 @@
         <div class="book-col">
           <span class="eyebrow" data-reveal="up">Reserve Your Stay</span>
           <h2 class="sec-h2" data-reveal="up" data-delay="1">Book your <em>escape</em><br>to the river</h2>
-          <p class="sec-lead" data-reveal="up" data-delay="2">Check real-time availability and book instantly through our trusted platforms — or send a direct inquiry for weddings, events, rafting packages, or extended stays.</p>
+          <p class="sec-lead" data-reveal="up" data-delay="2">Check real-time availability and book instantly through our trusted platforms — or send a direct inquiry for rafting packages or extended stays.</p>
           <div class="book-platforms" data-reveal="up" data-delay="3">
             <p class="book-prop-label">The Riverview B&amp;B — Entire Property</p>
             <a class="plat-btn plat-airbnb" href="https://www.airbnb.com/rooms/1694468348526585828" target="_blank" rel="noopener noreferrer" aria-label="Book the entire Riverview B&B on Airbnb">
@@ -1115,12 +1045,12 @@
             <div class="amenity-item">Paddleboards &amp; Tubes</div><div class="amenity-item">Private Boat Launch</div>
             <div class="amenity-item">Riverside Hot Tubs</div><div class="amenity-item">Pickleball Courts (Coming Soon)</div>
             <div class="amenity-item">Private &amp; Gated</div><div class="amenity-item">Full Kitchens + Bar</div>
-            <div class="amenity-item">750 ft River Frontage</div><div class="amenity-item">Wedding Venue</div>
+            <div class="amenity-item">750 ft River Frontage</div>
           </div>
         </div>
         <div class="book-col" data-reveal="right" data-delay="2">
           <h3 style="font-family:var(--ff-display);font-size:1.7rem;font-weight:400;color:var(--forest);margin-bottom:.25rem">Send an Inquiry</h3>
-          <p style="font-size:.85rem;color:var(--muted);margin-bottom:1.25rem">Weddings, events, rafting packages, or anything custom — we respond within 24 hours.</p>
+          <p style="font-size:.85rem;color:var(--muted);margin-bottom:1.25rem">Rafting packages or anything custom — we respond within 24 hours.</p>
           <div data-fs-success class="form-success-msg" role="alert"><h3>We'll be in touch!</h3><p>Thank you for your inquiry. We'll respond within 24 hours with availability and details.</p></div>
           <div data-fs-error style="color:#c0392b;font-size:.82rem;margin-bottom:.75rem"></div>
           <form class="contact-form" id="inquiry-form">
@@ -1139,7 +1069,7 @@
               <div class="fg"><label for="f-checkout">Desired Check-Out</label><input type="date" id="f-checkout" name="checkout"></div>
             </div>
             <div class="fg"><label for="f-type">Type of Stay</label>
-              <select id="f-type" name="stay_type"><option value="">Select...</option><option>Leisure / Vacation</option><option>Wedding</option><option>Private Event / Retreat</option><option>Rafting Package</option><option>Whitewater Rafting Adventure</option><option>Other</option></select>
+              <select id="f-type" name="stay_type"><option value="">Select...</option><option>Leisure / Vacation</option><option>Retreat</option><option>Rafting Package</option><option>Whitewater Rafting Adventure</option><option>Other</option></select>
             </div>
             <div class="fg"><label for="f-message">Message</label><textarea id="f-message" name="message" placeholder="Tell us about your stay — any special requests, questions, or details&hellip;"></textarea></div>
             <button type="submit" class="form-submit" data-fs-submit-btn>Send Inquiry</button>
@@ -1232,12 +1162,12 @@
           <span style="font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);font-weight:500">Read Article →</span>
         </div>
       </a>
-      <a href="blog/riverside-wedding-planning.html" style="background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(20,31,26,.10);display:flex;flex-direction:column;text-decoration:none;transition:transform .3s ease,box-shadow .3s ease" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 8px 32px rgba(20,31,26,.18)'" onmouseout="this.style.transform='';this.style.boxShadow='0 2px 12px rgba(20,31,26,.10)'">
-        <div style="height:180px;overflow:hidden"><img src="assets/bnb-deck2.jpg" alt="Riverside wedding venue on the McKenzie River" style="width:100%;height:100%;object-fit:cover"></div>
+      <a href="blog/mckenzie-river-fishing-guide.html" style="background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(20,31,26,.10);display:flex;flex-direction:column;text-decoration:none;transition:transform .3s ease,box-shadow .3s ease" onmouseover="this.style.transform='translateY(-6px)';this.style.boxShadow='0 8px 32px rgba(20,31,26,.18)'" onmouseout="this.style.transform='';this.style.boxShadow='0 2px 12px rgba(20,31,26,.10)'">
+        <div style="height:180px;overflow:hidden"><img src="assets/fishing.jpg" alt="Fly fishing on the McKenzie River, Oregon" style="width:100%;height:100%;object-fit:cover"></div>
         <div style="padding:1.5rem;flex:1;display:flex;flex-direction:column;gap:.5rem">
-          <span style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;background:var(--amber);color:var(--cream);padding:.25rem .7rem;border-radius:4px;font-weight:500;width:fit-content">Wedding Planning</span>
-          <h3 style="font-family:var(--ff-display);font-size:1.3rem;font-weight:400;color:var(--forest);line-height:1.2">Planning a Riverside Wedding</h3>
-          <p style="font-size:.85rem;color:var(--muted);line-height:1.65;flex:1">A complete guide to planning a ceremony the McKenzie River will hold in its memory.</p>
+          <span style="font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;background:var(--amber);color:var(--cream);padding:.25rem .7rem;border-radius:4px;font-weight:500;width:fit-content">Fishing Guide</span>
+          <h3 style="font-family:var(--ff-display);font-size:1.3rem;font-weight:400;color:var(--forest);line-height:1.2">McKenzie River Fly Fishing</h3>
+          <p style="font-size:.85rem;color:var(--muted);line-height:1.65;flex:1">Where, when, and how to fish the McKenzie — the best stretches, seasons, and techniques from a local.</p>
           <span style="font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);font-weight:500">Read Article →</span>
         </div>
       </a>
@@ -1273,10 +1203,6 @@
         <p class="faq-a">Vida View Retreat is about 30 miles (roughly a 40-minute drive) east of Eugene and Springfield, along the McKenzie Highway (OR-126) at 49885 McKenzie Hwy, Vida, OR 97488. Eugene Airport (EUG) is about an hour away.</p>
       </details>
       <details class="faq-item">
-        <summary class="faq-q">Can you host weddings at Vida View Retreat?</summary>
-        <p class="faq-a">Yes. Vida View is a private riverfront wedding and event venue accommodating everything from intimate elopements to full celebrations of up to 100 guests, with nine bedrooms across both properties so your wedding party can stay on the river all weekend.</p>
-      </details>
-      <details class="faq-item">
         <summary class="faq-q">How many bedrooms does Vida View Retreat have?</summary>
         <p class="faq-a">Vida View Retreat has nine bedrooms total across two private properties — the Riverview Bed &amp; Breakfast with four designer suites, and The River Front House on the lower riverside. Properties can be booked individually or together.</p>
       </details>
@@ -1294,7 +1220,6 @@
     {"@type": "Question", "name": "Where can I stay on the McKenzie River in Oregon?", "acceptedAnswer": {"@type": "Answer", "text": "Vida View Retreat offers two private, gated retreats directly on the McKenzie River in Vida, Oregon — a luxury four-suite Bed & Breakfast and The River Front House, with 750 feet of private river frontage. It is one of the few McKenzie River stays that includes a complimentary guided rafting experience with every three-night booking."}},
     {"@type": "Question", "name": "What is included with a stay at Vida View Retreat?", "acceptedAnswer": {"@type": "Answer", "text": "Every three-night stay includes standup paddleboards with life jackets and inner tubes for floating the McKenzie River, plus a complimentary introductory guided river float — all at no extra charge. You also get a heated pool, Finnish sauna, riverside hot tubs, pickleball courts (coming soon), full kitchens, a bar and lounge, and 750 feet of private river frontage. The grounds are private and gated."}},
     {"@type": "Question", "name": "How far is Vida View Retreat from Eugene, Oregon?", "acceptedAnswer": {"@type": "Answer", "text": "Vida View Retreat is about 30 miles (roughly a 40-minute drive) east of Eugene and Springfield, along the McKenzie Highway (OR-126) at 49885 McKenzie Hwy, Vida, OR 97488. Eugene Airport (EUG) is about an hour away."}},
-    {"@type": "Question", "name": "Can you host weddings at Vida View Retreat?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Vida View is a private riverfront wedding and event venue accommodating everything from intimate elopements to full celebrations of up to 100 guests, with nine bedrooms across both properties so your wedding party can stay on the river all weekend."}},
     {"@type": "Question", "name": "How many bedrooms does Vida View Retreat have?", "acceptedAnswer": {"@type": "Answer", "text": "Vida View Retreat has nine bedrooms total across two private properties — the Riverview Bed & Breakfast with four designer suites, and The River Front House on the lower riverside. Properties can be booked individually or together."}}
   ]
 }
@@ -1345,12 +1270,6 @@
     {
       "@type": "Review",
       "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
-      "author": {"@type": "Person", "name": "Jake & Renée L."},
-      "reviewBody": "We hosted our wedding here and it was more perfect than anything we'd dreamed. Having the entire property to ourselves for the weekend was extraordinary. The river backdrop made everyone cry — in the best way."
-    },
-    {
-      "@type": "Review",
-      "reviewRating": {"@type": "Rating", "ratingValue": "5", "bestRating": "5"},
       "author": {"@type": "Person", "name": "Thomas & Diana P."},
       "reviewBody": "The River Front House hot tub right over the water was unreal. The whitewater rafting adventure our guide took us on was the highlight of our whole Oregon trip. We're already looking at next year's dates."
     }
@@ -1388,7 +1307,7 @@
         <p class="ft-col-h">Navigate</p>
         <ul class="ft-links">
           <li><a href="#about">About</a></li><li><a href="#properties">The Stays</a></li><li><a href="#experiences">Experiences</a></li>
-          <li><a href="#events">Weddings &amp; Events</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#book">Book Now</a></li>
+          <li><a href="#gallery">Gallery</a></li><li><a href="#book">Book Now</a></li>
         </ul>
       </div>
       <div>
@@ -1456,7 +1375,6 @@
       <button class="bd-tab active" role="tab" aria-selected="true"  data-tab="suites">Individual Suites</button>
       <button class="bd-tab"        role="tab" aria-selected="false" data-tab="bnb">Whole B&amp;B</button>
       <button class="bd-tab"        role="tab" aria-selected="false" data-tab="river">River Front House</button>
-      <button class="bd-tab"        role="tab" aria-selected="false" data-tab="events">Events &amp; Weddings</button>
       <button class="bd-tab"        role="tab" aria-selected="false" data-tab="outdoor">Outdoor Experiences</button>
     </div>
   </div>
@@ -1513,7 +1431,7 @@
           <div class="bd-card-body">
             <p class="bd-card-tag">Entire Property &nbsp;·&nbsp; 4 Suites &nbsp;·&nbsp; Sleeps up to 10</p>
             <h3 class="bd-card-h">Riverview Bed &amp; Breakfast — Full Buyout</h3>
-            <p class="bd-card-p">Take over the entire B&amp;B — all four designer suites, the heated pool, Finnish sauna, bar lounge, and full resort grounds. Completely gated and private. Perfect for family reunions, group getaways, or milestone celebrations.</p>
+            <p class="bd-card-p">Take over the entire B&amp;B — all four designer suites, the heated pool, Finnish sauna, bar lounge, and full resort grounds. Completely gated and private. Perfect for family reunions and group getaways.</p>
             <ul class="bd-card-amenities">
               <li>✓ All 4 private suites, sleeps up to 10</li>
               <li>✓ Heated pool &amp; Finnish sauna</li>
@@ -1550,55 +1468,6 @@
         </div>
       </div>
       <div class="bd-form-wrap" id="bd-form-river"><div class="bd-form-inner" id="bd-form-content-river"></div></div>
-    </div>
-
-    <!-- ── Events & Weddings ── -->
-    <div class="bd-panel" id="bd-tab-events">
-      <div class="bd-cards">
-        <div class="bd-card">
-          <div class="bd-card-body">
-            <p class="bd-card-tag">Weddings &amp; Celebrations</p>
-            <h3 class="bd-card-h">Riverside Wedding</h3>
-            <p class="bd-card-p">Say "I do" on the banks of the McKenzie River. An intimate gated venue with 750 ft of riverfront. Sleeps the whole wedding party across nine bedrooms — your guests never have to leave the property.</p>
-            <ul class="bd-card-amenities">
-              <li>✓ Full resort buyout (both properties)</li>
-              <li>✓ 9 bedrooms for the wedding party</li>
-              <li>✓ Riverside ceremony &amp; reception space</li>
-              <li>✓ Pool, sauna &amp; hot tub included</li>
-            </ul>
-          </div>
-          <button class="bd-card-btn" data-property="Riverside Wedding Inquiry">Inquire About Weddings</button>
-        </div>
-        <div class="bd-card">
-          <div class="bd-card-body">
-            <p class="bd-card-tag">Corporate &amp; Group Retreats</p>
-            <h3 class="bd-card-h">Corporate Retreat</h3>
-            <p class="bd-card-p">Disconnect and reconnect as a team — guided rafting, outdoor activities, communal dining, and a completely private riverside estate. No interruptions. No distractions.</p>
-            <ul class="bd-card-amenities">
-              <li>✓ Full resort buyout available</li>
-              <li>✓ Team rafting &amp; outdoor experiences</li>
-              <li>✓ Bar lounge for evening events</li>
-              <li>✓ Pickleball (coming soon) &amp; river recreation</li>
-            </ul>
-          </div>
-          <button class="bd-card-btn" data-property="Corporate Retreat Inquiry">Inquire About Retreats</button>
-        </div>
-        <div class="bd-card">
-          <div class="bd-card-body">
-            <p class="bd-card-tag">Private Events</p>
-            <h3 class="bd-card-h">Private Celebration</h3>
-            <p class="bd-card-p">Milestone birthdays, anniversaries, family reunions — whatever the occasion, a fully private McKenzie River estate makes it unforgettable.</p>
-            <ul class="bd-card-amenities">
-              <li>✓ Fully gated — completely private</li>
-              <li>✓ Flexible event setup</li>
-              <li>✓ Catering coordination available</li>
-              <li>✓ Pool, sauna &amp; riverside activities</li>
-            </ul>
-          </div>
-          <button class="bd-card-btn" data-property="Private Event Inquiry">Inquire About Events</button>
-        </div>
-      </div>
-      <div class="bd-form-wrap" id="bd-form-events"><div class="bd-form-inner" id="bd-form-content-events"></div></div>
     </div>
 
     <!-- ── Outdoor Experiences ── -->
