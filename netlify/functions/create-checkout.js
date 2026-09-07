@@ -59,7 +59,7 @@ exports.handler = async (event) => {
     const SERVICE_FEE_FIXED = 30; // cents
     const serviceFeeCents = Math.round(amount * SERVICE_FEE_RATE) + SERVICE_FEE_FIXED;
 
-    const siteUrl = 'https://vidaviewresort.com';
+    const siteUrl = 'https://vidaviewretreat.com';
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],

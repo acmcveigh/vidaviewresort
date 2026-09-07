@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vidaviewresort.com/sitemap.xml
+Sitemap: https://vidaviewretreat.com/sitemap.xml
