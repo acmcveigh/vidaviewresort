@@ -646,6 +646,9 @@
     /* mobile nav book direct btn */
     #mobile-nav .mob-bd-btn{font-family:var(--ff-display);font-size:clamp(1.8rem,6vw,3rem);font-weight:300;color:var(--amber);letter-spacing:.04em;background:none;border:none;cursor:pointer;opacity:0;transform:translateY(20px);transition:color .2s ease,opacity .5s var(--ease-out) .35s,transform .5s var(--ease-out) .35s}
     #mobile-nav.open .mob-bd-btn{opacity:1;transform:translateY(0)}
+    #mobile-nav .mob-call{font-family:var(--ff-body);font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;padding:.9rem 1.6rem;margin-top:.5rem;background:var(--amber);color:var(--forest);border:none;border-radius:var(--r-sm);cursor:pointer;display:flex;align-items:center;gap:.55rem;opacity:0;transform:translateY(20px);transition:background .2s ease,opacity .5s var(--ease-out) .35s,transform .5s var(--ease-out) .35s}
+    #mobile-nav.open .mob-call{opacity:1;transform:translateY(0)}
+    #mobile-nav .mob-call:hover{background:var(--amber-lt)}
 
     @media(max-width:900px){
       .bd-portal-sub{display:none}
@@ -682,7 +685,10 @@
   <a href="#gallery">Gallery</a>
   <a href="blog/index.html">Blog</a>
   <a href="/faq.html">FAQ</a>
-  <button class="mob-bd-btn" id="mob-call-btn" aria-haspopup="dialog">&#9742;&nbsp;Call Now for Best Rates</button>
+  <button class="mob-call" id="mob-call-btn" aria-haspopup="dialog">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    Call Now for Best Rates
+  </button>
 </div>
 
 <!-- nav -->
