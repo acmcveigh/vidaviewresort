@@ -801,7 +801,7 @@
           </div>
           <div class="showcase-foot">
             <span class="showcase-price">Ask about our room rates</span>
-            <a class="btn btn-forest" href="#book">Book the B&amp;B</a>
+            <a class="btn btn-forest" href="tel:5418961196" data-call>Book the B&amp;B</a>
           </div>
         </div>
       </div>
@@ -831,7 +831,7 @@
           </div>
           <div class="showcase-foot">
             <span class="showcase-price">Whole house <small style="font-size:.72rem;font-weight:400;opacity:.7">3-night minimum</small></span>
-            <a class="btn btn-forest" href="#book">Book The River Front House</a>
+            <a class="btn btn-forest" href="tel:5418961196" data-call>Book The River Front House</a>
           </div>
         </div>
       </div>
@@ -1748,6 +1748,7 @@
   const openCall = () => { callModal.classList.add('open'); callModal.setAttribute('aria-hidden', 'false'); callModal.querySelector('.call-close').focus(); };
   const closeCall = () => { callModal.classList.remove('open'); callModal.setAttribute('aria-hidden', 'true'); };
   document.getElementById('nav-call-btn').addEventListener('click', openCall);
+  document.querySelectorAll('[data-call]').forEach(el => el.addEventListener('click', e => { e.preventDefault(); openCall(); }));
   document.getElementById('mob-call-btn').addEventListener('click', () => { closeMob(); openCall(); });
   callModal.querySelector('.call-close').addEventListener('click', closeCall);
   callModal.addEventListener('click', e => { if (e.target === callModal) closeCall(); });
