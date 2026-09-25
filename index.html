@@ -682,9 +682,7 @@
   <a href="#gallery">Gallery</a>
   <a href="blog/index.html">Blog</a>
   <a href="/faq.html">FAQ</a>
-  <a href="#book">Book Now</a>
-  <button class="mob-bd-btn" id="mob-direct-btn">Book Direct</button>
-  <a href="tel:5418961196">&#9742;&nbsp;541-896-1196</a>
+  <button class="mob-bd-btn" id="mob-call-btn" aria-haspopup="dialog">&#9742;&nbsp;Call Now for Best Rates</button>
 </div>
 
 <!-- nav -->
@@ -1737,6 +1735,7 @@
   const openCall = () => { callModal.classList.add('open'); callModal.setAttribute('aria-hidden', 'false'); callModal.querySelector('.call-close').focus(); };
   const closeCall = () => { callModal.classList.remove('open'); callModal.setAttribute('aria-hidden', 'true'); };
   document.getElementById('nav-call-btn').addEventListener('click', openCall);
+  document.getElementById('mob-call-btn').addEventListener('click', () => { closeMob(); openCall(); });
   callModal.querySelector('.call-close').addEventListener('click', closeCall);
   callModal.addEventListener('click', e => { if (e.target === callModal) closeCall(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && callModal.classList.contains('open')) closeCall(); });
