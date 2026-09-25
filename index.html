@@ -514,7 +514,7 @@
       .raft-img{height:280px}
     }
     @media(max-width:768px){
-      .nav-links,.nav-cta,.nav-direct,.nav-call{display:none}
+      .nav-links,.nav-cta,.nav-direct{display:none}
       .nav-ham{display:flex}
       .sec-inner{padding:5rem 1.5rem}
       .exp-grid{grid-template-columns:1fr 1fr}
@@ -544,6 +544,14 @@
     /* ─── CALL NOW NAV BUTTON + PHONE MODAL ─────────────────── */
     .nav-call{font-family:var(--ff-body);font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;padding:.85rem 2rem;background:var(--amber);color:var(--forest);border:none;border-radius:var(--r-sm);cursor:pointer;display:flex;align-items:center;gap:.6rem;transition:background .2s ease,transform .2s ease,box-shadow .2s ease}
     .nav-call:hover{background:var(--amber-lt);transform:translateY(-2px);box-shadow:0 6px 20px rgba(196,160,82,.4)}
+    .nav-call-short{display:none}
+    @media(max-width:768px){
+      #nav,#nav.scrolled{padding-left:1.25rem;padding-right:1.25rem}
+      .nav-call{font-size:.6rem;letter-spacing:.1em;padding:.5rem .8rem;gap:.35rem;white-space:nowrap;margin-left:auto;margin-right:.75rem}
+      .nav-call svg{width:12px;height:12px}
+      .nav-call-full{display:none}
+      .nav-call-short{display:inline}
+    }
     #call-modal{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:1rem;background:rgba(10,22,12,.72);backdrop-filter:blur(6px);opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease}
     #call-modal.open{opacity:1;visibility:visible}
     .call-box{position:relative;background:var(--cream);color:var(--forest);border-radius:var(--r-sm);padding:2.75rem 2.5rem 2.25rem;max-width:400px;width:100%;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.4);transform:translateY(16px);transition:transform .35s var(--ease-out)}
@@ -704,7 +712,7 @@
   </ul>
   <button class="nav-call" id="nav-call-btn" aria-haspopup="dialog">
     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-    Call Now for Best Rates
+    <span class="nav-call-full">Call Now for Best Rates</span><span class="nav-call-short">Call Now</span>
   </button>
   <button class="nav-ham" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
