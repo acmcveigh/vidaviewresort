@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Luxury McKenzie River vacation rental in Vida, Oregon — private B&amp;B with heated pool and sauna, riverfront house with hot tub, and 750 ft of private river frontage.">
-  <title>Vida View Retreat | McKenzie River Vacation Rental, Oregon</title>
+  <meta name="description" content="Luxury McKenzie River vacation rental in Vida, Oregon — B&amp;B with heated pool and sauna, riverfront house with hot tub, minutes from Belknap and Terwilliger Hot Springs.">
+  <title>Vida View Retreat | McKenzie River Rental Near Hot Springs, Oregon</title>
   <meta name="theme-color" content="#141f1a">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -192,6 +192,8 @@
     .nav-logo{font-family:var(--ff-display);font-size:1.5rem;font-weight:300;letter-spacing:.1em;text-transform:uppercase;color:var(--cream);display:flex;align-items:baseline;gap:.35rem}
     .nav-logo span{color:var(--amber)}
     .nav-links{display:flex;align-items:center;gap:2.25rem}
+    .nav-links a{white-space:nowrap}
+    @media(max-width:1280px){.nav-links{gap:1.5rem}}
     .nav-links a{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(244,240,232,.8);position:relative;transition:color .2s ease}
     .nav-links a::after{content:'';position:absolute;bottom:-5px;left:0;width:0;height:1px;background:var(--amber);transition:width .35s var(--ease-out)}
     .nav-links a:hover{color:var(--cream)}
@@ -390,6 +392,15 @@
     .faq-item[open] .faq-q::after{transform:rotate(45deg)}
     .faq-q:hover{color:var(--amber)}
     .faq-a{padding:0 1.4rem 1.25rem;font-size:.92rem;line-height:1.7;color:var(--muted)}
+
+    /* ─── HOT SPRINGS ───────────────────────────────────────── */
+    .hs-feature{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center}
+    .hs-feature-img{border-radius:var(--r-lg);width:100%;height:420px;object-fit:cover}
+    .hs-times{display:flex;gap:2rem;flex-wrap:wrap;margin:1.75rem 0 2rem}
+    .hs-time-n{font-family:var(--ff-display);font-size:2.2rem;font-weight:300;color:var(--amber);line-height:1}
+    .hs-time-n small{font-family:var(--ff-body);font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(244,240,232,.5);margin-left:.3rem}
+    .hs-time-l{font-size:.78rem;color:rgba(244,240,232,.7);margin-top:.35rem}
+    @media(max-width:900px){.hs-feature{grid-template-columns:1fr;gap:2rem}.hs-feature-img{height:260px}}
 
     /* ─── BOOK DIRECT STRIP ─────────────────────────────────── */
     .book-direct-strip{background:var(--canopy);padding:5rem 2.5rem}
@@ -643,6 +654,7 @@
   <a href="#experiences">Experiences</a>
   <a href="#gallery">Gallery</a>
   <a href="blog/index.html">Blog</a>
+  <a href="/hot-springs-lodging.html">Hot Springs</a>
   <a href="/faq.html">FAQ</a>
   <button class="mob-call" id="mob-call-btn" aria-haspopup="dialog">
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
@@ -659,6 +671,7 @@
     <li><a href="#experiences">Experiences</a></li>
     <li><a href="#gallery">Gallery</a></li>
     <li><a href="blog/index.html">Blog</a></li>
+    <li><a href="/hot-springs-lodging.html">Hot Springs</a></li>
     <li><a href="/faq.html">FAQ</a></li>
   </ul>
   <button class="nav-call" id="nav-call-btn" aria-haspopup="dialog">
@@ -1065,6 +1078,23 @@
   </div>
 </section>
 
+<!-- ─── HOT SPRINGS ─────────────────────────────────────────── -->
+<section id="hot-springs" class="sec dark-text" style="background:var(--forest)">
+  <div class="sec-inner hs-feature">
+    <img class="hs-feature-img" src="assets/riverfront-firepit-hottub.jpg" alt="Hot tub and fire pit beside the McKenzie River at The River Front House" loading="lazy" data-reveal="up">
+    <div>
+      <span class="eyebrow eyebrow-lt" data-reveal="up">Hot Springs Nearby</span>
+      <h2 class="sec-h2" data-reveal="up" data-delay="1">Springs by day,<br><em>sauna and hot tub by night</em></h2>
+      <p class="sec-lead" data-reveal="up" data-delay="2">Vida View Retreat sits on the river a few miles west of the McKenzie's best hot springs. Soak in the wild pools, then come home to your own sauna, heated pool, and riverside hot tubs.</p>
+      <div class="hs-times" data-reveal="up" data-delay="3">
+        <div><p class="hs-time-n">20–25<small>min</small></p><p class="hs-time-l">Belknap Hot Springs</p></div>
+        <div><p class="hs-time-n">~45<small>min</small></p><p class="hs-time-l">Terwilliger Hot Springs</p></div>
+      </div>
+      <a class="btn btn-gold" href="/hot-springs-lodging.html" data-reveal="up" data-delay="4">Plan a Hot Springs Stay</a>
+    </div>
+  </div>
+</section>
+
 <!-- ─── FAQ ────────────────────────────────────────────────── -->
 <section id="faq" class="sec" style="background:var(--cream)">
   <div class="sec-inner" style="max-width:820px">
@@ -1086,6 +1116,10 @@
         <p class="faq-a">Vida View Retreat is about 30 miles (roughly a 40-minute drive) east of Eugene and Springfield, along the McKenzie Highway (OR-126) at 49885 McKenzie Hwy, Vida, OR 97488. Eugene Airport (EUG) is about an hour away.</p>
       </details>
       <details class="faq-item">
+        <summary class="faq-q">Are there hot springs near Vida View Retreat?</summary>
+        <p class="faq-a">Yes. Belknap Hot Springs is about 20–25 minutes east on Highway 126, and Terwilliger (Cougar) Hot Springs is roughly 45 minutes away near Cougar Reservoir. Back at the resort, finish the day in the Finnish sauna, heated pool, or a riverside hot tub. See <a href="hot-springs-lodging.html">staying near the hot springs</a>.</p>
+      </details>
+      <details class="faq-item">
         <summary class="faq-q">How many bedrooms does Vida View Retreat have?</summary>
         <p class="faq-a">Vida View Retreat has nine bedrooms total across two private properties — the Riverview Bed &amp; Breakfast with four designer suites, and The River Front House on the lower riverside. Properties can be booked individually or together.</p>
       </details>
@@ -1102,6 +1136,7 @@
     {"@type": "Question", "name": "Where can I stay on the McKenzie River in Oregon?", "acceptedAnswer": {"@type": "Answer", "text": "Vida View Retreat offers two private, gated retreats directly on the McKenzie River in Vida, Oregon — a luxury four-suite Bed & Breakfast and The River Front House, with 750 feet of private river frontage."}},
     {"@type": "Question", "name": "What is included with a stay at Vida View Retreat?", "acceptedAnswer": {"@type": "Answer", "text": "Every three-night stay at The River Front House includes standup paddleboards with life jackets and inner tubes for floating the McKenzie River — all at no extra charge. You also get a heated pool, Finnish sauna, riverside hot tubs, pickleball courts (coming soon), full kitchens, a bar and lounge, and 750 feet of private river frontage. The grounds are private and gated."}},
     {"@type": "Question", "name": "How far is Vida View Retreat from Eugene, Oregon?", "acceptedAnswer": {"@type": "Answer", "text": "Vida View Retreat is about 30 miles (roughly a 40-minute drive) east of Eugene and Springfield, along the McKenzie Highway (OR-126) at 49885 McKenzie Hwy, Vida, OR 97488. Eugene Airport (EUG) is about an hour away."}},
+    {"@type": "Question", "name": "Are there hot springs near Vida View Retreat?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Belknap Hot Springs is about 20\u201325 minutes east on Highway 126, and Terwilliger (Cougar) Hot Springs is roughly 45 minutes away near Cougar Reservoir. Back at the resort, finish the day in the Finnish sauna, heated pool, or a riverside hot tub."}},
     {"@type": "Question", "name": "How many bedrooms does Vida View Retreat have?", "acceptedAnswer": {"@type": "Answer", "text": "Vida View Retreat has nine bedrooms total across two private properties — the Riverview Bed & Breakfast with four designer suites, and The River Front House on the lower riverside. Properties can be booked individually or together."}}
   ]
 }
@@ -1196,6 +1231,7 @@
         <ul class="ft-links">
           <li><a href="#about">About</a></li><li><a href="#properties">The Stays</a></li><li><a href="#experiences">Experiences</a></li>
           <li><a href="#gallery">Gallery</a></li><li><a href="#book">Book Now</a></li>
+          <li><a href="/hot-springs-lodging.html">Hot Springs</a></li>
         </ul>
       </div>
       <div>
