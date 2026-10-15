@@ -319,6 +319,31 @@
     .suite-name{font-size:.95rem;font-weight:600;color:var(--forest);line-height:1.3}
     .suite-rating{font-size:.85rem;color:var(--forest);white-space:nowrap}
     .suite-meta{font-size:.84rem;color:var(--muted);line-height:1.5;margin-top:-.45rem}
+    .suite-wrap{display:flex;flex-direction:column;gap:.7rem}
+    .suite-avail{align-self:flex-start;display:inline-flex;align-items:center;gap:.45rem;background:none;border:1px solid rgba(20,31,26,.18);border-radius:999px;padding:.45rem .9rem;font-family:var(--ff-body);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--forest);cursor:pointer;transition:border-color .2s ease,background .2s ease}
+    .suite-avail:hover{border-color:var(--amber);background:rgba(90,158,114,.08)}
+    .suite-avail[hidden]{display:none}
+    #avail-modal{position:fixed;inset:0;z-index:1001;display:flex;align-items:center;justify-content:center;padding:1rem;background:rgba(10,22,12,.72);backdrop-filter:blur(6px);opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease}
+    #avail-modal.open{opacity:1;visibility:visible}
+    .avail-box{position:relative;background:var(--cream);color:var(--forest);border-radius:var(--r-md);padding:2.25rem 2rem 1.75rem;max-width:680px;width:100%;max-height:calc(100vh - 2rem);overflow:auto;box-shadow:0 30px 80px rgba(0,0,0,.4)}
+    .avail-eyebrow{display:block;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;opacity:.7;margin-bottom:.4rem}
+    .avail-h{font-family:var(--ff-display);font-size:1.6rem;font-weight:400;margin-bottom:1.25rem;padding-right:2rem}
+    .avail-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:.75rem}
+    .avail-nav button{background:none;border:1px solid rgba(20,31,26,.18);border-radius:50%;width:34px;height:34px;font-size:1rem;color:var(--forest);cursor:pointer}
+    .avail-nav button:disabled{opacity:.3;cursor:default}
+    .avail-months{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+    .avail-month h5{font-family:var(--ff-body);font-size:.85rem;font-weight:600;text-align:center;margin-bottom:.6rem}
+    .avail-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;text-align:center}
+    .avail-dow{font-size:.62rem;color:var(--muted);padding:.3rem 0;font-weight:600}
+    .avail-day{font-size:.8rem;padding:.5rem 0;border-radius:6px;color:var(--forest)}
+    .avail-day.busy{color:rgba(20,31,26,.32);text-decoration:line-through;background:rgba(20,31,26,.06)}
+    .avail-day.past{color:rgba(20,31,26,.22)}
+    .avail-legend{display:flex;gap:1.25rem;flex-wrap:wrap;font-size:.75rem;color:var(--muted);margin:1.1rem 0 1.25rem}
+    .avail-legend span::before{content:"";display:inline-block;width:12px;height:12px;border-radius:3px;margin-right:.4rem;vertical-align:-1px;border:1px solid rgba(20,31,26,.18)}
+    .avail-legend .lg-busy::before{background:rgba(20,31,26,.1)}
+    .avail-foot{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-top:1.1rem;border-top:1px solid rgba(20,31,26,.1)}
+    .avail-foot p{font-size:.8rem;color:var(--muted);flex:1;min-width:200px}
+    @media(max-width:620px){.avail-months{grid-template-columns:1fr}.avail-month+.avail-month{display:none}.avail-box{padding:2rem 1.25rem 1.5rem}}
     @media(max-width:1100px){.suites{margin:-1.5rem 0 4.5rem}.suites-grid{grid-template-columns:repeat(2,1fr)}}
     @media(max-width:520px){.suites-grid{gap:1.1rem}.suite-name{font-size:.88rem}.suite-meta{font-size:.78rem}}
     .video-frame{position:relative;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:16/9;box-shadow:var(--shadow-md);background:#000}
@@ -525,7 +550,7 @@
       .nav-call-full{display:none}
       .nav-call-short{display:inline}
     }
-    #call-modal{position:fixed;inset:0;z-index:1000;display:flex;align-items:center;justify-content:center;padding:1rem;background:rgba(10,22,12,.72);backdrop-filter:blur(6px);opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease}
+    #call-modal{position:fixed;inset:0;z-index:1002;display:flex;align-items:center;justify-content:center;padding:1rem;background:rgba(10,22,12,.72);backdrop-filter:blur(6px);opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease}
     #call-modal.open{opacity:1;visibility:visible}
     .call-box{position:relative;background:var(--cream);color:var(--forest);border-radius:var(--r-sm);padding:2.75rem 2.5rem 2.25rem;max-width:400px;width:100%;text-align:center;box-shadow:0 30px 80px rgba(0,0,0,.4);transform:translateY(16px);transition:transform .35s var(--ease-out)}
     #call-modal.open .call-box{transform:translateY(0)}
@@ -788,26 +813,38 @@
           <p class="suites-sub">Book a single suite, or the whole house (3-night minimum).</p>
         </div>
         <div class="suites-grid">
-          <a class="suite" href="tel:5418961196" data-call aria-label="Call to book Room 1 · ADA View King Suite">
-            <div class="suite-img"><img src="assets/bnb-room1-ada-king.jpg" alt="Room 1, ADA-accessible king suite with sliding doors to the deck and forest views at Vida View Retreat Bed &amp; Breakfast" loading="lazy"><span class="suite-badge">Breakfast included</span></div>
-            <div class="suite-top"><span class="suite-name">Room 1 · ADA View King Suite</span><span class="suite-rating">★ 5.0</span></div>
-            <p class="suite-meta">1 king bed · Private bath · ADA accessible<br>10 reviews</p>
-          </a>
-          <a class="suite" href="tel:5418961196" data-call aria-label="Call to book Room 2 · View King Suite">
-            <div class="suite-img"><img src="assets/bnb-room2-king.jpg" alt="Room 2, king suite with grasscloth walls and sliding doors to a deck overlooking the McKenzie valley at Vida View Retreat Bed &amp; Breakfast" loading="lazy"><span class="suite-badge">Breakfast included</span></div>
-            <div class="suite-top"><span class="suite-name">Room 2 · View King Suite</span><span class="suite-rating">★ 5.0</span></div>
-            <p class="suite-meta">1 king bed · Private bath<br>4 reviews</p>
-          </a>
-          <a class="suite" href="tel:5418961196" data-call aria-label="Call to book Room 3 · View King Suite">
-            <div class="suite-img"><img src="assets/bnb-room3-king.jpg" alt="Room 3, king suite with geometric accent wall and sliding doors to the deck and hillside views at Vida View Retreat Bed &amp; Breakfast" loading="lazy"><span class="suite-badge">Breakfast included</span></div>
-            <div class="suite-top"><span class="suite-name">Room 3 · View King Suite</span><span class="suite-rating">★ 5.0</span></div>
-            <p class="suite-meta">1 king bed · Private bath<br>6 reviews</p>
-          </a>
-          <a class="suite" href="tel:5418961196" data-call aria-label="Call to book Room 4 · View Double Queen Suite">
-            <div class="suite-img"><img src="assets/bnb-room4-double-queen.jpg" alt="Room 4, double queen suite with blue grasscloth walls, desk, and sliding doors to the deck at Vida View Retreat Bed &amp; Breakfast" loading="lazy"><span class="suite-badge">Breakfast included</span></div>
-            <div class="suite-top"><span class="suite-name">Room 4 · View Double Queen Suite</span><span class="suite-rating">★ 5.0</span></div>
-            <p class="suite-meta">2 queen beds · Private bath<br>5 reviews</p>
-          </a>
+          <div class="suite-wrap">
+            <a class="suite" href="tel:5418961196" data-call aria-label="Call to book Room 1 · ADA View King Suite">
+              <div class="suite-img"><img src="assets/bnb-room1-ada-king.jpg" alt="Room 1, ADA-accessible king suite with sliding doors to the deck and forest views at Vida View Retreat Bed &amp; Breakfast" loading="lazy"><span class="suite-badge">Breakfast included</span></div>
+              <div class="suite-top"><span class="suite-name">Room 1 · ADA View King Suite</span><span class="suite-rating">★ 5.0</span></div>
+              <p class="suite-meta">1 king bed · Private bath · ADA accessible<br>10 reviews</p>
+            </a>
+            <button type="button" class="suite-avail" data-room="1" data-name="Room 1 · ADA View King Suite" hidden>View availability</button>
+          </div>
+          <div class="suite-wrap">
+            <a class="suite" href="tel:5418961196" data-call aria-label="Call to book Room 2 · View King Suite">
+              <div class="suite-img"><img src="assets/bnb-room2-king.jpg" alt="Room 2, king suite with grasscloth walls and sliding doors to a deck overlooking the McKenzie valley at Vida View Retreat Bed &amp; Breakfast" loading="lazy"><span class="suite-badge">Breakfast included</span></div>
+              <div class="suite-top"><span class="suite-name">Room 2 · View King Suite</span><span class="suite-rating">★ 5.0</span></div>
+              <p class="suite-meta">1 king bed · Private bath<br>4 reviews</p>
+            </a>
+            <button type="button" class="suite-avail" data-room="2" data-name="Room 2 · View King Suite" hidden>View availability</button>
+          </div>
+          <div class="suite-wrap">
+            <a class="suite" href="tel:5418961196" data-call aria-label="Call to book Room 3 · View King Suite">
+              <div class="suite-img"><img src="assets/bnb-room3-king.jpg" alt="Room 3, king suite with geometric accent wall and sliding doors to the deck and hillside views at Vida View Retreat Bed &amp; Breakfast" loading="lazy"><span class="suite-badge">Breakfast included</span></div>
+              <div class="suite-top"><span class="suite-name">Room 3 · View King Suite</span><span class="suite-rating">★ 5.0</span></div>
+              <p class="suite-meta">1 king bed · Private bath<br>6 reviews</p>
+            </a>
+            <button type="button" class="suite-avail" data-room="3" data-name="Room 3 · View King Suite" hidden>View availability</button>
+          </div>
+          <div class="suite-wrap">
+            <a class="suite" href="tel:5418961196" data-call aria-label="Call to book Room 4 · View Double Queen Suite">
+              <div class="suite-img"><img src="assets/bnb-room4-double-queen.jpg" alt="Room 4, double queen suite with blue grasscloth walls, desk, and sliding doors to the deck at Vida View Retreat Bed &amp; Breakfast" loading="lazy"><span class="suite-badge">Breakfast included</span></div>
+              <div class="suite-top"><span class="suite-name">Room 4 · View Double Queen Suite</span><span class="suite-rating">★ 5.0</span></div>
+              <p class="suite-meta">2 queen beds · Private bath<br>5 reviews</p>
+            </a>
+            <button type="button" class="suite-avail" data-room="4" data-name="Room 4 · View Double Queen Suite" hidden>View availability</button>
+          </div>
         </div>
       </div>
 
@@ -1291,6 +1328,25 @@
   <button class="lb-next" aria-label="Next image">&#8594;</button>
 </div>
 
+<!-- ─── SUITE AVAILABILITY (read-only) ───────────────────── -->
+<div id="avail-modal" role="dialog" aria-modal="true" aria-labelledby="avail-h" aria-hidden="true">
+  <div class="avail-box">
+    <button class="call-close avail-close" aria-label="Close">&times;</button>
+    <span class="avail-eyebrow">Availability</span>
+    <h3 class="avail-h" id="avail-h"></h3>
+    <div class="avail-nav">
+      <button type="button" class="avail-prev" aria-label="Previous month">&#8592;</button>
+      <button type="button" class="avail-next" aria-label="Next month">&#8594;</button>
+    </div>
+    <div class="avail-months"></div>
+    <div class="avail-legend"><span>Available</span><span class="lg-busy">Booked</span></div>
+    <div class="avail-foot">
+      <p>Dates update automatically from our booking calendar. Call to reserve — direct bookings get our best rate.</p>
+      <a class="btn btn-gold" href="tel:5418961196" data-call>Call Now for Best Rates</a>
+    </div>
+  </div>
+</div>
+
 <!-- ─── CALL NOW — PHONE MODAL ────────────────────────────── -->
 <div id="call-modal" role="dialog" aria-modal="true" aria-label="Call Vida View Retreat" aria-hidden="true">
   <div class="call-box">
@@ -1655,6 +1711,67 @@
   callModal.querySelector('.call-close').addEventListener('click', closeCall);
   callModal.addEventListener('click', e => { if (e.target === callModal) closeCall(); });
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && callModal.classList.contains('open')) closeCall(); });
+
+  /* ── Suite availability (read-only, from Airbnb iCal via Netlify) ── */
+  (function () {
+    const modal = document.getElementById('avail-modal');
+    const monthsEl = modal.querySelector('.avail-months');
+    const prevBtn = modal.querySelector('.avail-prev');
+    const nextBtn = modal.querySelector('.avail-next');
+    const MAX_AHEAD = 12;
+    let busy = [], offset = 0, opener = null;
+    const today = new Date(); today.setHours(0, 0, 0, 0);
+    const iso = d => d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+    const isBusy = d => { const k = iso(d); return busy.some(r => k >= r.start && k < r.end); };
+
+    function month(y, m) {
+      const first = new Date(y, m, 1);
+      let h = '<div class="avail-month"><h5>' + first.toLocaleString('en-US', { month: 'long', year: 'numeric' }) + '</h5><div class="avail-grid">';
+      'SMTWTFS'.split('').forEach(c => { h += '<div class="avail-dow">' + c + '</div>'; });
+      for (let i = 0; i < first.getDay(); i++) h += '<div></div>';
+      const days = new Date(y, m + 1, 0).getDate();
+      for (let d = 1; d <= days; d++) {
+        const dt = new Date(y, m, d);
+        const cls = dt < today ? 'past' : isBusy(dt) ? 'busy' : '';
+        h += '<div class="avail-day ' + cls + '"' + (cls === 'busy' ? ' aria-label="' + d + ', booked"' : '') + '>' + d + '</div>';
+      }
+      return h + '</div></div>';
+    }
+    function render() {
+      const y = today.getFullYear(), m = today.getMonth() + offset;
+      monthsEl.innerHTML = month(y, m) + month(y, m + 1);
+      prevBtn.disabled = offset === 0;
+      nextBtn.disabled = offset >= MAX_AHEAD;
+    }
+    function close() {
+      modal.classList.remove('open'); modal.setAttribute('aria-hidden', 'true');
+      if (opener) opener.focus();
+    }
+    prevBtn.addEventListener('click', () => { offset--; render(); });
+    nextBtn.addEventListener('click', () => { offset++; render(); });
+    modal.querySelector('.avail-close').addEventListener('click', close);
+    modal.addEventListener('click', e => { if (e.target === modal) close(); });
+    modal.querySelector('[data-call]').addEventListener('click', close);
+    document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('open')) close(); });
+
+    fetch('https://cheerful-kataifi-93e959.netlify.app/.netlify/functions/availability')
+      .then(r => r.ok ? r.json() : Promise.reject())
+      .then(data => {
+        document.querySelectorAll('.suite-avail').forEach(btn => {
+          const ranges = data.rooms && data.rooms[btn.dataset.room];
+          if (!ranges) return;
+          btn.hidden = false;
+          btn.addEventListener('click', () => {
+            busy = ranges; offset = 0; opener = btn;
+            modal.querySelector('.avail-h').textContent = btn.dataset.name;
+            render();
+            modal.classList.add('open'); modal.setAttribute('aria-hidden', 'false');
+            modal.querySelector('.avail-close').focus();
+          });
+        });
+      })
+      .catch(() => { /* calendar unavailable: buttons stay hidden */ });
+  })();
   const mobDirect = document.getElementById('mob-direct-btn');
   if (mobDirect) mobDirect.addEventListener('click', () => { closeMob(); openBdPw(); });
 
