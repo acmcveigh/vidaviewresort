@@ -323,6 +323,7 @@
     .suite-avail{align-self:flex-start;display:inline-flex;align-items:center;gap:.45rem;background:none;border:1px solid rgba(20,31,26,.18);border-radius:999px;padding:.45rem .9rem;font-family:var(--ff-body);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--forest);cursor:pointer;transition:border-color .2s ease,background .2s ease}
     .suite-avail:hover{border-color:var(--amber);background:rgba(90,158,114,.08)}
     .suite-avail[hidden]{display:none}
+    .showcase-foot .suite-avail{align-self:center}
     #avail-modal{position:fixed;inset:0;z-index:1001;display:flex;align-items:center;justify-content:center;padding:1rem;background:rgba(10,22,12,.72);backdrop-filter:blur(6px);opacity:0;visibility:hidden;transition:opacity .3s ease,visibility .3s ease}
     #avail-modal.open{opacity:1;visibility:visible}
     .avail-box{position:relative;background:var(--cream);color:var(--forest);border-radius:var(--r-md);padding:2.25rem 2rem 1.75rem;max-width:680px;width:100%;max-height:calc(100vh - 2rem);overflow:auto;box-shadow:0 30px 80px rgba(0,0,0,.4)}
@@ -874,6 +875,7 @@
           <div class="showcase-foot">
             <span class="showcase-price">Whole house <small style="font-size:.72rem;font-weight:400;opacity:.7">3-night minimum</small></span>
             <a class="btn btn-forest" href="tel:5418961196" data-call>Book The River Front House</a>
+            <button type="button" class="suite-avail" data-room="riverfront" data-name="The River Front House" hidden>View availability</button>
           </div>
         </div>
       </div>

@@ -1,15 +1,21 @@
-/* Read-only availability for the B&B suites.
- * Reads each room's private Airbnb iCal feed from env vars ICAL_ROOM1..ICAL_ROOM4
- * (feed URLs must never be committed — the repo is public) and returns only
+/* Read-only availability for the B&B suites and The River Front House.
+ * Reads each listing's private Airbnb iCal feed from env vars ICAL_ROOM1..ICAL_ROOM4
+ * and ICAL_RIVERFRONT (feed URLs must never be committed — the repo is public) and returns only
  * booked date ranges. Guest details in the feed (reservation codes, phone
  * digits) are never returned.
  *
  * GET /.netlify/functions/availability
- * → { updated, rooms: { "1": [{ start: "2026-10-17", end: "2026-10-19" }, ...] } }
+ * → { updated, rooms: { "1": [{ start: "2026-10-17", end: "2026-10-19" }, ...], "riverfront": [...] } }
  * end is exclusive (the checkout day is free).
  */
 
-const ROOMS = ['1', '2', '3', '4'];
+const FEEDS = {
+  '1': 'ICAL_ROOM1',
+  '2': 'ICAL_ROOM2',
+  '3': 'ICAL_ROOM3',
+  '4': 'ICAL_ROOM4',
+  riverfront: 'ICAL_RIVERFRONT',
+};
 
 const headers = {
   'Content-Type': 'application/json',
@@ -38,8 +44,8 @@ exports.handler = async (event) => {
 
   const rooms = {};
   await Promise.all(
-    ROOMS.map(async (room) => {
-      const url = process.env[`ICAL_ROOM${room}`];
+    Object.entries(FEEDS).map(async ([room, envVar]) => {
+      const url = process.env[envVar];
       if (!url) return;
       try {
         const res = await fetch(url, { headers: { 'User-Agent': 'VidaViewRetreat-availability/1.0' } });
