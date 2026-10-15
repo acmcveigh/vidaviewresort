@@ -304,6 +304,24 @@
     .showcase-foot{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;padding-top:1.25rem;border-top:1px solid rgba(196,160,82,.25);margin-top:.5rem}
     .showcase-price{font-family:var(--ff-display);font-size:1.15rem;color:var(--forest)}
     .showcase-media{display:flex;flex-direction:column;gap:1rem}
+    /* B&B suites (listed like Airbnb) */
+    .suites{margin:-2.5rem 0 6rem}
+    .suites-head{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem}
+    .suites-h{font-family:var(--ff-display);font-size:1.6rem;font-weight:400;color:var(--forest)}
+    .suites-sub{font-size:.85rem;color:var(--muted)}
+    .suites-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem}
+    .suite{display:flex;flex-direction:column;gap:.7rem;text-decoration:none;color:inherit}
+    .suite-img{position:relative;aspect-ratio:1/1;border-radius:var(--r-md);overflow:hidden;background:rgba(20,31,26,.06)}
+    .suite-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+    .suite:hover .suite-img img{transform:scale(1.04)}
+    .suite-badge{position:absolute;top:.75rem;left:.75rem;background:rgba(255,255,255,.94);color:var(--forest);font-size:.62rem;font-weight:600;letter-spacing:.06em;padding:.32rem .65rem;border-radius:999px;box-shadow:0 2px 8px rgba(0,0,0,.12)}
+    .suite-top{display:flex;justify-content:space-between;align-items:baseline;gap:.5rem}
+    .suite-name{font-size:.95rem;font-weight:600;color:var(--forest);line-height:1.3}
+    .suite-rating{font-size:.85rem;color:var(--forest);white-space:nowrap}
+    .suite-meta{font-size:.84rem;color:var(--muted);line-height:1.5;margin-top:-.45rem}
+    .suite-link{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--amber);margin-top:-.15rem}
+    @media(max-width:1100px){.suites{margin:-1.5rem 0 4.5rem}.suites-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(max-width:520px){.suites-grid{gap:1.1rem}.suite-name{font-size:.88rem}.suite-meta{font-size:.78rem}}
     .video-frame{position:relative;border-radius:var(--r-lg);overflow:hidden;aspect-ratio:16/9;box-shadow:var(--shadow-md);background:#000}
     .video-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block;filter:saturate(1.16) contrast(1.05) brightness(1.02)}
     .yt-facade{position:absolute;inset:0;width:100%;height:100%;display:block;padding:0;border:0;background:#000;cursor:pointer}
@@ -761,6 +779,40 @@
             <span class="showcase-price">Whole house <small style="font-size:.72rem;font-weight:400;opacity:.7">3-night minimum</small></span>
             <a class="btn btn-forest" href="tel:5418961196" data-call>Book the B&amp;B</a>
           </div>
+        </div>
+      </div>
+
+      <!-- B&B suites -->
+      <div class="suites" data-reveal="up">
+        <div class="suites-head">
+          <h4 class="suites-h">The Suites</h4>
+          <p class="suites-sub">Book a single suite, or the whole house (3-night minimum).</p>
+        </div>
+        <div class="suites-grid">
+          <a class="suite" href="https://www.airbnb.com/rooms/1694406521780874037" target="_blank" rel="noopener">
+            <div class="suite-img"><img src="assets/bnb-room1-ada-king.jpg" alt="Room 1, ADA-accessible king suite with sliding doors to the deck and forest views at Vida View Retreat Bed &amp; Breakfast" loading="lazy"><span class="suite-badge">Breakfast included</span></div>
+            <div class="suite-top"><span class="suite-name">Room 1 · ADA View King Suite</span><span class="suite-rating">★ 5.0</span></div>
+            <p class="suite-meta">1 king bed · Private bath · ADA accessible<br>10 reviews</p>
+            <span class="suite-link">View on Airbnb →</span>
+          </a>
+          <a class="suite" href="https://www.airbnb.com/rooms/1694366630998432753" target="_blank" rel="noopener">
+            <div class="suite-img"><img src="assets/bnb-room2-king.jpg" alt="Room 2, king suite with grasscloth walls and sliding doors to a deck overlooking the McKenzie valley at Vida View Retreat Bed &amp; Breakfast" loading="lazy"><span class="suite-badge">Breakfast included</span></div>
+            <div class="suite-top"><span class="suite-name">Room 2 · View King Suite</span><span class="suite-rating">★ 5.0</span></div>
+            <p class="suite-meta">1 king bed · Private bath<br>4 reviews</p>
+            <span class="suite-link">View on Airbnb →</span>
+          </a>
+          <a class="suite" href="https://www.airbnb.com/rooms/1617678897076850737" target="_blank" rel="noopener">
+            <div class="suite-img"><img src="assets/bnb-room3-king.jpg" alt="Room 3, king suite with geometric accent wall and sliding doors to the deck and hillside views at Vida View Retreat Bed &amp; Breakfast" loading="lazy"><span class="suite-badge">Breakfast included</span></div>
+            <div class="suite-top"><span class="suite-name">Room 3 · View King Suite</span><span class="suite-rating">★ 5.0</span></div>
+            <p class="suite-meta">1 king bed · Private bath<br>6 reviews</p>
+            <span class="suite-link">View on Airbnb →</span>
+          </a>
+          <a class="suite" href="https://www.airbnb.com/rooms/1694447162042583927" target="_blank" rel="noopener">
+            <div class="suite-img"><img src="assets/bnb-room4-double-queen.jpg" alt="Room 4, double queen suite with blue grasscloth walls, desk, and sliding doors to the deck at Vida View Retreat Bed &amp; Breakfast" loading="lazy"><span class="suite-badge">Breakfast included</span></div>
+            <div class="suite-top"><span class="suite-name">Room 4 · View Double Queen Suite</span><span class="suite-rating">★ 5.0</span></div>
+            <p class="suite-meta">2 queen beds · Private bath<br>5 reviews</p>
+            <span class="suite-link">View on Airbnb →</span>
+          </a>
         </div>
       </div>
 
