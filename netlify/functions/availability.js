@@ -1,12 +1,13 @@
-/* Read-only availability for the B&B suites and The River Front House.
- * Reads each listing's private Airbnb iCal feed from env vars ICAL_ROOM1..ICAL_ROOM4
- * and ICAL_RIVERFRONT (feed URLs must never be committed — the repo is public) and returns only
- * booked date ranges. Guest details in the feed (reservation codes, phone
- * digits) are never returned.
+/* Read-only availability for the B&B suites, the B&B whole house, and The River Front House.
+ * Reads each listing's private Airbnb iCal feed from env vars ICAL_ROOM1..ICAL_ROOM4,
+ * ICAL_BNB (whole-house listing) and ICAL_RIVERFRONT (feed URLs must never be
+ * committed — the repo is public) and returns only booked date ranges. Guest
+ * details in the feed (reservation codes, phone digits) are never returned.
  *
  * GET /.netlify/functions/availability
  * → { updated, rooms: { "1": [{ start: "2026-10-17", end: "2026-10-19" }, ...], "riverfront": [...] } }
  * end is exclusive (the checkout day is free).
+ * "bnb" (whole house) is busy whenever its own listing OR any suite is booked.
  */
 
 const FEEDS = {
@@ -14,6 +15,7 @@ const FEEDS = {
   '2': 'ICAL_ROOM2',
   '3': 'ICAL_ROOM3',
   '4': 'ICAL_ROOM4',
+  bnb: 'ICAL_BNB',
   riverfront: 'ICAL_RIVERFRONT',
 };
 
@@ -56,6 +58,14 @@ exports.handler = async (event) => {
       }
     })
   );
+
+  /* The whole house is only free when every suite is free too. */
+  if (rooms.bnb) {
+    rooms.bnb = ['1', '2', '3', '4']
+      .flatMap((r) => rooms[r] || [])
+      .concat(rooms.bnb)
+      .sort((a, b) => a.start.localeCompare(b.start));
+  }
 
   return {
     statusCode: 200,
