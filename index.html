@@ -422,8 +422,15 @@
     .bdstrip-form select option{color:var(--text);background:#fff}
     .bdstrip-btn{padding:.9rem;background:var(--amber);color:var(--forest);border:none;border-radius:6px;font-family:var(--ff-body);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;cursor:pointer;transition:background .2s ease}
     .bdstrip-btn:hover{background:var(--amber-lt)}
-    .bdstrip-or{font-size:.78rem;color:rgba(244,240,232,.4);text-align:center;margin-top:.25rem}
-    .bdstrip-or a{color:rgba(244,240,232,.6);border-bottom:1px solid rgba(90,158,114,.3);text-decoration:none}
+    .bdstrip-or{display:flex;align-items:center;gap:.85rem;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,240,232,.4);margin:.35rem 0 .1rem}
+    .bdstrip-or::before,.bdstrip-or::after{content:"";flex:1;height:1px;background:rgba(90,158,114,.25)}
+    .bdstrip-call{display:flex;align-items:center;justify-content:center;gap:.9rem;padding:.95rem 1rem;border:1.5px solid var(--amber);border-radius:6px;color:var(--cream);text-decoration:none;transition:background .2s ease,transform .2s ease}
+    .bdstrip-call:hover{background:rgba(196,160,82,.12);transform:translateY(-1px)}
+    .bdstrip-call svg{color:var(--amber);flex-shrink:0}
+    .bdstrip-call-txt{display:flex;flex-direction:column;line-height:1.15}
+    .bdstrip-call-lbl{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--amber);font-weight:600}
+    .bdstrip-call-num{font-family:var(--ff-display);font-size:1.6rem;font-weight:400;color:var(--cream);letter-spacing:.02em}
+    @media(max-width:480px){.bdstrip-call{padding:.9rem .6rem}.bdstrip-call svg{display:none}.bdstrip-call-txt{align-items:center}.bdstrip-call-lbl{letter-spacing:.14em}}
     .bdstrip-success{font-size:.9rem;color:var(--amber);text-align:center;padding:1rem}
     @media(max-width:900px){.bdstrip-inner{grid-template-columns:1fr;gap:3rem}.bdstrip-row{grid-template-columns:1fr}}
 
@@ -1016,7 +1023,11 @@
             </select>
           </div>
           <button type="submit" class="bdstrip-btn">Send Direct Inquiry</button>
-          <p class="bdstrip-or">or call <a href="tel:5418961196">541-896-1196</a></p>
+          <p class="bdstrip-or">or</p>
+          <a class="bdstrip-call" href="tel:5418961196" data-call>
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span class="bdstrip-call-txt"><span class="bdstrip-call-lbl">Call Now for Best Rates</span><span class="bdstrip-call-num">541-896-1196</span></span>
+          </a>
         </form>
         <p class="bdstrip-success" id="bdstrip-success" style="display:none">✓ Got it! We'll be in touch within 24 hours.</p>
       </div>
