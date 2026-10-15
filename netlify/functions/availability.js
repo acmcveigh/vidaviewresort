@@ -1,7 +1,7 @@
 /* Read-only availability for the B&B suites, the B&B whole house, and The River Front House.
  * Reads each listing's private Airbnb iCal feed from env vars ICAL_ROOM1..ICAL_ROOM4,
- * ICAL_BNB (whole-house listing) and ICAL_RIVERFRONT, plus The River Front House's
- * VRBO feed from ICAL_RIVERFRONT_VRBO (feed URLs must never be committed — the
+ * ICAL_BNB (whole-house listing) and ICAL_RIVERFRONT, plus the VRBO feeds
+ * ICAL_BNB_VRBO and ICAL_RIVERFRONT_VRBO (feed URLs must never be committed — the
  * repo is public) and returns only booked date ranges. Guest details in the
  * feeds (reservation codes, phone digits) are never returned.
  *
@@ -10,7 +10,8 @@
  * end is exclusive (the checkout day is free).
  * "bnb" (whole house) is busy whenever its own listing OR any suite is booked.
  * "riverfront" combines its Airbnb and VRBO calendars (Airbnb's export leaves
- * out dates it imported from VRBO).
+ * out dates it imported from VRBO). A VRBO B&B booking is for the whole house,
+ * so it blocks "bnb" and every suite.
  */
 
 const FEEDS = {
@@ -21,7 +22,10 @@ const FEEDS = {
   bnb: 'ICAL_BNB',
   riverfront: 'ICAL_RIVERFRONT',
   riverfrontVrbo: 'ICAL_RIVERFRONT_VRBO',
+  bnbVrbo: 'ICAL_BNB_VRBO',
 };
+
+const byStart = (a, b) => a.start.localeCompare(b.start);
 
 const headers = {
   'Content-Type': 'application/json',
@@ -40,7 +44,7 @@ function parseBusy(ics) {
     const end = block.match(/^DTEND[^:\n]*:(\d{8})/m);
     if (start && end) ranges.push({ start: toISODate(start[1]), end: toISODate(end[1]) });
   }
-  return ranges.sort((a, b) => a.start.localeCompare(b.start));
+  return ranges.sort(byStart);
 }
 
 exports.handler = async (event) => {
@@ -63,18 +67,23 @@ exports.handler = async (event) => {
     })
   );
 
+  /* A VRBO B&B booking takes the whole house, so it blocks every suite. */
+  const bnbVrbo = rooms.bnbVrbo || [];
+  delete rooms.bnbVrbo;
+  for (const r of ['1', '2', '3', '4']) {
+    if (rooms[r]) rooms[r] = rooms[r].concat(bnbVrbo).sort(byStart);
+  }
+
   /* The whole house is only free when every suite is free too. */
   if (rooms.bnb) {
     rooms.bnb = ['1', '2', '3', '4']
       .flatMap((r) => rooms[r] || [])
       .concat(rooms.bnb)
-      .sort((a, b) => a.start.localeCompare(b.start));
+      .sort(byStart);
   }
 
   if (rooms.riverfrontVrbo) {
-    rooms.riverfront = (rooms.riverfront || [])
-      .concat(rooms.riverfrontVrbo)
-      .sort((a, b) => a.start.localeCompare(b.start));
+    rooms.riverfront = (rooms.riverfront || []).concat(rooms.riverfrontVrbo).sort(byStart);
     delete rooms.riverfrontVrbo;
   }
 
