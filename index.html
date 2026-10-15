@@ -1207,16 +1207,36 @@
       <h3>Join 1,000+ River Lovers</h3>
       <p>Get 5 days of McKenzie River secrets delivered to your inbox — fishing tips, photography guides, seasonal advice, and insider knowledge from people who live here.</p>
     </div>
-    <form class="ft-email-form" id="footer-email-form" onsubmit="handleFooterEmailSignup(event)">
-      <input type="text" name="ft_email_name" placeholder="Your name" required>
-      <input type="email" name="ft_email_address" placeholder="Your email" required>
+    <form class="ft-email-form" id="footer-email-form" action="https://formspree.io/f/maqgvkve" method="POST" onsubmit="handleFooterEmailSignup(event)">
+      <input type="hidden" name="_subject" value="New email signup: Join 1,000+ River Lovers">
+      <input type="text" name="name" placeholder="Your name" required>
+      <input type="email" name="email" placeholder="Your email" required>
       <button type="submit">Get the Series</button>
       <div class="ft-email-success" id="footer-email-success">
-        <p>✓ Welcome! Check your inbox in a few minutes.</p>
+        <p>✓ Thanks! You're on the list.</p>
       </div>
     </form>
   </div>
 </section>
+<script>
+async function handleFooterEmailSignup(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('button[type="submit"]');
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+  try {
+    const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
+    if (!res.ok) throw new Error();
+    form.querySelectorAll('input, button').forEach(el => el.style.display = 'none');
+    document.getElementById('footer-email-success').classList.add('show');
+  } catch {
+    btn.textContent = 'Get the Series';
+    btn.disabled = false;
+    alert('Something went wrong. Please try again or call 541-896-1196.');
+  }
+}
+</script>
 
 <!-- ─── FOOTER ──────────────────────────────────────────────── -->
 <footer>
