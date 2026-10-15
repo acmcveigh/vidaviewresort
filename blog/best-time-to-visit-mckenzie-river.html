@@ -168,18 +168,6 @@
     .sidebar-toc ul li a::before{content:'';width:14px;height:1px;background:var(--amber);flex-shrink:0}
     .sidebar-toc ul li a:hover{color:var(--forest)}
     .sidebar-ad{background:var(--cream-dk);border:1px dashed rgba(196,160,82,.35);border-radius:var(--r-md);padding:1.5rem;text-align:center;color:var(--muted);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;min-height:250px;display:flex;align-items:center;justify-content:center}
-    .sidebar-email{background:linear-gradient(135deg, rgba(26,46,28,.08) 0%, rgba(61,135,117,.06) 100%);border:1px solid rgba(61,135,117,.2);border-radius:var(--r-md)}
-    .sidebar-email h4{font-family:var(--ff-display);font-size:1.15rem;font-weight:400;color:var(--forest);margin-bottom:.5rem}
-    .sidebar-email-desc{font-size:.78rem;color:var(--muted);line-height:1.6;margin-bottom:1rem}
-    .sidebar-email-form{display:flex;flex-direction:column;gap:.6rem}
-    .sidebar-email-form input{width:100%;padding:.65rem .85rem;background:#fff;border:1px solid rgba(196,160,82,.2);border-radius:4px;font-size:.8rem;font-family:var(--ff-body);outline:none;transition:border-color .2s ease}
-    .sidebar-email-form input:focus{border-color:var(--amber)}
-    .sidebar-email-form button{padding:.7rem;background:var(--river);color:#fff;border:none;border-radius:4px;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500;cursor:pointer;transition:background .2s ease}
-    .sidebar-email-form button:hover{background:#2d6d5f}
-    .sidebar-email-success{display:none;text-align:center;padding:1.25rem .75rem;color:var(--river)}
-    .sidebar-email-success.show{display:block}
-    .sidebar-email-success-icon{font-size:1.8rem;margin-bottom:.4rem}
-    .sidebar-email-success p{font-size:.75rem;color:var(--muted);line-height:1.5}
 
     /* RELATED */
     .related-section{background:var(--cream-dk);padding:4rem 2.5rem}
@@ -423,21 +411,6 @@
 
     <!-- SIDEBAR AD — replace with your ad unit code -->
     <div class="sidebar-ad">Ad Unit<br><small>250×250 or 300×600</small></div>
-
-    <div class="sidebar-card sidebar-email" style="padding:1.5rem">
-      <h4>River Tips &amp; Offers</h4>
-      <p class="sidebar-email-desc">Get occasional McKenzie River tips and offers — fishing, photography, local spots, and the best seasons to visit.</p>
-      <form class="sidebar-email-form" action="https://formspree.io/f/maqgvkve" method="POST" onsubmit="handleSidebarEmailSignup(event)">
-        <input type="hidden" name="_subject" value="New email signup: blog">
-        <input type="text" name="name" placeholder="Your name" required>
-        <input type="email" name="email" placeholder="Your email" required>
-        <button type="submit">Join</button>
-        <div class="sidebar-email-success" style="padding:1rem 0.5rem">
-          <div class="sidebar-email-success-icon">✓</div>
-          <p>Thanks! You're on the list.</p>
-        </div>
-      </form>
-    </div>
   </aside>
 
 </div>
@@ -482,27 +455,6 @@
     </div>
   </div>
 </footer>
-
-<script>
-function handleSidebarEmailSignup(e) {
-  e.preventDefault();
-  const form = e.target;
-  const btn = form.querySelector('button[type="submit"]');
-  btn.textContent = 'Sending…';
-  btn.disabled = true;
-  fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
-    .then(res => {
-      if (!res.ok) throw new Error();
-      form.querySelectorAll('input, button').forEach(el => el.style.display = 'none');
-      form.querySelector('.sidebar-email-success').classList.add('show');
-    })
-    .catch(() => {
-      btn.textContent = 'Join';
-      btn.disabled = false;
-      alert('Something went wrong. Please try again or call 541-896-1196.');
-    });
-}
-</script>
 
 </body>
 </html>

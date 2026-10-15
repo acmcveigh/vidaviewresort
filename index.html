@@ -428,19 +428,6 @@
     @media(max-width:900px){.bdstrip-inner{grid-template-columns:1fr;gap:3rem}.bdstrip-row{grid-template-columns:1fr}}
 
     /* ─── FOOTER EMAIL ────────────────────────────────────── */
-    .ft-email-strip{background:var(--forest-mid);padding:4rem 2.5rem}
-    .ft-email-inner{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
-    @media(max-width:800px){.ft-email-inner{grid-template-columns:1fr}}
-    .ft-email-left h3{font-family:var(--ff-display);font-size:1.8rem;font-weight:300;color:var(--cream);margin-bottom:.75rem}
-    .ft-email-left p{font-size:.9rem;color:rgba(244,240,232,.65);line-height:1.7}
-    .ft-email-form{display:flex;flex-direction:column;gap:.85rem}
-    .ft-email-form input{padding:.85rem 1rem;background:rgba(255,255,255,.08);border:1px solid rgba(90,158,114,.2);border-radius:6px;color:var(--cream);font-family:var(--ff-body);font-size:.88rem;outline:none}
-    .ft-email-form input::placeholder{color:rgba(244,240,232,.35)}
-    .ft-email-form input:focus{border-color:var(--amber)}
-    .ft-email-form button{padding:.9rem;background:var(--amber);color:var(--forest);border:none;border-radius:6px;font-family:var(--ff-body);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;cursor:pointer;transition:background .2s ease}
-    .ft-email-form button:hover{background:var(--amber-lt)}
-    .ft-email-success{display:none;text-align:center;padding:1.5rem;color:var(--cream)}
-    .ft-email-success.show{display:block}
 
     /* ─── FOOTER ─────────────────────────────────────────────── */
     footer{background:#0b1a0d;color:var(--cream);padding:5rem 2.5rem 2.5rem}
@@ -1197,44 +1184,6 @@
       "reviewBody": "We had a wonderful time on the river with our dogs. The house itself was even better than the pictures; very clean and the amenities were top notch. We very much enjoyed the hot tub, fire pit and fishing from the backyard and the dogs loved running around in the grass and down to the river. We highly recommend this house!"
     }
   ]
-}
-</script>
-
-<!-- ─── FOOTER EMAIL SIGNUP ─────────────────────────────────── -->
-<section class="ft-email-strip">
-  <div class="ft-email-inner">
-    <div class="ft-email-left">
-      <h3>Join 1,000+ River Lovers</h3>
-      <p>Get occasional McKenzie River tips and offers in your inbox — fishing, photography, seasonal advice, and insider knowledge from people who live here.</p>
-    </div>
-    <form class="ft-email-form" id="footer-email-form" action="https://formspree.io/f/maqgvkve" method="POST" onsubmit="handleFooterEmailSignup(event)">
-      <input type="hidden" name="_subject" value="New email signup: Join 1,000+ River Lovers">
-      <input type="text" name="name" placeholder="Your name" required>
-      <input type="email" name="email" placeholder="Your email" required>
-      <button type="submit">Sign Me Up</button>
-      <div class="ft-email-success" id="footer-email-success">
-        <p>✓ Thanks! You're on the list.</p>
-      </div>
-    </form>
-  </div>
-</section>
-<script>
-async function handleFooterEmailSignup(e) {
-  e.preventDefault();
-  const form = e.target;
-  const btn = form.querySelector('button[type="submit"]');
-  btn.textContent = 'Sending…';
-  btn.disabled = true;
-  try {
-    const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } });
-    if (!res.ok) throw new Error();
-    form.querySelectorAll('input, button').forEach(el => el.style.display = 'none');
-    document.getElementById('footer-email-success').classList.add('show');
-  } catch {
-    btn.textContent = 'Sign Me Up';
-    btn.disabled = false;
-    alert('Something went wrong. Please try again or call 541-896-1196.');
-  }
 }
 </script>
 

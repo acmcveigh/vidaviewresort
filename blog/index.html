@@ -89,23 +89,6 @@
     .post-read-more:hover{gap:.75rem}
 
     /* EMAIL SIGNUP */
-    .email-section{background:var(--forest);padding:5rem 2.5rem}
-    .email-inner{max-width:var(--mw);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
-    @media(max-width:800px){.email-inner{grid-template-columns:1fr;gap:2rem}}
-    .email-left h3{font-family:var(--ff-display);font-size:2.2rem;font-weight:300;color:var(--cream);line-height:1.1;margin-bottom:1rem}
-    .email-left p{font-size:.95rem;color:rgba(244,240,232,.65);line-height:1.8;margin-bottom:1.5rem}
-    .email-benefit{display:flex;align-items:flex-start;gap:.75rem;font-size:.85rem;color:rgba(244,240,232,.6);margin-bottom:.85rem}
-    .email-benefit span{color:var(--amber);font-weight:500;flex-shrink:0}
-    .email-form{display:flex;flex-direction:column;gap:.9rem}
-    .email-form input{width:100%;padding:.9rem 1.1rem;background:rgba(255,255,255,.08);border:1px solid rgba(196,160,82,.2);border-radius:6px;color:var(--cream);font-family:var(--ff-body);font-size:.88rem;outline:none;transition:border-color .2s ease}
-    .email-form input::placeholder{color:rgba(244,240,232,.35)}
-    .email-form input:focus{border-color:var(--amber)}
-    .email-submit{padding:1rem;background:var(--amber);color:var(--forest);border:none;border-radius:6px;font-family:var(--ff-body);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;cursor:pointer;transition:background .2s ease}
-    .email-submit:hover{background:var(--amber-lt)}
-    .email-success{display:none;text-align:center;padding:1.5rem;background:rgba(61,135,117,.1);border:1px solid rgba(61,135,117,.25);border-radius:6px;color:var(--cream)}
-    .email-success.show{display:block}
-    .email-success h4{font-family:var(--ff-display);font-size:1.3rem;color:var(--cream);margin-bottom:.5rem}
-    .email-success p{font-size:.85rem;color:rgba(244,240,232,.6)}
 
     /* FOOTER */
     footer{background:#0b1a0d;color:var(--cream);padding:4rem 2.5rem 2rem}
@@ -319,45 +302,6 @@
   </div>
 </main>
 
-<section class="email-section">
-  <div class="email-inner">
-    <div class="email-left">
-      <h3>Get McKenzie River Tips &amp; Offers</h3>
-      <p>Occasional emails on fishing, photography, where locals go, choosing your season, and special offers. Written by people who live here.</p>
-      <div style="margin-top:1.5rem">
-        <div class="email-benefit">
-          <span>✓</span>
-          <span>Fishing secrets and where to find the best trout</span>
-        </div>
-        <div class="email-benefit">
-          <span>✓</span>
-          <span>Photography tips for capturing the river's light</span>
-        </div>
-        <div class="email-benefit">
-          <span>✓</span>
-          <span>Where locals actually go (restaurants, hikes, quiet spots)</span>
-        </div>
-        <div class="email-benefit">
-          <span>✓</span>
-          <span>How to choose your season and plan accordingly</span>
-        </div>
-      </div>
-    </div>
-    <div>
-      <form class="email-form" id="blog-email-form" action="https://formspree.io/f/maqgvkve" method="POST" onsubmit="handleEmailSignup(event)">
-        <input type="hidden" name="_subject" value="New email signup: blog">
-        <input type="text" name="name" placeholder="Your name" required>
-        <input type="email" name="email" placeholder="Your email" required>
-        <button type="submit" class="email-submit">Sign Me Up</button>
-        <div class="email-success" id="blog-email-success">
-          <h4>✓ You're on the list!</h4>
-          <p>Thanks for joining. Welcome to the McKenzie River community.</p>
-        </div>
-      </form>
-    </div>
-  </div>
-</section>
-
 <footer>
   <div class="ft-inner">
     <p class="ft-logo">Vida <span>View</span> Retreat</p>
@@ -372,28 +316,6 @@
     </div>
   </div>
 </footer>
-
-<script>
-/* Email signup handler */
-function handleEmailSignup(e) {
-  e.preventDefault();
-  const form = e.target;
-  const submitBtn = form.querySelector('.email-submit');
-  submitBtn.textContent = 'Sending…';
-  submitBtn.disabled = true;
-  fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
-    .then(res => {
-      if (!res.ok) throw new Error();
-      form.querySelectorAll('input, button').forEach(el => el.style.display = 'none');
-      form.querySelector('.email-success').classList.add('show');
-    })
-    .catch(() => {
-      submitBtn.textContent = 'Sign Me Up';
-      submitBtn.disabled = false;
-      alert('Something went wrong. Please try again or call 541-896-1196.');
-    });
-}
-</script>
 
 </body>
 </html>
