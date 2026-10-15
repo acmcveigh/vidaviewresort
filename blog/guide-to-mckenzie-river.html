@@ -318,15 +318,16 @@
     </div>
 
     <div class="sidebar-card sidebar-email" style="padding:1.5rem">
-      <h4>5 Days of Secrets</h4>
-      <p class="sidebar-email-desc">Get an email series on fishing, photography, local spots, seasons, and planning your trip.</p>
-      <form class="sidebar-email-form" onsubmit="handleSidebarEmailSignup(event)">
-        <input type="text" placeholder="Your name" required>
-        <input type="email" placeholder="Your email" required>
+      <h4>River Tips &amp; Offers</h4>
+      <p class="sidebar-email-desc">Get occasional McKenzie River tips and offers — fishing, photography, local spots, and the best seasons to visit.</p>
+      <form class="sidebar-email-form" action="https://formspree.io/f/maqgvkve" method="POST" onsubmit="handleSidebarEmailSignup(event)">
+        <input type="hidden" name="_subject" value="New email signup: blog">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Your email" required>
         <button type="submit">Join</button>
         <div class="sidebar-email-success" style="padding:1rem 0.5rem">
           <div class="sidebar-email-success-icon">✓</div>
-          <p>Check your inbox for email 1!</p>
+          <p>Thanks! You're on the list.</p>
         </div>
       </form>
     </div>
@@ -379,22 +380,20 @@
 function handleSidebarEmailSignup(e) {
   e.preventDefault();
   const form = e.target;
-  const inputs = form.querySelectorAll('input');
-  const name = inputs[0].value.trim();
-  const email = inputs[1].value.trim();
-  const successDiv = form.nextElementSibling;
-
-  if (!name || !email || !/\S+@\S+\.\S+/.test(email)) {
-    alert('Please enter valid name and email');
-    return;
-  }
-
-  const signups = JSON.parse(localStorage.getItem('mckenzie_signups') || '[]');
-  signups.push({ name, email, date: new Date().toISOString() });
-  localStorage.setItem('mckenzie_signups', JSON.stringify(signups));
-
-  form.style.display = 'none';
-  successDiv.classList.add('show');
+  const btn = form.querySelector('button[type="submit"]');
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+  fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
+    .then(res => {
+      if (!res.ok) throw new Error();
+      form.querySelectorAll('input, button').forEach(el => el.style.display = 'none');
+      form.querySelector('.sidebar-email-success').classList.add('show');
+    })
+    .catch(() => {
+      btn.textContent = 'Join';
+      btn.disabled = false;
+      alert('Something went wrong. Please try again or call 541-896-1196.');
+    });
 }
 </script>
 

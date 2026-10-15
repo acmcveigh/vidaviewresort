@@ -322,8 +322,8 @@
 <section class="email-section">
   <div class="email-inner">
     <div class="email-left">
-      <h3>Get 5 Days of McKenzie River Secrets</h3>
-      <p>An email series on fishing, photography, where locals go, choosing your season, and planning your trip. Written by people who live here.</p>
+      <h3>Get McKenzie River Tips &amp; Offers</h3>
+      <p>Occasional emails on fishing, photography, where locals go, choosing your season, and special offers. Written by people who live here.</p>
       <div style="margin-top:1.5rem">
         <div class="email-benefit">
           <span>✓</span>
@@ -344,13 +344,14 @@
       </div>
     </div>
     <div>
-      <form class="email-form" id="blog-email-form" onsubmit="handleEmailSignup(event)">
-        <input type="text" name="email_name" placeholder="Your name" required>
-        <input type="email" name="email_address" placeholder="Your email" required>
-        <button type="submit" class="email-submit">Send Me the Series</button>
+      <form class="email-form" id="blog-email-form" action="https://formspree.io/f/maqgvkve" method="POST" onsubmit="handleEmailSignup(event)">
+        <input type="hidden" name="_subject" value="New email signup: blog">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Your email" required>
+        <button type="submit" class="email-submit">Sign Me Up</button>
         <div class="email-success" id="blog-email-success">
-          <h4>✓ Check your inbox!</h4>
-          <p>First email coming in a few minutes. Welcome to the McKenzie River community.</p>
+          <h4>✓ You're on the list!</h4>
+          <p>Thanks for joining. Welcome to the McKenzie River community.</p>
         </div>
       </form>
     </div>
@@ -377,35 +378,20 @@
 function handleEmailSignup(e) {
   e.preventDefault();
   const form = e.target;
-  const nameInput = form.querySelector('[name="email_name"]');
-  const emailInput = form.querySelector('[name="email_address"]');
-  const successDiv = form.parentElement.querySelector('.email-success');
   const submitBtn = form.querySelector('.email-submit');
-
-  const name = nameInput.value.trim();
-  const email = emailInput.value.trim();
-
-  if (!name || !email) {
-    alert('Please fill in all fields');
-    return;
-  }
-
-  if (!/\S+@\S+\.\S+/.test(email)) {
-    alert('Please enter a valid email');
-    return;
-  }
-
-  /* Store the signup locally and show success */
-  const signups = JSON.parse(localStorage.getItem('mckenzie_signups') || '[]');
-  signups.push({ name, email, date: new Date().toISOString() });
-  localStorage.setItem('mckenzie_signups', JSON.stringify(signups));
-
-  /* Show success message */
-  form.style.display = 'none';
-  successDiv.classList.add('show');
-
-  /* Log to console for debugging */
-  console.log('Email signup collected:', { name, email });
+  submitBtn.textContent = 'Sending…';
+  submitBtn.disabled = true;
+  fetch(form.action, { method: 'POST', body: new FormData(form), headers: { Accept: 'application/json' } })
+    .then(res => {
+      if (!res.ok) throw new Error();
+      form.querySelectorAll('input, button').forEach(el => el.style.display = 'none');
+      form.querySelector('.email-success').classList.add('show');
+    })
+    .catch(() => {
+      submitBtn.textContent = 'Sign Me Up';
+      submitBtn.disabled = false;
+      alert('Something went wrong. Please try again or call 541-896-1196.');
+    });
 }
 </script>
 

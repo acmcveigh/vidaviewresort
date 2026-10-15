@@ -1205,13 +1205,13 @@
   <div class="ft-email-inner">
     <div class="ft-email-left">
       <h3>Join 1,000+ River Lovers</h3>
-      <p>Get 5 days of McKenzie River secrets delivered to your inbox — fishing tips, photography guides, seasonal advice, and insider knowledge from people who live here.</p>
+      <p>Get occasional McKenzie River tips and offers in your inbox — fishing, photography, seasonal advice, and insider knowledge from people who live here.</p>
     </div>
     <form class="ft-email-form" id="footer-email-form" action="https://formspree.io/f/maqgvkve" method="POST" onsubmit="handleFooterEmailSignup(event)">
       <input type="hidden" name="_subject" value="New email signup: Join 1,000+ River Lovers">
       <input type="text" name="name" placeholder="Your name" required>
       <input type="email" name="email" placeholder="Your email" required>
-      <button type="submit">Get the Series</button>
+      <button type="submit">Sign Me Up</button>
       <div class="ft-email-success" id="footer-email-success">
         <p>✓ Thanks! You're on the list.</p>
       </div>
@@ -1231,7 +1231,7 @@ async function handleFooterEmailSignup(e) {
     form.querySelectorAll('input, button').forEach(el => el.style.display = 'none');
     document.getElementById('footer-email-success').classList.add('show');
   } catch {
-    btn.textContent = 'Get the Series';
+    btn.textContent = 'Sign Me Up';
     btn.disabled = false;
     alert('Something went wrong. Please try again or call 541-896-1196.');
   }
