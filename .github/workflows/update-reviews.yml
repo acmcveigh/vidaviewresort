@@ -1,0 +1,37 @@
+name: Update suite review counts
+
+# 1st and 15th of each month, 8am Pacific (15:00 UTC). Can also be run by hand
+# from the Actions tab.
+on:
+  schedule:
+    - cron: '0 15 1,15 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Refresh counts from Airbnb
+        run: python3 scripts/update_airbnb_reviews.py
+
+      - name: Commit and redeploy if anything changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet index.html; then
+            echo "Review counts unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git commit -am "Update suite review counts from Airbnb"
+          git push
+          # Pushes made by this workflow don't trigger other workflows, so start the Pages deploy directly.
+          gh workflow run deploy-pages.yml --ref master
