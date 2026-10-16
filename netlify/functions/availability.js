@@ -30,7 +30,9 @@ const byStart = (a, b) => a.start.localeCompare(b.start);
 const headers = {
   'Content-Type': 'application/json',
   'Access-Control-Allow-Origin': '*',
-  'Cache-Control': 'public, max-age=600',
+  /* browsers always re-check; Netlify's CDN may reuse a copy for up to 5 minutes */
+  'Cache-Control': 'no-cache',
+  'Netlify-CDN-Cache-Control': 'public, max-age=300',
 };
 
 /* "20261017" or "20261017T150000Z" → "2026-10-17" */

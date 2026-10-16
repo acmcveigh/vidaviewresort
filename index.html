@@ -1757,7 +1757,7 @@
     modal.querySelector('[data-call]').addEventListener('click', close);
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('open')) close(); });
 
-    fetch('https://cheerful-kataifi-93e959.netlify.app/.netlify/functions/availability')
+    fetch('https://cheerful-kataifi-93e959.netlify.app/.netlify/functions/availability', { cache: 'no-store' })
       .then(r => r.ok ? r.json() : Promise.reject())
       .then(data => {
         document.querySelectorAll('.suite-avail').forEach(btn => {
